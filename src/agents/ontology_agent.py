@@ -13,9 +13,29 @@ class OntologyAgent:
                 return [ing.name for ing in c.hasIngredient]
         return []
 
+    def preparacion_de(self, nombre):
+        for c in self.onto.Cocktail.instances():
+            if c.name.lower() == nombre.lower():
+                if hasattr(c, 'preparation'):
+                    return c.preparation[0] if c.preparation else "No hay instrucciones disponibles."
+                else:
+                    return "Este cóctel no tiene información de preparación."
+        return "Cóctel no encontrado."
 
-# Prueba
-if __name__ == "__main__":
-    agente = OntologyAgent("src/ontology/bartender.owl")
-    print("Cócteles:", agente.listar_tragos())
-    print("Ingredientes de Mojito:", agente.ingredientes_de("Mojito"))
+    def origen_de(self, nombre):
+        for c in self.onto.Cocktail.instances():
+            if c.name.lower() == nombre.lower():
+                if hasattr(c, 'origin'):
+                    return c.origin[0] if c.origin else "Origen desconocido."
+                else:
+                    return "Este cóctel no tiene información de origen."
+        return "Cóctel no encontrado."
+
+    def recomendar_por_ingrediente(self, ingrediente_nombre):
+        resultado = []
+        for c in self.onto.Cocktail.instances():
+            for ing in c.hasIngredient:
+                if ing.name.lower() == ingrediente_nombre.lower():
+                    resultado.append(c.name)
+                    break
+        return resultado

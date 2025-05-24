@@ -29,5 +29,5 @@ with onto:
     class hasPrice(Cocktail >> str, DataProperty): pass
 
 # Guardar ontología
-onto.save(file = "ontology.owl", format = "rdfxml")
+onto.save(file = "src/ontology/ontology.owl", format = "rdfxml")
 print("Ontología guardada como bartender.owl")

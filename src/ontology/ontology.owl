@@ -39,18 +39,18 @@
 </owl:ObjectProperty>
 
 <owl:DatatypeProperty rdf:about="#hasHistory">
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   <rdfs:domain rdf:resource="#Cocktail"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#hasRating">
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
   <rdfs:domain rdf:resource="#Cocktail"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#hasPrice">
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   <rdfs:domain rdf:resource="#Cocktail"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 </owl:DatatypeProperty>
 
 <owl:Class rdf:about="#Cocktail">
@@ -91,15 +91,268 @@
 
 <owl:NamedIndividual rdf:about="#Mojito">
   <rdf:type rdf:resource="#Cocktail"/>
-  <hasIngredient rdf:resource="#Rum"/>
   <hasIngredient rdf:resource="#Mint"/>
+  <hasIngredient rdf:resource="#Rum"/>
+  <hasIngredient rdf:resource="#Sugar"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Mint">
+  <rdf:type rdf:resource="#Ingredient"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#Rum">
   <rdf:type rdf:resource="#Ingredient"/>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Mint">
+<owl:NamedIndividual rdf:about="#Sugar">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Margarita">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Triple_Sec"/>
+  <hasIngredient rdf:resource="#Tequila"/>
+  <hasIngredient rdf:resource="#Lime_Juice"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Triple_Sec">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Tequila">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lime_Juice">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Old_Fashioned">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Bourbon"/>
+  <hasIngredient rdf:resource="#Angostura_Bitters"/>
+  <hasIngredient rdf:resource="#Sugar"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bourbon">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Angostura_Bitters">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Caipirinha">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Sugar"/>
+  <hasIngredient rdf:resource="#Cachaça"/>
+  <hasIngredient rdf:resource="#Lime"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Cachaça">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lime">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Daiquiri">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Sugar"/>
+  <hasIngredient rdf:resource="#Rum"/>
+  <hasIngredient rdf:resource="#Lime_Juice"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Negroni">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Vermouth"/>
+  <hasIngredient rdf:resource="#Campari"/>
+  <hasIngredient rdf:resource="#Gin"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Vermouth">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Campari">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Gin">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Cosmopolitan">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Triple_Sec"/>
+  <hasIngredient rdf:resource="#Vodka"/>
+  <hasIngredient rdf:resource="#Cranberry_Juice"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Vodka">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Cranberry_Juice">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Mai_Tai">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Rum"/>
+  <hasIngredient rdf:resource="#Orgeat_Syrup"/>
+  <hasIngredient rdf:resource="#Lime_Juice"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Orgeat_Syrup">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Piña_Colada">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Pineapple_Juice"/>
+  <hasIngredient rdf:resource="#Rum"/>
+  <hasIngredient rdf:resource="#Coconut_Cream"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Pineapple_Juice">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Coconut_Cream">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Manhattan">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Whiskey"/>
+  <hasIngredient rdf:resource="#Vermouth"/>
+  <hasIngredient rdf:resource="#Angostura_Bitters"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Whiskey">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Whiskey_Sour">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Whiskey"/>
+  <hasIngredient rdf:resource="#Sugar"/>
+  <hasIngredient rdf:resource="#Lemon_Juice"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lemon_Juice">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bloody_Mary">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Vodka"/>
+  <hasIngredient rdf:resource="#Tomato_Juice"/>
+  <hasIngredient rdf:resource="#Tabasco"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Tomato_Juice">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Tabasco">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Gin_Tonic">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Gin"/>
+  <hasIngredient rdf:resource="#Tonic_Water"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Tonic_Water">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Tequila_Sunrise">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Grenadine"/>
+  <hasIngredient rdf:resource="#Tequila"/>
+  <hasIngredient rdf:resource="#Orange_Juice"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Grenadine">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Orange_Juice">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Cuba_Libre">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Cola"/>
+  <hasIngredient rdf:resource="#Rum"/>
+  <hasIngredient rdf:resource="#Lime"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Cola">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Tom_Collins">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Gin"/>
+  <hasIngredient rdf:resource="#Lemon_Juice"/>
+  <hasIngredient rdf:resource="#Soda_Water"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Soda_Water">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Aperol_Spritz">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Prosecco"/>
+  <hasIngredient rdf:resource="#Aperol"/>
+  <hasIngredient rdf:resource="#Soda_Water"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Prosecco">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Aperol">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Espresso_Martini">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Vodka"/>
+  <hasIngredient rdf:resource="#Coffee_Liqueur"/>
+  <hasIngredient rdf:resource="#Espresso"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Coffee_Liqueur">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Espresso">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Mint_Julep">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Bourbon"/>
+  <hasIngredient rdf:resource="#Sugar"/>
+  <hasIngredient rdf:resource="#Mint"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#French_75">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Champagne"/>
+  <hasIngredient rdf:resource="#Gin"/>
+  <hasIngredient rdf:resource="#Lemon_Juice"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Champagne">
   <rdf:type rdf:resource="#Ingredient"/>
 </owl:NamedIndividual>
 
