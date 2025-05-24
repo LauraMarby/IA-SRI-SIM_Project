@@ -1,3 +1,5 @@
+# src/ui/user_interface.py
+
 BARTENDER_ASCII = r"""
       .-''''-.
      /  O  O  \
@@ -11,22 +13,18 @@ BARTENDER_ASCII = r"""
    Virtual Bartender
 """
 
-class ConsoleInterface:
-    def __init__(self, coordinator):
-        self.coordinator = coordinator
+def show_welcome_message():
+    print("=" * 60)
+    print(BARTENDER_ASCII)
+    print("=" * 60)
+    print("¿En qué puedo ayudarte con tus cócteles hoy?")
+    print("Escribe 'salir' para terminar.\n")
 
-    def launch(self):
-        print("=" * 60)
-        print(BARTENDER_ASCII)
-        print("=" * 60)
-        print("¿En qué puedo ayudarte con tus cócteles hoy?")
-        print("Escribe 'salir' para terminar.\n")
+def get_user_input():
+    return input("> ")
 
-        while True:
-            user_input = input("> ")
-            if user_input.lower() in ['salir', 'exit', 'quit']:
-                print("🍸 ¡Hasta luego, bartender amigo!")
-                break
-            response = self.coordinator.handle_query(user_input)
-            if response:
-                print(f"🍸 {response}/n")
+def show_response(response):
+    print(f"🍸 {response}\n")
+
+def show_exit_message():
+    print("🍸 ¡Hasta luego, bartender amigo!")

@@ -1,7 +1,7 @@
+from agents.user_agent import UserAgent
 from agents.coordinator_agent import CoordinatorAgent
 from agents.ontology_agent import OntologyAgent
 from environment.environment import Environment
-from ui.user_interface import ConsoleInterface
 
 if __name__ == "__main__":
     env = Environment('src/ontology/ontology.owl')
@@ -11,6 +11,6 @@ if __name__ == "__main__":
     coordinator = CoordinatorAgent(env)
     env.register_agent('coordinator', coordinator)
 
-    interface = ConsoleInterface(coordinator)
-    interface.launch()
+    user_agent = UserAgent(env)
+    user_agent.interact()
 
