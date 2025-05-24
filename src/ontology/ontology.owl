@@ -77,17 +77,31 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Rating">
+<owl:Class rdf:about="#Person">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Person">
+<owl:Class rdf:about="#Rating">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#PriceRange">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
+
+<owl:NamedIndividual rdf:about="#Mojito">
+  <rdf:type rdf:resource="#Cocktail"/>
+  <hasIngredient rdf:resource="#Rum"/>
+  <hasIngredient rdf:resource="#Mint"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rum">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Mint">
+  <rdf:type rdf:resource="#Ingredient"/>
+</owl:NamedIndividual>
 
 
 </rdf:RDF>
