@@ -1,7 +1,5 @@
 import re
 
-import re
-
 INTENTS = {
     "saludo": [
         r"^\s*(hola|buenas|buenos días|buenas tardes|buenas noches|hey|qué tal)\b",

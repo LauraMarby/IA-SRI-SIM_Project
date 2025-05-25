@@ -1,5 +1,3 @@
-# src/ui/user_interface.py
-
 BARTENDER_ASCII = r"""
       .-''''-.
      /  O  O  \
