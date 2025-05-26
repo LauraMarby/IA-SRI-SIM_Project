@@ -22,3 +22,4 @@ src/agents/__pycache__/user_agent.cpython-312.pyc
 src/ui/__pycache__/user_interface.cpython-312.pyc
 src/utils/__pycache__/write_to_json.cpython-312.pyc
 src/utils/__pycache__/extract_robots.cpython-312.pyc
+src/embedding/__pycache__/embedder.cpython-310.pyc
