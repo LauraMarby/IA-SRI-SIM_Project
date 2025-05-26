@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/171/barnacle-bill",
+  "Name": "Barnacle Bill",
+  "Glass": "Old-fashioned glass",
+  "Ingredients": [
+    "15 ml Yellow Chartreuse (or génépy liqueur)",
+    "15 ml Giffard Parfait Amour liqueur",
+    "15 ml Aniseed (anise) liqueur",
+    "15 ml Chilled water omit if using wet ice"
+  ],
+  "Instructions": [
+    "Select and pre-chill an Old-fashioned glass .",
+    "Prepare mint sprigs for garnish.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into glass filled with crushed ice.",
+    "Garnish with mint sprigs bouquet."
+  ],
+  "Review": "This sweet drink is best enjoyed after a meal on a warm night.",
+  "History": "Adapted from Victor Bergeron's Trader Vic's Bartender's Guide (1972 revised edition) .",
+  "Nutrition": "One serving of Barnacle Bill contains 136 calories",
+  "Alcohol_Content": [
+    [
+      "0.9 standard drinks"
+    ],
+    [
+      "19.85% alc./vol. (19.85° proof)"
+    ],
+    [
+      "11.9 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

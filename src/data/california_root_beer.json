@@ -1,0 +1,35 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/359/california-root-beer",
+  "Name": "California Root Beer",
+  "Glass": "Sling glass",
+  "Ingredients": [
+    "40 ml Ketel One Vodka",
+    "15 ml Galliano L'Autentico liqueur",
+    "10 ml De Kuyper Crème de Cafe",
+    "5 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)",
+    "90 ml Thomas Henry Soda Water"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Sling glass .",
+    "Prepare garnish of lime wedge.",
+    "SHAKE first 3 ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "TOP with soda.",
+    "Garnish with lime wedge."
+  ],
+  "Review": "Does indeed taste like root beer.",
+  "History": "Adapted from a recipe in Mark Torre's 1984 The Bartender's Cherry, Second Edition .",
+  "Nutrition": "One serving of California Root Beer contains 185 calories",
+  "Alcohol_Content": [
+    [
+      "1.3 standard drinks"
+    ],
+    [
+      "11.19% alc./vol. (11.19° proof)"
+    ],
+    [
+      "17.9 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

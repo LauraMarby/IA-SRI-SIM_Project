@@ -1,0 +1,34 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/3693/queen-mary",
+  "Name": "Queen Mary",
+  "Glass": "Coupe glass",
+  "Ingredients": [
+    "50 ml Cognac (brandy)",
+    "22.5 ml Izarra Green (Vert) liqueur",
+    "15 ml Lemon juice (freshly squeezed)",
+    "10 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)",
+    "2 dash Angostura Aromatic Bitters"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Coupe glass .",
+    "Prepare rosemary sprig for garnish.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into chilled glass.",
+    "Garnish with rosemary sprig."
+  ],
+  "Review": "Konstantinos' original recipe called for dushi buttons in place of sugar syrup. Sadly, while commonplace in his local market in Messinia , Greece, dushi buttons are a rarity in South London, England, hence our substitution.",
+  "History": "Adapted from a recipe created in 2015 by Konstantinos Kollias at Armyra By Papaioannou, Messinia, Greece.",
+  "Nutrition": "One serving of Queen Mary contains 206 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "21.94% alc./vol. (21.94° proof)"
+    ],
+    [
+      "21.5 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

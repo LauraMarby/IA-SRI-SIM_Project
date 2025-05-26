@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2101/wilton-martini",
+  "Name": "Wilton Martini",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "30 ml Ketel One Vodka",
+    "30 ml Calvados / apple brandy / straight applejack",
+    "15 ml Apple Schnapps liqueur",
+    "5 ml Goldwasser cinnamon schnapps liqueur",
+    "45 ml Apple juice/apple cider (cloudy & unsweetened)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of cinnamon dusted apple slice.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "Refined cinnamon and apple.",
+  "History": "A 2003 adaptation of the signature cocktail at The Blue Bar, The Berkeley Hotel, London, England.",
+  "Nutrition": "One serving of Wilton Martini contains 211 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "17.06% alc./vol. (17.06° proof)"
+    ],
+    [
+      "21.3 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

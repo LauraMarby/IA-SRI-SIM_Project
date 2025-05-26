@@ -1,0 +1,30 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1099/kentucky-tea",
+  "Name": "Kentucky Tea",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "45 ml Bourbon whiskey",
+    "22.5 ml De Kuyper Triple Sec (40%)",
+    "22.5 ml Lime juice (freshly squeezed)",
+    "10 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)",
+    "60 ml Thomas Henry Ginger Ale"
+  ],
+  "Instructions": [
+    "SHAKE first 4 ingredients with ice and fine strain into ice-filled glass. TOP with ginger ale."
+  ],
+  "Review": "Citrusy whiskey and ginger.",
+  "History": "",
+  "Nutrition": "One serving of Kentucky Tea contains 221 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "13.44% alc./vol. (13.44° proof)"
+    ],
+    [
+      "21.5 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Lime wedge"
+}

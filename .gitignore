@@ -14,3 +14,11 @@ src/environment/__pycache__/environment.cpython-310.pyc
 src/ui/__pycache__/user_interface.cpython-310.pyc
 src/utils/__pycache__/text_preprocessing.cpython-310.pyc
 src/utils/__pycache__/text_preprocessing.cpython-313.pyc
+src/agents/__pycache__/coordinator_agent.cpython-312.pyc
+src/agents/__pycache__/crawler_agent.cpython-312.pyc
+src/agents/__pycache__/intent_detector_agent.cpython-312.pyc
+src/agents/__pycache__/ontology_agent.cpython-312.pyc
+src/agents/__pycache__/user_agent.cpython-312.pyc
+src/ui/__pycache__/user_interface.cpython-312.pyc
+src/utils/__pycache__/write_to_json.cpython-312.pyc
+src/utils/__pycache__/extract_robots.cpython-312.pyc

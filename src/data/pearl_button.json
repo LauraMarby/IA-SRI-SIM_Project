@@ -1,0 +1,30 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/3615/pearl-button",
+  "Name": "Pearl Button",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "50 ml Cachaça",
+    "20 ml Aromatized wine (e.g. Lillet Blanc)",
+    "15 ml Lime juice (freshly squeezed)",
+    "5 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)",
+    "50 ml Lemonade"
+  ],
+  "Instructions": [
+    "SHAKE first 4 ingredients with ice and strain into ice-filled glass. TOP with lemonade."
+  ],
+  "Review": "Cachaça, aromatised wine, and citrus combine in this dry, refreshing drink.",
+  "History": "Adapted from a drink created in 2013 by John Deragon at PDT , New York City, USA. John's original recipe calls for San Pellegrino Limonata in place of lemonade.",
+  "Nutrition": "One serving of Pearl Button contains 175 calories",
+  "Alcohol_Content": [
+    [
+      "1.2 standard drinks"
+    ],
+    [
+      "12.34% alc./vol. (12.34° proof)"
+    ],
+    [
+      "17.3 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Half grapefruit slice"
+}

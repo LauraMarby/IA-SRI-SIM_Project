@@ -1,0 +1,30 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/883/golden-shot",
+  "Name": "Golden Shot",
+  "Glass": "Shot glass",
+  "Ingredients": [
+    "15 ml Honey herbal liqueur (e.g. Drambuie)",
+    "15 ml Irish cream liqueur",
+    "15 ml Blended Scotch whisky"
+  ],
+  "Instructions": [
+    "Select a Shot glass .",
+    "Refrigerate ingredients.",
+    "LAYER in chilled glass by carefully pouring ingredients in the order listed."
+  ],
+  "Review": "A whisky based layered shot with plenty of character.",
+  "History": "",
+  "Nutrition": "One serving of Golden Shot contains 129 calories",
+  "Alcohol_Content": [
+    [
+      "0.9 standard drinks"
+    ],
+    [
+      "29.39% alc./vol. (29.39° proof)"
+    ],
+    [
+      "13.2 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

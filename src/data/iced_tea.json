@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/999/iced-tea",
+  "Name": "Iced Tea",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "15 ml Cognac (brandy)",
+    "15 ml Dark/black/blackstrap rum",
+    "15 ml De Kuyper Triple Sec (40%)",
+    "15 ml Lime juice (freshly squeezed)",
+    "15 ml Orange juice (freshly squeezed)",
+    "60 ml Cold black tea",
+    "Top up with Cola (e.g. Coca-Cola or Pepsi)"
+  ],
+  "Instructions": [
+    "SHAKE first six ingredients with ice and strain into glass filled with crushed ice. TOP with cola."
+  ],
+  "Review": "Sweetened and fortified fruity cola.",
+  "History": "Created in 1990 by Charles Schumann , Munich, Germany.",
+  "Nutrition": "One serving of Iced Tea contains 113 calories",
+  "Alcohol_Content": [
+    [
+      "0.9 standard drinks"
+    ],
+    [
+      "9.8% alc./vol. (9.8° proof)"
+    ],
+    [
+      "13.2 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Lime wedge"
+}

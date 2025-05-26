@@ -1,0 +1,30 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/186/bazooka-joe",
+  "Name": "Bazooka Joe",
+  "Glass": "Shot glass",
+  "Ingredients": [
+    "15 ml De Kuyper Blue Curaçao",
+    "15 ml Giffard Banane du Brésil liqueur",
+    "15 ml Irish cream liqueur"
+  ],
+  "Instructions": [
+    "Select a Shot glass .",
+    "Refrigerate ingredients.",
+    "LAYER in chilled glass by carefully pouring ingredients in the order listed."
+  ],
+  "Review": "Banana and orange topped with whiskey cream.",
+  "History": "",
+  "Nutrition": "One serving of Bazooka Joe contains 122 calories",
+  "Alcohol_Content": [
+    [
+      "0.6 standard drinks"
+    ],
+    [
+      "18.79% alc./vol. (18.79° proof)"
+    ],
+    [
+      "8.5 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

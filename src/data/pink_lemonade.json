@@ -1,0 +1,34 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1549/pink-lemonade",
+  "Name": "Pink Lemonade",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "45 ml Lemon juice (freshly squeezed)",
+    "12.5 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)",
+    "12.5 ml Grenadine/pomegranate syrup",
+    "75 ml Thomas Henry Soda Water"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare lemon slice wheel for garnish.",
+    "SHAKE first 3 ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "TOP with soda.",
+    "Garnish with lemon slice."
+  ],
+  "Review": "A tall, pink, tangy alcohol-free cocktail.",
+  "History": "Discovered in 2004 in New York City.",
+  "Nutrition": "One serving of Pink Lemonade contains 84 calories",
+  "Alcohol_Content": [
+    [
+      "0 standard drinks"
+    ],
+    [
+      "0% alc./vol. (0° proof)"
+    ],
+    [
+      "0 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

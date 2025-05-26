@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1385/nantucket",
+  "Name": "Nantucket",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "45 ml Light white rum (charcoal-filtered 1-4 years old)",
+    "75 ml Cranberry juice (sweetened)",
+    "30 ml Pink grapefruit juice (freshly squeezed)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare garnish of lime wedge.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "Garnish with lime wedge."
+  ],
+  "Review": "Essentially a Seabreeze with rum in place of vodka.",
+  "History": "Popularised by the USA Cheers Bar chain, this is named after the beautiful island off Cape Cod.",
+  "Nutrition": "One serving of Nantucket contains 143 calories",
+  "Alcohol_Content": [
+    [
+      "0.9 standard drinks"
+    ],
+    [
+      "8.82% alc./vol. (8.82° proof)"
+    ],
+    [
+      "13.2 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

@@ -1,0 +1,28 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1200/lush",
+  "Name": "Lush",
+  "Glass": "Flute glass",
+  "Ingredients": [
+    "30 ml Ketel One Vodka",
+    "15 ml Giffard Framboise de Ronce (raspberry liqueur)",
+    "90 ml Brut champagne/sparkling wine"
+  ],
+  "Instructions": [
+    "POUR vodka and liqueur into chilled glass, TOP with champagne and lightly stir."
+  ],
+  "Review": "It is, are you?",
+  "History": "Created in 1999 by Spike Marchant at Alphabet, London, England.",
+  "Nutrition": "One serving of Lush contains 177 calories",
+  "Alcohol_Content": [
+    [
+      "1.4 standard drinks"
+    ],
+    [
+      "14.87% alc./vol. (14.87° proof)"
+    ],
+    [
+      "20.1 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Raspberries"
+}

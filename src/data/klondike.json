@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1116/klondike",
+  "Name": "Klondike",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "50 ml Bourbon whiskey",
+    "50 ml Orange juice (freshly squeezed)",
+    "50 ml Thomas Henry Ginger Ale"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare garnish of orange slice wheel.",
+    "POUR all ingredients into chilled glass.",
+    "FILL glass with ice.",
+    "Garnish with orange slice."
+  ],
+  "Review": "A simple drink but its three-equal parts ingredients combine well.",
+  "History": "Recipe adapted from A. S. Crockett's 1935 The Old Waldorf-Astoria Bar Book .",
+  "Nutrition": "One serving of Klondike contains 164 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "13.64% alc./vol. (13.64° proof)"
+    ],
+    [
+      "20.4 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1972/tom-collins",
+  "Name": "Tom Collins",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "60 ml Hayman's Old Tom Gin",
+    "25 ml Lemon juice (freshly squeezed)",
+    "15 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)",
+    "50 ml Thomas Henry Soda Water"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare garnish of skewered orange slice wheel & Luxardo Maraschino Cherry (sail).",
+    "SHAKE first 3 ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "TOP with soda and briefly stir."
+  ],
+  "Review": "A medium-dry Gin Collins based on old tom gin. There is much confusion between Tom Collins and John Collins ; arguably, the two names are interchangeable [see history below]. However, I follow the convention that a Tom Collins is based on old tom gin while a John Collins is made with London dry gin (although a John Collins was originally made with genever. Today, that's a Dutch or Genever Collins ).",
+  "History": "In his 1948 The Fine Art of Mixing Drinks , David A. Embury says \" The original Collinses were always made with gin but, strangely enough, never with London dry gin - the very liquor that is practically always used in making a Collins today. The Tom Collins was made with Old Tom gin and the John Collins with Holland gin [jenever]. \" He goes on to explain the confusion/difference between a Tom and John Collins:",
+  "Nutrition": "One serving of Tom Collins contains 177 calories",
+  "Alcohol_Content": [
+    [
+      "1.3 standard drinks"
+    ],
+    [
+      "12.18% alc./vol. (12.18° proof)"
+    ],
+    [
+      "18.3 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

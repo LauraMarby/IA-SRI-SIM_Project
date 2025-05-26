@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2003/tutti-frutti",
+  "Name": "Tutti Frutti",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "30 ml Patrón Reposado tequila",
+    "30 ml Green melon liqueur",
+    "30 ml Passoã passion fruit liqueur",
+    "90 ml Cranberry juice (sweetened)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare garnish of lime wedge.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "Garnish with lime wedge."
+  ],
+  "Review": "A berry drink with a tropical tinge.",
+  "History": "",
+  "Nutrition": "One serving of Tutti Frutti contains 301 calories",
+  "Alcohol_Content": [
+    [
+      "1.2 standard drinks"
+    ],
+    [
+      "9.44% alc./vol. (9.44° proof)"
+    ],
+    [
+      "17 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

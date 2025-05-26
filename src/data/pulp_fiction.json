@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1612/pulp-fiction",
+  "Name": "Pulp Fiction",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "50 ml Cognac (brandy)",
+    "50 ml Apple juice/apple cider (cloudy & unsweetened)",
+    "25 ml Apple Schnapps liqueur",
+    "50 ml Lemon-lime soda (Sprite/7-Up)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare garnish of apple wedge or slice.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass while also pouring lemon-lime soda.",
+    "Garnish with apple wedge or slice."
+  ],
+  "Review": "Originally made with apple pulp, this drink has a zingy apple taste.",
+  "History": "Discovered in 2001 at Teatro Club in London, England.",
+  "Nutrition": "One serving of Pulp Fiction contains 198 calories",
+  "Alcohol_Content": [
+    [
+      "1.3 standard drinks"
+    ],
+    [
+      "10.5% alc./vol. (10.5° proof)"
+    ],
+    [
+      "18.4 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

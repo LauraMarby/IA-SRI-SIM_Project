@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1553/pinky-pincher",
+  "Name": "Pinky Pincher",
+  "Glass": "Old-fashioned glass",
+  "Ingredients": [
+    "45 ml Bourbon whiskey",
+    "15 ml Orange juice (freshly squeezed)",
+    "15 ml Lemon juice (freshly squeezed)",
+    "5 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)",
+    "5 ml Orgeat (almond) sugar syrup (2:1)"
+  ],
+  "Instructions": [
+    "Select and pre-chill an Old-fashioned glass .",
+    "Prepare garnish of mint sprig, orange & lemon slices.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass."
+  ],
+  "Review": "Fruity, sweetened bourbon. What's not to like.",
+  "History": "Adapted from a drink created by Victor J. Bergeron (Trader Vic) and published in his 1972 Trader Vic's Bartender's Guide Revised .",
+  "Nutrition": "One serving of Pinky Pincher contains 154 calories",
+  "Alcohol_Content": [
+    [
+      "1.1 standard drinks"
+    ],
+    [
+      "17.53% alc./vol. (17.53° proof)"
+    ],
+    [
+      "14.9 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

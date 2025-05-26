@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1901/sunny-breeze",
+  "Name": "Sunny Breeze",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "15 ml De Kuyper Triple Sec (40%)",
+    "15 ml Grand Marnier or other cognac orange liqueur",
+    "45 ml Aniseed (anise) liqueur",
+    "90 ml Pink grapefruit juice (freshly squeezed)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare orange slice for garnish.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into glass filled with crushed ice.",
+    "Garnish with orange slice."
+  ],
+  "Review": "A suitably named refreshing long drink with an adult dry edge and kick.",
+  "History": "Created in 2003 by yours truly (Simon Difford).",
+  "Nutrition": "One serving of Sunny Breeze contains 250 calories",
+  "Alcohol_Content": [
+    [
+      "1.6 standard drinks"
+    ],
+    [
+      "13.37% alc./vol. (13.37° proof)"
+    ],
+    [
+      "22.1 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

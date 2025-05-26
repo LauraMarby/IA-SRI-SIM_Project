@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1248/manhattan-island",
+  "Name": "Manhattan Island",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "60 ml Cognac (brandy)",
+    "30 ml Strucchi Rosso Vermouth",
+    "5 ml Luxardo Maraschino liqueur",
+    "3 dash Angostura Aromatic Bitters"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of skewered Luxardo Maraschino Cherry .",
+    "STIR all ingredients with ice.",
+    "FINE STRAIN into chilled glass.",
+    "Garnish with skewered cherry."
+  ],
+  "Review": "A twist on the classic Harvard , or brandy-based Sweet Manhattan .",
+  "History": "Manhattan cocktail history",
+  "Nutrition": "One serving of Manhattan Island contains 193 calories",
+  "Alcohol_Content": [
+    [
+      "1.7 standard drinks"
+    ],
+    [
+      "25.29% alc./vol. (25.29° proof)"
+    ],
+    [
+      "24.3 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

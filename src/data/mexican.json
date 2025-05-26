@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1300/mexican",
+  "Name": "Mexican",
+  "Glass": "Coupe glass",
+  "Ingredients": [
+    "60 ml Patrón Reposado tequila",
+    "45 ml Pineapple juice",
+    "5 ml Grenadine/pomegranate syrup"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Coupe glass .",
+    "Prepare garnish of pineapple wedge.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass.",
+    "Garnish with pineapple wedge on rim."
+  ],
+  "Review": "Delicately sweetened pineapple and tequila. Yumm! If you like this then you'll love a Mexican Martini .",
+  "History": "",
+  "Nutrition": "One serving of Mexican contains 170 calories",
+  "Alcohol_Content": [
+    [
+      "1.3 standard drinks"
+    ],
+    [
+      "16.05% alc./vol. (16.05° proof)"
+    ],
+    [
+      "17.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

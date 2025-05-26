@@ -1,0 +1,31 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2430/grand-slam",
+  "Name": "Grand Slam",
+  "Glass": "Coupe glass",
+  "Ingredients": [
+    "50 ml Swedish Punsch liqueur",
+    "25 ml Strucchi Dry Vermouth",
+    "25 ml Strucchi Rosso Vermouth"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Coupe glass .",
+    "Prepare garnish of strawberry on rim.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "This after-dinner libation is slightly sweet but wonderfully aromatic.",
+  "History": "Adapted from a recipe in Harry Craddock's 1930 The Savoy Cocktail Book .",
+  "Nutrition": "One serving of Grand Slam contains 186 calories",
+  "Alcohol_Content": [
+    [
+      "1.1 standard drinks"
+    ],
+    [
+      "15.81% alc./vol. (15.81° proof)"
+    ],
+    [
+      "15.8 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

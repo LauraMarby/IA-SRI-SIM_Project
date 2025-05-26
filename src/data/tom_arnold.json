@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2206/tom-arnold",
+  "Name": "Tom Arnold",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "45 ml Ketel One Vodka",
+    "45 ml Lemon juice (freshly squeezed)",
+    "22.5 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)",
+    "60 ml Cold black tea"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare lemon slice wheel for garnish.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "Garnish with lemon slice."
+  ],
+  "Review": "Traditional lemonade laced with vodka and lengthened with tea to make a light and refreshing drink.",
+  "History": "This is one of a series of tea-based drinks that were originally named after golfers. It takes its name from the actor and comedian who starred in National Lampoon's Golf Punk .",
+  "Nutrition": "One serving of Tom Arnold contains 180 calories",
+  "Alcohol_Content": [
+    [
+      "0.9 standard drinks"
+    ],
+    [
+      "7.67% alc./vol. (7.67° proof)"
+    ],
+    [
+      "13.2 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

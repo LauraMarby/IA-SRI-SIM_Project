@@ -1,0 +1,30 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1395/new-orleans-mule",
+  "Name": "New Orleans Mule",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "60 ml Bourbon whiskey",
+    "30 ml De Kuyper Crème de Cafe",
+    "30 ml Pineapple juice",
+    "15 ml Lime juice (freshly squeezed)",
+    "Top up with Thomas Henry Ginger Beer"
+  ],
+  "Instructions": [
+    "SHAKE first 4 ingredients with ice and fine strain into ice-filled glass. TOP with ginger beer."
+  ],
+  "Review": "A spicy, full-flavoured taste of the South.",
+  "History": "A detailed history of the Moscow Mule cocktail , of which this drink is a variant, can be found on our page.",
+  "Nutrition": "One serving of New Orleans Mule contains 252 calories",
+  "Alcohol_Content": [
+    [
+      "1.7 standard drinks"
+    ],
+    [
+      "17.97% alc./vol. (17.97° proof)"
+    ],
+    [
+      "24.3 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Lime wedge"
+}

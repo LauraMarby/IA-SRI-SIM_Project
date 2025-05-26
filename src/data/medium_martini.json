@@ -1,0 +1,28 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1282/medium-martini",
+  "Name": "Medium Martini",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "45 ml Hayman's London Dry Gin",
+    "22.5 ml Strucchi Dry Vermouth",
+    "22.5 ml Strucchi Rosso Vermouth"
+  ],
+  "Instructions": [
+    "STIR all ingredients with ice and strain into chilled glass"
+  ],
+  "Review": "A classic Martini served perfect and very wet. I prefer mine shaken which is the method Harry specifies in his guide.",
+  "History": "Adapted from a recipe in Harry Craddock's 1930 The Savoy Cocktail Book .",
+  "Nutrition": "One serving of Medium Martini contains 160 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "22.91% alc./vol. (22.91° proof)"
+    ],
+    [
+      "20.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Orange zest twist"
+}

@@ -1,0 +1,28 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1512/perroquet",
+  "Name": "Perroquet",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "30 ml Pastis",
+    "7.5 ml Green mint (menthe verte)/Peppermint syrup",
+    "Top up with Chilled water"
+  ],
+  "Instructions": [
+    "POUR pastis and mint syrup into glass. Serve iced water separately in small jug (known in France as a 'broc') so the customer can dilute to their own taste (I recommend five shots). Lastly, add ice to fill glass."
+  ],
+  "Review": "The traditional French café drink with a hint of sweet mint.",
+  "History": "Very popular throughout France, this drink is named after the parrot due to the bird's brightly coloured plumage.",
+  "Nutrition": "One serving of Perroquet contains 96 calories",
+  "Alcohol_Content": [
+    [
+      "0.9 standard drinks"
+    ],
+    [
+      "32.73% alc./vol. (32.73° proof)"
+    ],
+    [
+      "12.3 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

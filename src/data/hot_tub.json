@@ -1,0 +1,29 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/989/hot-tub",
+  "Name": "Hot Tub",
+  "Glass": "Coupe glass",
+  "Ingredients": [
+    "45 ml Ketel One Vodka",
+    "30 ml Pineapple juice",
+    "7.5 ml Giffard Framboise de Ronce (raspberry liqueur)",
+    "30 ml Fiol Extra Dry Prosecco"
+  ],
+  "Instructions": [
+    "SHAKE first three ingredients with ice and fine strain into chilled glass. TOP with prosecco."
+  ],
+  "Review": "Basically, a French Martini with bubbles.",
+  "History": "Adapted from a cocktail discovered in 2004 at Teatro in Boston, USA.",
+  "Nutrition": "One serving of Hot Tub contains 161 calories",
+  "Alcohol_Content": [
+    [
+      "1.2 standard drinks"
+    ],
+    [
+      "14.8% alc./vol. (14.8° proof)"
+    ],
+    [
+      "16.7 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Pineapple wedge"
+}

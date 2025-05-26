@@ -1,0 +1,30 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/800/french-mule",
+  "Name": "French Mule",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "50 ml Cognac (brandy)",
+    "25 ml Lime juice (freshly squeezed)",
+    "12.5 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)",
+    "2 dash Angostura Aromatic Bitters",
+    "75 ml Thomas Henry Ginger Beer"
+  ],
+  "Instructions": [
+    "SHAKE first 4 ingredients with ice and strain into ice-filled mug or glass whilst also pouring ginger beer."
+  ],
+  "Review": "This French answer to the vodka-based Moscow Mule uses cognac to make a more robustly flavoured, long, refreshing drink.",
+  "History": "A variation on the Moscow Mule .",
+  "Nutrition": "One serving of French Mule contains 200 calories",
+  "Alcohol_Content": [
+    [
+      "1.1 standard drinks"
+    ],
+    [
+      "9.14% alc./vol. (9.14° proof)"
+    ],
+    [
+      "14.9 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Lime wedge or mint sprig bouquet"
+}

@@ -1,0 +1,35 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1165/limey",
+  "Name": "Limey",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "60 ml Absolut Lime Vodka",
+    "15 ml Lime juice (freshly squeezed)",
+    "15 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)",
+    "5 ml Lime cordial (sweetened lime juice)",
+    "3 dash Angostura Aromatic Bitters",
+    "15 ml Chilled water omit if using wet ice"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of lime zest twist.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass.",
+    "Express lime zest twist over the cocktail and use as garnish."
+  ],
+  "Review": "A rust coloured drink with a delicately sour flavour.",
+  "History": "Created by yours truly (Simon Difford) in 2001 and named this drink after the British Naval tradition of mixing lime juice with spirits in an attempt to prevent scurvy. This practice gained British sailors the nickname 'limeys'.",
+  "Nutrition": "One serving of Limey contains 95 calories",
+  "Alcohol_Content": [
+    [
+      "1.3 standard drinks"
+    ],
+    [
+      "16.19% alc./vol. (16.19° proof)"
+    ],
+    [
+      "18 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

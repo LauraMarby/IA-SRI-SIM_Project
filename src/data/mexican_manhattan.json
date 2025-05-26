@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1303/mexican-manhattan",
+  "Name": "Mexican Manhattan",
+  "Glass": "Coupe glass",
+  "Ingredients": [
+    "60 ml Patrón Añejo tequila",
+    "30 ml Strucchi Rosso Vermouth",
+    "1 dash Difford's Margarita Bitters"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Coupe glass .",
+    "Prepare garnish of Luxardo Maraschino Cherry .",
+    "STIR all ingredients with ice.",
+    "FINE STRAIN into chilled glass.",
+    "Garnish with maraschino cherry."
+  ],
+  "Review": "You've tried this with bourbon and rye, now surprise yourself with aged tequila.",
+  "History": "Manhattan cocktail history",
+  "Nutrition": "One serving of Mexican Manhattan contains 178 calories",
+  "Alcohol_Content": [
+    [
+      "1.6 standard drinks"
+    ],
+    [
+      "25.2% alc./vol. (25.2° proof)"
+    ],
+    [
+      "22.8 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

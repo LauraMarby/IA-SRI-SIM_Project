@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1008/imperial-martini",
+  "Name": "Imperial Martini",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "45 ml Hayman's London Dry Gin",
+    "45 ml Strucchi Dry Vermouth",
+    "1.25 ml Luxardo Maraschino liqueur",
+    "1 dash Angostura Aromatic Bitters"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of skewered Fragata Green Olive .",
+    "STIR all ingredients with ice.",
+    "STRAIN into chilled glass.",
+    "Garnish with skewered olive."
+  ],
+  "Review": "A Fifty Fifty Martini with a dash of aromatic bitters and subtly fruity maraschino.",
+  "History": "Adapted from a recipe published in Hugo R. Ensslin's 1917 Recipes for Mixed Drinks (Second Edition) . The Imperial Cocktail also notably features in Harry Craddock 's 1930 The Savoy Cocktail Book .",
+  "Nutrition": "One serving of Imperial Martini contains 155 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "23.37% alc./vol. (23.37° proof)"
+    ],
+    [
+      "21.4 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

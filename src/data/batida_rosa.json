@@ -1,0 +1,30 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2285/batida-rosa",
+  "Name": "Batida Rosa",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "45 ml Thomas Henry Soda Water",
+    "45 ml Cachaça",
+    "22.5 ml Pineapple juice",
+    "22.5 ml Lemon juice (freshly squeezed)",
+    "15 ml Grenadine/pomegranate syrup"
+  ],
+  "Instructions": [
+    "POUR soda water into ice-filled glass. SHAKE other ingredients with ice and strain into ice-filled and soda-charged glass."
+  ],
+  "Review": "Fruity and tropical. A tall refreshing drink for a hot evening or an afternoon beside the pool.",
+  "History": "Adapted from a drink created in 2008 by Jeffrey Morgenthaler at Bel Ami Lounge, Oregon, USA.",
+  "Nutrition": "One serving of Batida Rosa contains 159 calories",
+  "Alcohol_Content": [
+    [
+      "0.9 standard drinks"
+    ],
+    [
+      "8.82% alc./vol. (8.82° proof)"
+    ],
+    [
+      "13.2 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Pineapple wedge"
+}

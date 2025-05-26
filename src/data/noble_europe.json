@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1407/noble-europe",
+  "Name": "Noble Europe",
+  "Glass": "Old-fashioned glass",
+  "Ingredients": [
+    "45 ml Tokaji Hungarian wine",
+    "30 ml Ketel One Vodka",
+    "30 ml Orange juice (freshly squeezed)",
+    "1 dash Vanilla extract/essence"
+  ],
+  "Instructions": [
+    "Select and pre-chill an Old-fashioned glass .",
+    "Prepare orange slice for garnish.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into glass filled with crushed ice.",
+    "Garnish with orange slice."
+  ],
+  "Review": "A delicious cocktail that harnesses the rich, sweet flavours of Tokaji.",
+  "History": "Created in 2002 by Dan Spink at Brown's, St Martin's Lane, London, England.",
+  "Nutrition": "One serving of Noble Europe contains 115 calories",
+  "Alcohol_Content": [
+    [
+      "0.9 standard drinks"
+    ],
+    [
+      "12.46% alc./vol. (12.46° proof)"
+    ],
+    [
+      "13.1 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

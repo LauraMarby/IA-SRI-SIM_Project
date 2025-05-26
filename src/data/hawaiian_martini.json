@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/944/hawaiian-martini",
+  "Name": "Hawaiian Martini",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "45 ml Hayman's London Dry Gin",
+    "15 ml Strucchi Dry Vermouth",
+    "15 ml Strucchi Rosso Vermouth",
+    "45 ml Pineapple juice"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of skewered pineapple wedge and Luxardo Maraschino Cherry .",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass.",
+    "Garnish with pineapple wedge and maraschino cherry."
+  ],
+  "Review": "An aptly named fruity twist on the classic Martini.",
+  "History": "Adapted from a drink discovered in 2005 at the Four Seasons Hotel in Milan, Italy.",
+  "Nutrition": "One serving of Hawaiian Martini contains 163 calories",
+  "Alcohol_Content": [
+    [
+      "1.2 standard drinks"
+    ],
+    [
+      "14.49% alc./vol. (14.49° proof)"
+    ],
+    [
+      "17.4 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

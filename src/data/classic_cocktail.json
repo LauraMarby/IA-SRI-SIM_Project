@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/441/classic-cocktail",
+  "Name": "Classic Cocktail",
+  "Glass": "Coupe glass",
+  "Ingredients": [
+    "45 ml Cognac (brandy)",
+    "15 ml Luxardo Maraschino liqueur",
+    "15 ml Orange Curaçao liqueur",
+    "15 ml Lemon juice (freshly squeezed)",
+    "10 ml Chilled water omit if using wet ice"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Coupe glass .",
+    "Prepare garnish of lemon zest twist (& optional sugar rim).",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "Reminiscent of a Sidecar with maraschino liqueur.",
+  "History": "Adapted from a recipe in Harry Craddock 's 1930 The Savoy Cocktail Book .",
+  "Nutrition": "One serving of Classic Cocktail contains 187 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "21.18% alc./vol. (21.18° proof)"
+    ],
+    [
+      "21.2 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

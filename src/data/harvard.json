@@ -1,0 +1,30 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/934/harvard",
+  "Name": "Harvard",
+  "Glass": "Coupe glass",
+  "Ingredients": [
+    "45 ml Cognac (brandy)",
+    "45 ml Strucchi Rosso Vermouth",
+    "2.5 ml Gomme syrup",
+    "3 dash Angostura Aromatic Bitters",
+    "15 ml Thomas Henry Soda Water chilled"
+  ],
+  "Instructions": [
+    "STIR first 4 ingredients with ice and strain into chilled glass. TOP with soda."
+  ],
+  "Review": "Old-school, but approachably so. Dry and herbal. A great apéritif.",
+  "History": "This recipe is faithful to the first known reference to this cocktail in George J. Kappeler's 1895 Modern American Drinks – How to Mix and Serve All Kinds of Cups and Drinks . In his 1931 book Old Waldorf Bar Days , Albert Stevens Crockett notes of this drink, \" Named after a school for young men, whose site is contiguous to the Charles River, in a suburb of Boston. Alumni who drunk it sometimes lost the 'Harvard accent' .\"",
+  "Nutrition": "One serving of Harvard contains 176 calories",
+  "Alcohol_Content": [
+    [
+      "1.4 standard drinks"
+    ],
+    [
+      "18.6% alc./vol. (18.6° proof)"
+    ],
+    [
+      "20.2 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Lemon zest twist"
+}

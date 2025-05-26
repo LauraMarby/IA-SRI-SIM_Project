@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1125/kretchma",
+  "Name": "Kretchma",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "60 ml Ketel One Vodka",
+    "22.5 ml Dutch Cacao white crème de cacao",
+    "15 ml Lemon juice (freshly squeezed)",
+    "5 ml Grenadine/pomegranate syrup"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of chocolate powder.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass.",
+    "Garnish with a dusting of chocolate powder."
+  ],
+  "Review": "Fortified Turkish Delight.",
+  "History": "Adapted from a recipe in David Embury's The Fine Art of Mixing Drinks .",
+  "Nutrition": "One serving of Kretchma contains 211 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "21.09% alc./vol. (21.09° proof)"
+    ],
+    [
+      "21.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

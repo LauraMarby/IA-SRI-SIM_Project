@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2930/fanhattan",
+  "Name": "Fanhattan",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "60 ml Bourbon whiskey",
+    "15 ml Punt E Mes vermouth amaro",
+    "15 ml Fig liqueur (crème de figue)",
+    "1 dash Angostura Aromatic Bitters"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of fig wedge.",
+    "STIR all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "Twist on a Manhattan for fig lovers.",
+  "History": "Created in 2010 by Dan Richards of Host Academy, UK.",
+  "Nutrition": "One serving of Fanhattan contains 199 calories",
+  "Alcohol_Content": [
+    [
+      "1.8 standard drinks"
+    ],
+    [
+      "27.85% alc./vol. (27.85° proof)"
+    ],
+    [
+      "25.1 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

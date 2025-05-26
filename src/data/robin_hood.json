@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1683/robin-hood",
+  "Name": "Robin Hood",
+  "Glass": "Coupe glass",
+  "Ingredients": [
+    "45 ml Light gold rum (1-3 year old molasses column)",
+    "30 ml Apple Schnapps liqueur",
+    "15 ml Lime cordial (sweetened lime juice)",
+    "10 ml Lime juice (freshly squeezed)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Coupe glass .",
+    "Prepare garnish of apple wedge.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "American readers might consider this an Apple Martini based on rum.",
+  "History": "Adapted from a drink created in 2002 by Tony Conigliaro at The Lonsdale in Notting Hill, London, England.",
+  "Nutrition": "One serving of Robin Hood contains 177 calories",
+  "Alcohol_Content": [
+    [
+      "1.3 standard drinks"
+    ],
+    [
+      "17.65% alc./vol. (17.65° proof)"
+    ],
+    [
+      "17.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

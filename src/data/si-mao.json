@@ -1,0 +1,31 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2850/si-mao",
+  "Name": "Si-Mao",
+  "Glass": "Shot glass",
+  "Ingredients": [
+    "30 ml Tennessee whiskey",
+    "15 ml Giffard Banane du Brésil liqueur",
+    "7.5 ml Orange juice (freshly squeezed)",
+    "7.5 ml Lemon juice (freshly squeezed)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Shot glass .",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "A whiskey laced shot with a hint of banana.",
+  "History": "Adapted from a drink discovered in 2010 at Nobu Berkeley, London, England.",
+  "Nutrition": "One serving of Si-Mao contains 118 calories",
+  "Alcohol_Content": [
+    [
+      "0.8 standard drinks"
+    ],
+    [
+      "19.3% alc./vol. (19.3° proof)"
+    ],
+    [
+      "11.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

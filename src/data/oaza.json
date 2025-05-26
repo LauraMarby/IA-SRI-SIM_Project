@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1422/oaza",
+  "Name": "Oaza",
+  "Glass": "Old-fashioned glass",
+  "Ingredients": [
+    "60 ml Becherovka liqueur",
+    "22.5 ml Lime juice (freshly squeezed)",
+    "7.5 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)"
+  ],
+  "Instructions": [
+    "Select and pre-chill an Old-fashioned glass .",
+    "Prepare garnish of lime wedge.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into ice-filled glass.",
+    "Garnish with lime wedge."
+  ],
+  "Review": "Herbal and bittersweet. Not for everyone.",
+  "History": "A popular drink in the Czech Republic where Becerovka, a herbal liquor, is the national drink.",
+  "Nutrition": "One serving of Oaza contains 168 calories",
+  "Alcohol_Content": [
+    [
+      "1.2 standard drinks"
+    ],
+    [
+      "18.63% alc./vol. (18.63° proof)"
+    ],
+    [
+      "16.8 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

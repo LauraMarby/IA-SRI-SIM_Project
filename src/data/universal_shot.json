@@ -1,0 +1,30 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2015/universal-shot",
+  "Name": "Universal Shot",
+  "Glass": "Shot glass",
+  "Ingredients": [
+    "15 ml Green melon liqueur",
+    "15 ml Pink grapefruit juice (freshly squeezed)",
+    "15 ml Ketel One Vodka"
+  ],
+  "Instructions": [
+    "Select a Shot glass .",
+    "Refrigerate ingredients.",
+    "LAYER in chilled glass by carefully pouring ingredients in the order listed."
+  ],
+  "Review": "Sweet melon liqueur toned down by grapefruit and fortified by vodka.",
+  "History": "",
+  "Nutrition": "One serving of Universal Shot contains 73 calories",
+  "Alcohol_Content": [
+    [
+      "0.6 standard drinks"
+    ],
+    [
+      "18.18% alc./vol. (18.18° proof)"
+    ],
+    [
+      "8.2 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

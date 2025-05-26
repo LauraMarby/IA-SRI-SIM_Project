@@ -1,0 +1,30 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/4186/something-tasty",
+  "Name": "Something Tasty",
+  "Glass": "Coupe glass",
+  "Ingredients": [
+    "50 ml Bacardi Carta Blanca Superior White Rum",
+    "30 ml Pineapple juice",
+    "15 ml Yuzu juice",
+    "15 ml De Kuyper Apricot Brandy liqueur",
+    "15 ml Lime juice (freshly squeezed)"
+  ],
+  "Instructions": [
+    "SHAKE all ingredients with ice and fine strain into chilled glass."
+  ],
+  "Review": "",
+  "History": "Adapted from a recipe created for Bacardí Legacy 2017 by Kolomiiets Dmytro Mikhailovich at Parovoz Speakeasy in Kiev, Ukraine.",
+  "Nutrition": "One serving of Something Tasty contains 161 calories",
+  "Alcohol_Content": [
+    [
+      "1.2 standard drinks"
+    ],
+    [
+      "13.14% alc./vol. (13.14° proof)"
+    ],
+    [
+      "16.4 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Grated lime zest"
+}

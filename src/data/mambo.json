@@ -1,0 +1,34 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1229/mambo",
+  "Name": "Mambo",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "25 ml Ketel One Vodka",
+    "25 ml De Kuyper Triple Sec (40%)",
+    "25 ml De Kuyper Apricot Brandy liqueur",
+    "5 ml Strucchi Red Bitter (Campari-style liqueur)",
+    "75 ml Orange juice (freshly squeezed)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare orange slice for garnish.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "Garnish with orange slice."
+  ],
+  "Review": "A slightly bitter, tangy, orange, cooling drink.",
+  "History": "Created by Nichole Colella.",
+  "Nutrition": "One serving of Mambo contains 214 calories",
+  "Alcohol_Content": [
+    [
+      "1.4 standard drinks"
+    ],
+    [
+      "12.93% alc./vol. (12.93° proof)"
+    ],
+    [
+      "20 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

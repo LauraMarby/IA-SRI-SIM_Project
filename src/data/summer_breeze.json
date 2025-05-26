@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1893/summer-breeze",
+  "Name": "Summer Breeze",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "60 ml Ketel One Vodka",
+    "30 ml Elderflower liqueur",
+    "45 ml Cranberry juice (sweetened)",
+    "45 ml Apple juice/apple cider (cloudy & unsweetened)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare garnish of apple slice .",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass."
+  ],
+  "Review": "Cranberry, apple and elderflower fortified with vodka.",
+  "History": "Adapted from a drink created in 1998 by Dick Bradsell, London, England.",
+  "Nutrition": "One serving of Summer Breeze contains 248 calories",
+  "Alcohol_Content": [
+    [
+      "1.6 standard drinks"
+    ],
+    [
+      "12.25% alc./vol. (12.25° proof)"
+    ],
+    [
+      "22.1 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

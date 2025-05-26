@@ -1,0 +1,30 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/3047/viejo-martini",
+  "Name": "Viejo Martini",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "75 ml Ketel One Vodka",
+    "5 ml Patrón Añejo tequila",
+    "7.5 ml Strucchi Dry Vermouth"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "STIR all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "A ‘Dry Martini’ influenced by a hint aged tequila.",
+  "History": "Created in 2011 by Ian Cameron at the Cabinet Room, London, England.",
+  "Nutrition": "One serving of Viejo Martini contains 185 calories",
+  "Alcohol_Content": [
+    [
+      "1.9 standard drinks"
+    ],
+    [
+      "30.01% alc./vol. (30.01° proof)"
+    ],
+    [
+      "26.3 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

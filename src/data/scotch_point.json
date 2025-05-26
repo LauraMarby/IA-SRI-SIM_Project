@@ -1,0 +1,29 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/3052/scotch-point",
+  "Name": "Scotch Point",
+  "Glass": "Old-fashioned glass",
+  "Ingredients": [
+    "60 ml Blended Scotch whisky",
+    "15 ml Punt E Mes vermouth amaro",
+    "15 ml Cockburn's Ruby Soho Port",
+    "1 dash Peychaud's or other Creole-style bitters"
+  ],
+  "Instructions": [
+    "STIR all ingredients with ice and strain into ice filled glass."
+  ],
+  "Review": "Scotch, vermouth, fortified wine, and bitters. If there is a Manhattan, then this is Aberdeen, Glasgow, and Edinburgh rolled into one.",
+  "History": "Adapted from a recipe created in 2011 by Ian Cameron, London, England.",
+  "Nutrition": "One serving of Scotch Point contains 178 calories",
+  "Alcohol_Content": [
+    [
+      "1.7 standard drinks"
+    ],
+    [
+      "25.6% alc./vol. (25.6° proof)"
+    ],
+    [
+      "23.1 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Grapefruit zest twist"
+}

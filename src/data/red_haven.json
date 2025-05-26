@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/4054/red-haven",
+  "Name": "Red Haven",
+  "Glass": "Old-fashioned glass",
+  "Ingredients": [
+    "45 ml Blended Scotch whisky",
+    "22.5 ml Cockburn's Ruby Soho Port",
+    "22.5 ml Cynar or other carciofo amaro",
+    "2 dash Peychaud's or other Creole-style bitters"
+  ],
+  "Instructions": [
+    "Select and pre-chill an Old-fashioned glass .",
+    "Prepare garnish of orange zest twist.",
+    "STIR all ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "EXPRESS orange zest twist over the cocktail and use as garnish."
+  ],
+  "Review": "Ruby port contributes rich wine notes to this Scotch whisky-based cocktail, with rhubarb amaro contributing complex bittersweet flavours. The Sun Tavern's original spec calls for \"oak bitters\", but given its \"Red\" moniker, I opted for Peychaud's Bitters.",
+  "History": "Adapted from a drink created by Tommy Cummins and discovered in January 2017 at The Sun Tavern, Bethnal Green, London, England, which called for Nardini Rabarbaro Amaro instead of Cynar.",
+  "Nutrition": "One serving of Red Haven contains 172 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "22.77% alc./vol. (22.77° proof)"
+    ],
+    [
+      "20.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2103/the-windsor-rose",
+  "Name": "The Windsor Rose",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "37.5 ml Ketel One Oranje Vodka",
+    "30 ml De Kuyper Triple Sec (40%)",
+    "30 ml Cranberry juice (sweetened)",
+    "15 ml Lime juice (freshly squeezed)",
+    "5 ml Rose water"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of rose petal.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "An orange vodka and rosewater Cosmo.",
+  "History": "Adapted from a drink discovered in 2005 at The Polo Club Lounge, New Orleans, USA.",
+  "Nutrition": "One serving of The Windsor Rose contains 169 calories",
+  "Alcohol_Content": [
+    [
+      "1.4 standard drinks"
+    ],
+    [
+      "16.9% alc./vol. (16.9° proof)"
+    ],
+    [
+      "19.9 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

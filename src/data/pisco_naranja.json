@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1561/pisco-naranja",
+  "Name": "Pisco Naranja",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "40 ml BarSol Mosto Verde Italia Pisco",
+    "20 ml Orange Curaçao liqueur",
+    "90 ml Orange juice (freshly squeezed)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare orange slice for garnish.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "Garnish with orange slice."
+  ],
+  "Review": "Aromatic brandy and orange juice pepped and sweetened with a slug of orange liqueur.",
+  "History": "Based on the traditional Chilean combination of pisco and orange juice.",
+  "Nutrition": "One serving of Pisco Naranja contains 168 calories",
+  "Alcohol_Content": [
+    [
+      "1.3 standard drinks"
+    ],
+    [
+      "12.12% alc./vol. (12.12° proof)"
+    ],
+    [
+      "18.2 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

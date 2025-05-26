@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1993/tropic",
+  "Name": "Tropic",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "30 ml Bénédictine D.O.M. liqueur",
+    "60 ml Sauvignon blanc wine",
+    "60 ml Pink grapefruit juice (freshly squeezed)",
+    "15 ml Lemon juice (freshly squeezed)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare lemon slice wheel for garnish.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "Garnish with lemon slice."
+  ],
+  "Review": "A light, satisfying summertime cooler.",
+  "History": "Based on a recipe believed to date back to the 1950s.",
+  "Nutrition": "One serving of Tropic contains 169 calories",
+  "Alcohol_Content": [
+    [
+      "1 standard drinks"
+    ],
+    [
+      "8.56% alc./vol. (8.56° proof)"
+    ],
+    [
+      "14.1 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

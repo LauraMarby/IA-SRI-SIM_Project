@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/765/floral-martini",
+  "Name": "Floral Martini",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "60 ml Hayman's London Dry Gin",
+    "20 ml Strucchi Dry Vermouth",
+    "10 ml Elderflower liqueur",
+    "2.5 ml Rose water"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of edible flower.",
+    "STIR all ingredients with ice.",
+    "FINE STRAIN into chilled glass.",
+    "Garnish with edible flower."
+  ],
+  "Review": "This aptly named gin Martini is floral but semi-dry and spirit-forward.",
+  "History": "Adapted from a drink created in 2003 at Zander Bar in London, England.",
+  "Nutrition": "One serving of Floral Martini contains 180 calories",
+  "Alcohol_Content": [
+    [
+      "1.7 standard drinks"
+    ],
+    [
+      "25.81% alc./vol. (25.81° proof)"
+    ],
+    [
+      "23.9 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

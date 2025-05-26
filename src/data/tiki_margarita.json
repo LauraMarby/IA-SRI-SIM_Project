@@ -1,0 +1,28 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1955/tiki-margarita",
+  "Name": "Tiki Margarita",
+  "Glass": "Old-fashioned glass",
+  "Ingredients": [
+    "60 ml Patrón Reposado tequila",
+    "15 ml Orgeat (almond) sugar syrup (2:1)",
+    "22.5 ml Lime juice (freshly squeezed)"
+  ],
+  "Instructions": [
+    "SHAKE all ingredients with ice and strain into chilled glass filled with crushed ice."
+  ],
+  "Review": "A simple three-imgrediet almond twist on the classic Margarita.",
+  "History": "Created in 2005 by Crispin Somerville and Jasper Eyears at Bar Tiki, Mexico City. See: Margarita cocktail history",
+  "Nutrition": "One serving of Tiki Margarita contains 183 calories",
+  "Alcohol_Content": [
+    [
+      "1.3 standard drinks"
+    ],
+    [
+      "18.1% alc./vol. (18.1° proof)"
+    ],
+    [
+      "17.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Mint leaf, lime & pineapple wedges"
+}

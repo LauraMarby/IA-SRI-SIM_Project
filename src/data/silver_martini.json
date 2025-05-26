@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1776/silver-martini",
+  "Name": "Silver Martini",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "45 ml Hayman's London Dry Gin",
+    "45 ml Strucchi Dry Vermouth",
+    "7.5 ml Luxardo Maraschino liqueur",
+    "2 dash Orange Bitters by Angostura"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of Luxardo Maraschino Cherry .",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass.",
+    "Garnish with maraschino cherry."
+  ],
+  "Review": "Dry and aromatic with a hint of maraschino richness.",
+  "History": "Adapted from the Silver Cocktail in Harry Craddock's 1930 The Savoy Cocktail Book : \" SILVER COCKTAIL. 2 Dashes Maraschino. 2 Dashes Orange Bitters. ½ French Vermouth. ½ Dry Gin. Shake well and strain into cocktail glass. \"",
+  "Nutrition": "One serving of Silver Martini contains 170 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "21.89% alc./vol. (21.89° proof)"
+    ],
+    [
+      "21.5 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

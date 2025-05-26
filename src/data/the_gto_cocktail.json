@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/921/the-gto-cocktail",
+  "Name": "The GTO Cocktail",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "50 ml Bourbon whiskey",
+    "15 ml Disaronno amaretto",
+    "10 ml Lemon juice (freshly squeezed)",
+    "75 ml Pineapple juice"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare garnish of pineapple wedge.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass."
+  ],
+  "Review": "A fruity punch-like drink.",
+  "History": "Adapted from a recipe discovered in 2004 at Jones, Los Angeles, USA.",
+  "Nutrition": "One serving of The GTO Cocktail contains 220 calories",
+  "Alcohol_Content": [
+    [
+      "1.4 standard drinks"
+    ],
+    [
+      "13.09% alc./vol. (13.09° proof)"
+    ],
+    [
+      "19.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

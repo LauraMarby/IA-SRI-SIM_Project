@@ -1,0 +1,36 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1456/paloma",
+  "Name": "Paloma",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "50 ml Patrón Silver blanco tequila",
+    "25 ml Pink grapefruit juice (freshly squeezed)",
+    "12.5 ml Lime juice (freshly squeezed)",
+    "7.5 ml Agave syrup",
+    "50 ml Thomas Henry Pink Grapefruit soda"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Optionally, RIM glass with salt (moisten outside edge with lime juice and dip into salt).",
+    "Prepare garnish of pink (or red) grapefruit wedge.",
+    "SHAKE first 4 ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "TOP with grapefruit soda and briefly stir.",
+    "Garnish with grapefruit wedge."
+  ],
+  "Review": "Reminiscent of a long fruity Margarita with refreshing effervescence.",
+  "History": "Paloma is Spanish for 'dove'. Its origins are unknown although it is reputed to date back to the 1950s. Some attribute its creation to the legendary Don Javier Delgado Corona, the former owner/bartender of La Capilla (The Chapel) in Tequila, Mexico, who created the Batanga .",
+  "Nutrition": "One serving of Paloma contains 168 calories",
+  "Alcohol_Content": [
+    [
+      "1.1 standard drinks"
+    ],
+    [
+      "10.14% alc./vol. (10.14° proof)"
+    ],
+    [
+      "14.7 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

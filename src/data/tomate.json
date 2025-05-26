@@ -1,0 +1,28 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1974/tomate",
+  "Name": "Tomate",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "30 ml Pastis",
+    "7.5 ml Grenadine/pomegranate syrup",
+    "Top up with Chilled water"
+  ],
+  "Instructions": [
+    "POUR pastis and grenadine into glass. SERVE iced water separately in a small jug (known in France as a 'broc') so the customer can dilute to their own taste (I recommend five shots). Lastly add ice to fill glass."
+  ],
+  "Review": "The traditional aniseed and liquorice French café drink with a sweet hint of fruit.",
+  "History": "Very popular throughout France. Pronounced 'Toh-Maht', the name literally means 'tomato' and refers to the drink's colour.",
+  "Nutrition": "One serving of Tomate contains 98 calories",
+  "Alcohol_Content": [
+    [
+      "0.9 standard drinks"
+    ],
+    [
+      "32.73% alc./vol. (32.73° proof)"
+    ],
+    [
+      "12.3 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

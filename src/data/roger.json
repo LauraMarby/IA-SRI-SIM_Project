@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1687/roger",
+  "Name": "Roger",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "60 ml Ketel One Vodka",
+    "60 ml Peach purée white",
+    "15 ml Lemon juice (freshly squeezed)",
+    "7.5 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of peach slice.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "Thick and very fruity - one for a summer's afternoon.",
+  "History": "A popular drink in Venice, where it is made using the peach purée mix prepared for bellinis.",
+  "Nutrition": "One serving of Roger contains 195 calories",
+  "Alcohol_Content": [
+    [
+      "1.3 standard drinks"
+    ],
+    [
+      "12.38% alc./vol. (12.38° proof)"
+    ],
+    [
+      "17.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

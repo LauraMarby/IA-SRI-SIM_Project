@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1296/mesa-fresca",
+  "Name": "Mesa Fresca",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "50 ml Patrón Reposado tequila",
+    "75 ml Pink grapefruit juice (freshly squeezed)",
+    "25 ml Lime juice (freshly squeezed)",
+    "15 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare lime slice wheel for garnish.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "Garnish with lime wheel."
+  ],
+  "Review": "Sweet and sour tequila and grapefruit.",
+  "History": "Adapted from a recipe discovered in 2005 at Mesa Grill in New York City, USA.",
+  "Nutrition": "One serving of Mesa Fresca contains 192 calories",
+  "Alcohol_Content": [
+    [
+      "1.1 standard drinks"
+    ],
+    [
+      "8.91% alc./vol. (8.91° proof)"
+    ],
+    [
+      "14.7 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

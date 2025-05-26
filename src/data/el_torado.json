@@ -1,0 +1,31 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/702/el-torado",
+  "Name": "El Torado",
+  "Glass": "Coupe glass",
+  "Ingredients": [
+    "60 ml Patrón Reposado tequila",
+    "15 ml Strucchi Dry Vermouth",
+    "45 ml Apple juice/apple cider (cloudy & unsweetened)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Coupe glass .",
+    "Prepare garnish of apple slice.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "Dry, sophisticated and fruity, with tequila body.",
+  "History": "Popular throughout Mexico.",
+  "Nutrition": "One serving of El Torado contains 169 calories",
+  "Alcohol_Content": [
+    [
+      "1.4 standard drinks"
+    ],
+    [
+      "16.36% alc./vol. (16.36° proof)"
+    ],
+    [
+      "19.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

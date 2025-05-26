@@ -1,0 +1,35 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1214/macka",
+  "Name": "Macka",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "50 ml Hayman's London Dry Gin",
+    "15 ml Strucchi Dry Vermouth",
+    "15 ml Strucchi Rosso Vermouth",
+    "15 ml Joseph Cartron Double Crème de Cassis de Bourgogne",
+    "45 ml Thomas Henry Soda Water"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare lemon slice wheel for garnish.",
+    "SHAKE first 4 ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "TOP with soda.",
+    "Garnish with lemon slice."
+  ],
+  "Review": "A long fruity drink for parched palates.",
+  "History": "Famously, the only cocktail, indeed the only drink, served since 1928 at the Damour Colette bar in Lamballe-Armor, Brittany, France. Each customer is only allowed two.",
+  "Nutrition": "One serving of Macka contains 194 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "14.99% alc./vol. (14.99° proof)"
+    ],
+    [
+      "21 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

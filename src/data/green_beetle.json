@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2433/green-beetle",
+  "Name": "Green Beetle",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "60 ml Patrón Reposado tequila",
+    "15 ml Pallini Limoncello liqueur",
+    "15 ml Agave syrup",
+    "2.5 ml La Fée Parisienne absinthe"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of lemon zest twist.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass.",
+    "EXPRESS lemon zest twist over the cocktail and use as garnish."
+  ],
+  "Review": "Tequila and lemon aromatized by absinthe.",
+  "History": "Adapted from a recipe created by Alex Richer at Bar Red in London, England.",
+  "Nutrition": "One serving of Green Beetle contains 195 calories",
+  "Alcohol_Content": [
+    [
+      "1.6 standard drinks"
+    ],
+    [
+      "23.53% alc./vol. (23.53° proof)"
+    ],
+    [
+      "21.8 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

@@ -1,0 +1,29 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/3368/refresher",
+  "Name": "Refresher",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "15 ml Elderflower cordial",
+    "30 ml Lemon juice (freshly squeezed)",
+    "60 ml Cranberry juice (sweetened)",
+    "150 ml Lemonade"
+  ],
+  "Instructions": [
+    "POUR elderflower and lemon juice into glass. ADD crushed ice and cranberry juice. CHURN. ADD more crushed ice and TOP with lemonade. CHURN."
+  ],
+  "Review": "",
+  "History": "Adapted from a drink created in 2013 which is popular in Jamie's Italian Bars.",
+  "Nutrition": "One serving of Refresher contains 121 calories",
+  "Alcohol_Content": [
+    [
+      "0 standard drinks"
+    ],
+    [
+      "0% alc./vol. (0° proof)"
+    ],
+    [
+      "0 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Lemon slice"
+}

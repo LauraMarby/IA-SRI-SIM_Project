@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2059/walnut-martini",
+  "Name": "Walnut Martini",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "60 ml Ketel One Vodka",
+    "15 ml Tuaca liqueur",
+    "15 ml Walnut (Nocino) liqueur",
+    "15 ml Strucchi Dry Vermouth"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of walnut.",
+    "STIR all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "Nutty but nice.",
+  "History": "Created in 2005 by yours truly (Simon Difford).",
+  "Nutrition": "One serving of Walnut Martini contains 226 calories",
+  "Alcohol_Content": [
+    [
+      "2 standard drinks"
+    ],
+    [
+      "26.66% alc./vol. (26.66° proof)"
+    ],
+    [
+      "28 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

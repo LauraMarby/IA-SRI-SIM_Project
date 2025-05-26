@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1461/palm-beach",
+  "Name": "Palm Beach",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "75 ml Hayman's London Dry Gin",
+    "15 ml Strucchi Rosso Vermouth",
+    "30 ml Pink grapefruit juice (freshly squeezed)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of Luxardo Maraschino Cherry .",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass.",
+    "Garnish with maraschino cherry."
+  ],
+  "Review": "Dry, aromatic and packs one hell of a punch.",
+  "History": "A classic from the 1940s.",
+  "Nutrition": "One serving of Palm Beach contains 200 calories",
+  "Alcohol_Content": [
+    [
+      "1.7 standard drinks"
+    ],
+    [
+      "20.4% alc./vol. (20.4° proof)"
+    ],
+    [
+      "24.5 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

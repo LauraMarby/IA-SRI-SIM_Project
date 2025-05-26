@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/5/absinthe-cocktail",
+  "Name": "Absinthe Cocktail",
+  "Glass": "Coupe glass",
+  "Ingredients": [
+    "30 ml La Fée Parisienne absinthe",
+    "75 ml Chilled water",
+    "7.5 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Coupe glass .",
+    "Prepare mint leaf for garnish.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass.",
+    "Garnish with mint leaf."
+  ],
+  "Review": "Absinthe tamed and served straight-up.",
+  "History": "Dr. Ordinaire perfected his recipe for absinthe in 1792 and from day one it required the addition of water and sugar to make it palatable.",
+  "Nutrition": "One serving of Absinthe Cocktail contains 143 calories",
+  "Alcohol_Content": [
+    [
+      "1.1 standard drinks"
+    ],
+    [
+      "13.33% alc./vol. (13.33° proof)"
+    ],
+    [
+      "15 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

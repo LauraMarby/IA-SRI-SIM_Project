@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/11/acapulco",
+  "Name": "Acapulco",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "30 ml Patrón Reposado tequila",
+    "30 ml Light gold rum (1-3 year old molasses column)",
+    "30 ml Pink grapefruit juice (freshly squeezed)",
+    "60 ml Pineapple juice",
+    "10 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare garnish of pineapple wedge.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass."
+  ],
+  "Review": "Fruity and tropical in style and laced with tequila and rum.",
+  "History": "",
+  "Nutrition": "One serving of Acapulco contains 208 calories",
+  "Alcohol_Content": [
+    [
+      "1.3 standard drinks"
+    ],
+    [
+      "11.03% alc./vol. (11.03° proof)"
+    ],
+    [
+      "17.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

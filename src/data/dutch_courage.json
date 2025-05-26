@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/682/dutch-courage",
+  "Name": "Dutch Courage",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "25 ml Hayman's London Dry Gin",
+    "25 ml Warninks Advocaat liqueur",
+    "20 ml Lemon juice (freshly squeezed)",
+    "75 ml Apple juice/apple cider (cloudy & unsweetened)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare lemon slice wheel for garnish.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "Garnish with lemon slice."
+  ],
+  "Review": "A refreshing alternative to a traditional English lemonade.",
+  "History": "Created in 2002 by Alex Kammerling, London, England.",
+  "Nutrition": "One serving of Dutch Courage contains 152 calories",
+  "Alcohol_Content": [
+    [
+      "0.8 standard drinks"
+    ],
+    [
+      "7.4% alc./vol. (7.4° proof)"
+    ],
+    [
+      "10.7 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2445/hoffman-house",
+  "Name": "Hoffman House",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "75 ml Hayman's London Dry Gin",
+    "15 ml Strucchi Dry Vermouth",
+    "2 dash Orange Bitters by Angostura"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of lemon zest twist.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass.",
+    "EXPRESS lemon zest twist over the cocktail and use as garnish."
+  ],
+  "Review": "A shaken Wet (5:1) Martini with orange bitters.",
+  "History": "Apparently the house cocktail at Manhattan's Hoffman House in the 1880s.",
+  "Nutrition": "One serving of Hoffman House contains 183 calories",
+  "Alcohol_Content": [
+    [
+      "1.8 standard drinks"
+    ],
+    [
+      "27.4% alc./vol. (27.4° proof)"
+    ],
+    [
+      "24.8 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

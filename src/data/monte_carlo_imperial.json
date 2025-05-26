@@ -1,0 +1,29 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1356/monte-carlo-imperial",
+  "Name": "Monte Carlo Imperial",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "45 ml Hayman's London Dry Gin",
+    "15 ml Giffard Menthe Pastille white crème de menthe",
+    "15 ml Lemon juice (freshly squeezed)",
+    "Top up with Brut champagne/sparkling wine"
+  ],
+  "Instructions": [
+    "SHAKE first three ingredients with ice and fine strain into chilled glass. TOP with champagne."
+  ],
+  "Review": "A classic, minty digestif.",
+  "History": "Adapted from a recipe in Harry Craddock's 1930 The Savoy Cocktail Book .",
+  "Nutrition": "One serving of Monte Carlo Imperial contains 140 calories",
+  "Alcohol_Content": [
+    [
+      "1.2 standard drinks"
+    ],
+    [
+      "21.71% alc./vol. (21.71° proof)"
+    ],
+    [
+      "16.3 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Mint leaf"
+}

@@ -1,0 +1,31 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2958/french-cocktail",
+  "Name": "French Cocktail",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "60 ml Cognac (brandy)",
+    "45 ml Pineapple juice",
+    "15 ml Giffard Framboise de Ronce (raspberry liqueur)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of pineapple wedge .",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "A simple riff on the French Martini swapping the usual vodka for the more French cognac. Fruity and easy drinking.",
+  "History": "Created in June 2011 by yours truly at The Cabinet Room, London, England.",
+  "Nutrition": "One serving of French Cocktail contains 211 calories",
+  "Alcohol_Content": [
+    [
+      "1.4 standard drinks"
+    ],
+    [
+      "16.36% alc./vol. (16.36° proof)"
+    ],
+    [
+      "19.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

@@ -1,0 +1,29 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2084/whiskey-squirt",
+  "Name": "Whiskey Squirt",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "60 ml Peach purée",
+    "60 ml Bourbon whiskey",
+    "7.5 ml Grand Marnier or other cognac orange liqueur",
+    "Top up with Soda from siphon"
+  ],
+  "Instructions": [
+    "SHAKE first three ingredients with ice and strain into ice-filled glass. TOP with soda from a siphon. Serve with straws."
+  ],
+  "Review": "Peach combines wonderfully with bourbon and this drink benefits from that marriage.",
+  "History": "Adapted from a recipe purloined from David Embury's classic book, The Fine Art of Mixing Drinks .",
+  "Nutrition": "One serving of Whiskey Squirt contains 204 calories",
+  "Alcohol_Content": [
+    [
+      "1.6 standard drinks"
+    ],
+    [
+      "17.3% alc./vol. (17.3° proof)"
+    ],
+    [
+      "22.1 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Peach slice"
+}

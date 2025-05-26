@@ -1,0 +1,34 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/191/beachcomber",
+  "Name": "Beachcomber",
+  "Glass": "Coupe glass",
+  "Ingredients": [
+    "45 ml Light white rum (charcoal-filtered 1-4 years old)",
+    "22.5 ml De Kuyper Triple Sec (40%)",
+    "15 ml Lime juice (freshly squeezed)",
+    "5 ml Luxardo Maraschino liqueur",
+    "2.5 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix) optional"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Coupe glass .",
+    "Prepare garnish of lime wedge.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass.",
+    "Garnish with lime wedge."
+  ],
+  "Review": "A Daiquiri with the addition of a dash of triple sec and maraschino.",
+  "History": "Adapted from a recipe in Patrick Gavin Duffy's 1956 The Official Mixer's Manual .",
+  "Nutrition": "One serving of Beachcomber contains 168 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "23.37% alc./vol. (23.37° proof)"
+    ],
+    [
+      "21 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

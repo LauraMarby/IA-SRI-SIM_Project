@@ -1,0 +1,35 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1123/koolaid",
+  "Name": "Koolaid",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "45 ml Ketel One Vodka",
+    "22.5 ml Green melon liqueur",
+    "22.5 ml Disaronno amaretto",
+    "15 ml Lime juice (freshly squeezed)",
+    "60 ml Cranberry juice (sweetened)",
+    "30 ml Orange juice (freshly squeezed)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare garnish of lime wedge.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "Garnish with lime wedge."
+  ],
+  "Review": "Tangy liquid marzipan with hints of melon, cranberry and orange juice.",
+  "History": "A drink with unknown origins that emerged and morphed during the 1990s.",
+  "Nutrition": "One serving of Koolaid contains 277 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "10.86% alc./vol. (10.86° proof)"
+    ],
+    [
+      "21.2 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

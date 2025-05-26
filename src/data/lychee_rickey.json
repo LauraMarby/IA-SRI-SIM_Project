@@ -1,0 +1,29 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1210/lychee-rickey",
+  "Name": "Lychee Rickey",
+  "Glass": "Fizz or Highball (8oz to 10oz)",
+  "Ingredients": [
+    "60 ml Hayman's London Dry Gin",
+    "30 ml Kwai Feh lychee liqueur",
+    "15 ml Lime juice (freshly squeezed)",
+    "60 ml Thomas Henry Soda Water"
+  ],
+  "Instructions": [
+    "SHAKE first 3 ingredients with ice and strain into ice-filled glass. TOP with soda water."
+  ],
+  "Review": "The lychee liqueur dominates this surprisingly dry Rickey.",
+  "History": "Adapted from a drink discovered in 2005 at Club 97 in Hong Kong, China.",
+  "Nutrition": "One serving of Lychee Rickey contains 164 calories",
+  "Alcohol_Content": [
+    [
+      "1.6 standard drinks"
+    ],
+    [
+      "13.69% alc./vol. (13.69° proof)"
+    ],
+    [
+      "22.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Length of lime peel"
+}

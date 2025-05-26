@@ -1,0 +1,35 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/3286/jack-tar",
+  "Name": "Jack Tar",
+  "Glass": "Old-fashioned glass",
+  "Ingredients": [
+    "30 ml Navy rum (ideally 54.5% alc./vol.)",
+    "15 ml Bourbon whiskey",
+    "15 ml Hayman's London Dry Gin",
+    "7.5 ml Lime juice (freshly squeezed)",
+    "7.5 ml Lemon juice (freshly squeezed)",
+    "10 ml Demerara/Muscovado/brown sugar syrup (2 sugar to 1 water)"
+  ],
+  "Instructions": [
+    "Select and pre-chill an Old-fashioned glass .",
+    "Prepare garnish of lime wedge.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "Garnish with lime wedge."
+  ],
+  "Review": "Characterful rum leads with gin and whiskey playing supporting roles with hints of citrus.",
+  "History": "Jack is a generic name for all British sailors, derived from Jack Tar in the 18th and 19th centuries. Sailors in those years used high-grade tar in their clothing and hair for waterproofing. The term, \"Jack-of-all-trades,\" described a sailor who could turn his hand to anything, and is widely used today.",
+  "Nutrition": "One serving of Jack Tar contains 194 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "25.33% alc./vol. (25.33° proof)"
+    ],
+    [
+      "21.5 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

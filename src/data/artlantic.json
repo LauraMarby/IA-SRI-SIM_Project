@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/108/artlantic",
+  "Name": "Artlantic",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "30 ml Chairman's Reserve Spiced Rum",
+    "15 ml Disaronno amaretto",
+    "15 ml De Kuyper Blue Curaçao",
+    "15 ml Lime juice (freshly squeezed)",
+    "90 ml Apple juice/apple cider (cloudy & unsweetened)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare garnish of orange wedge.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass."
+  ],
+  "Review": "This sea green cocktail tastes much better than it looks.",
+  "History": "Atlantic Bar & Grill, London, England.",
+  "Nutrition": "One serving of Artlantic contains 185 calories",
+  "Alcohol_Content": [
+    [
+      "1 standard drinks"
+    ],
+    [
+      "8.56% alc./vol. (8.56° proof)"
+    ],
+    [
+      "14.1 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

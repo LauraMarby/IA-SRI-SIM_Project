@@ -1,0 +1,35 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1151/lemongrad",
+  "Name": "Lemongrad",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "50 ml Ketel One Vodka",
+    "15 ml Ketel One Citroen Vodka",
+    "15 ml Elderflower liqueur",
+    "15 ml Lemon juice (freshly squeezed)",
+    "5 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)",
+    "45 ml Thomas Henry Tonic Water"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare garnish of lemon wedge.",
+    "SHAKE first 5 ingredients with ice.",
+    "STRAIN into ice-filled glass whilst also pouring tonic water.",
+    "Garnish with lemon wedge."
+  ],
+  "Review": "A great summer afternoon drink. Fresh lemon with elderflower and tonic.",
+  "History": "Adapted from a recipe created in 2002 by Alex Kammerling in London, England.",
+  "Nutrition": "One serving of Lemongrad contains 217 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "14.71% alc./vol. (14.71° proof)"
+    ],
+    [
+      "21.3 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

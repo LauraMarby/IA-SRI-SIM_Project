@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1588/pontberry-martini",
+  "Name": "Pontberry Martini",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "50 ml Ketel One Vodka",
+    "15 ml Giffard Crème de Mûre liqueur",
+    "50 ml Cranberry juice (sweetened)",
+    "1 dash Boker's bitters optional"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of skewered blackberries.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "A light, fruity, easy drinking cocktail.",
+  "History": "Adapted from a recipe created by Dick Bradsell in the late 90s for the opening of Agent Provocateur in Pont Street in London, England.",
+  "Nutrition": "One serving of Pontberry Martini contains 174 calories",
+  "Alcohol_Content": [
+    [
+      "1.2 standard drinks"
+    ],
+    [
+      "14.37% alc./vol. (14.37° proof)"
+    ],
+    [
+      "16.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

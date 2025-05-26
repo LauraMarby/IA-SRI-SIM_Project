@@ -1,0 +1,30 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2910/beggars-banquet",
+  "Name": "Beggar's Banquet",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "60 ml Bourbon whiskey",
+    "30 ml Lemon juice (freshly squeezed)",
+    "22.5 ml Maple syrup",
+    "2 dash Angostura Aromatic Bitters",
+    "45 ml British bitter ale"
+  ],
+  "Instructions": [
+    "SHAKE first four ingredients with ice and strain into ice-filled glass. TOP with beer."
+  ],
+  "Review": "If using a 12oz glass you'll know you have great ice if when strained into glass you have sufficient room for 60ml (2oz) of beer.",
+  "History": "Created in 2010 by Aisha Sharpe in New York City, USA.",
+  "Nutrition": "One serving of Beggar's Banquet contains 256 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "13.42% alc./vol. (13.42° proof)"
+    ],
+    [
+      "21.2 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Orange slice"
+}

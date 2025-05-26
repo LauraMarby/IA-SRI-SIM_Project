@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2672/le-grand-feu",
+  "Name": "Le Grand Feu",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "45 ml Cognac (brandy)",
+    "45 ml Giffard Vanille de Madagascar",
+    "15 ml Irish cream liqueur",
+    "22.5 ml Chai tea (cold)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare mint sprigs for garnish.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass.",
+    "Garnish with mint sprigs bouquet."
+  ],
+  "Review": "Cognac smoothed with vanilla and cream, spiced with chai tea.",
+  "History": "Adapted from a recipe by Tony Venci, La Femme Bar, MGM Grand Hotel, Las Vegas, USA.",
+  "Nutrition": "One serving of Le Grand Feu contains 259 calories",
+  "Alcohol_Content": [
+    [
+      "1.6 standard drinks"
+    ],
+    [
+      "17.04% alc./vol. (17.04° proof)"
+    ],
+    [
+      "21.7 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

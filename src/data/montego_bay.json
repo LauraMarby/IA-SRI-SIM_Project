@@ -1,0 +1,34 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1357/montego-bay",
+  "Name": "Montego Bay",
+  "Glass": "",
+  "Ingredients": [
+    "45 ml Rhum Clément Blanc",
+    "15 ml De Kuyper Triple Sec (40%)",
+    "15 ml Lime juice (freshly squeezed)",
+    "7.5 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)",
+    "2 dash Angostura Aromatic Bitters"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Coupe glass .",
+    "Prepare garnish of lime wedge.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass.",
+    "Garnish with lime wedge."
+  ],
+  "Review": "The name suggests Jamaica, but the recipe stipulates Martinique agricole rum.",
+  "History": "Adapted from a recipe in Victor Bergeron 's 1972 Trader Vic's Bartender's Guide where it is accompanied by Trader Vic's \"TV\" logo, indicating it is a signature cocktail.",
+  "Nutrition": "One serving of Montego Bay contains 156 calories",
+  "Alcohol_Content": [
+    [
+      "1.3 standard drinks"
+    ],
+    [
+      "21.48% alc./vol. (21.48° proof)"
+    ],
+    [
+      "17.9 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

@@ -1,0 +1,31 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/388/causeway",
+  "Name": "Causeway",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "45 ml Irish whiskey",
+    "22.5 ml Honey herbal liqueur (e.g. Drambuie)",
+    "7.5 ml Lemon juice (freshly squeezed)",
+    "3 dash Angostura Aromatic Bitters",
+    "1 dash Orange Bitters by Angostura",
+    "75 ml Thomas Henry Ginger Ale"
+  ],
+  "Instructions": [
+    "SHAKE first 5 ingredients with ice and strain into ice-filled glass. TOP with ginger ale."
+  ],
+  "Review": "Dry, aromatic long whiskey drink.",
+  "History": "Adapted from a recipe created by David Myers at Titanic, London, England.",
+  "Nutrition": "One serving of Causeway contains 199 calories",
+  "Alcohol_Content": [
+    [
+      "1.4 standard drinks"
+    ],
+    [
+      "13.37% alc./vol. (13.37° proof)"
+    ],
+    [
+      "20.2 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Lime wedge"
+}

@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1337/mister-stu",
+  "Name": "Mister Stu",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "50 ml Patrón Silver blanco tequila",
+    "15 ml Disaronno amaretto",
+    "10 ml Coconut rum liqueur (35-40% alc./vol.)",
+    "40 ml Pineapple juice",
+    "40 ml Orange juice (freshly squeezed)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare garnish of pineapple wedge.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass."
+  ],
+  "Review": "There's a touch of the disco about this foamy drink, but it is still complex and interesting.",
+  "History": "",
+  "Nutrition": "One serving of Mister Stu contains 226 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "13.26% alc./vol. (13.26° proof)"
+    ],
+    [
+      "20.5 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

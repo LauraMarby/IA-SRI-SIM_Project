@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2205/tnt-tequila-n-tonic",
+  "Name": "TNT (Tequila 'N' Tonic)",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "45 ml Patrón Reposado tequila",
+    "7.5 ml Lime juice (freshly squeezed)",
+    "Top up with Thomas Henry Tonic Water"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare garnish of lime wedge.",
+    "POUR all ingredients into ice-filled glass.",
+    "STIR .",
+    "Garnish with lime wedge."
+  ],
+  "Review": "A simple but very tasty way to enjoy tequila.",
+  "History": "Adapted from Victor Bergeron's Trader Vic's Bartender's Guide (1972 revised edition).",
+  "Nutrition": "One serving of TNT (Tequila 'N' Tonic) contains 99 calories",
+  "Alcohol_Content": [
+    [
+      "1 standard drinks"
+    ],
+    [
+      "27% alc./vol. (27° proof)"
+    ],
+    [
+      "14.2 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

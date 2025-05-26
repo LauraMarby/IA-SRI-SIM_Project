@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1211/lynchburg-lemonade",
+  "Name": "Lynchburg Lemonade",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "40 ml Tennessee whiskey",
+    "25 ml De Kuyper Triple Sec (40%)",
+    "25 ml Lemon juice (freshly squeezed)",
+    "50 ml Lemon-lime soda (Sprite/7-Up)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare garnish of lemon slice wheel.",
+    "POUR all ingredients into chilled glass.",
+    "FILL glass with ice.",
+    "Garnish with lemon slice."
+  ],
+  "Review": "Tangy, light and very easy to drink.",
+  "History": "Adapted from a recipe created for the Jack Daniel's distillery in - yep, you guessed it - Lynchburg, Tennessee.",
+  "Nutrition": "One serving of Lynchburg Lemonade contains 149 calories",
+  "Alcohol_Content": [
+    [
+      "1.7 standard drinks"
+    ],
+    [
+      "16.88% alc./vol. (16.88° proof)"
+    ],
+    [
+      "23.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

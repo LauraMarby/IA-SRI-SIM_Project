@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1325/milano",
+  "Name": "Milano",
+  "Glass": "Old-fashioned glass",
+  "Ingredients": [
+    "30 ml Ketel One Vodka",
+    "30 ml Strucchi Red Bitter (Campari-style liqueur)",
+    "30 ml Strucchi Rosso Vermouth"
+  ],
+  "Instructions": [
+    "Select and pre-chill an Old-fashioned glass .",
+    "Prepare orange slice for garnish.",
+    "STIR all ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "Garnish with orange slice."
+  ],
+  "Review": "A vodka-based Negroni .",
+  "History": "",
+  "Nutrition": "One serving of Milano contains 183 calories",
+  "Alcohol_Content": [
+    [
+      "1.4 standard drinks"
+    ],
+    [
+      "21.26% alc./vol. (21.26° proof)"
+    ],
+    [
+      "19.1 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

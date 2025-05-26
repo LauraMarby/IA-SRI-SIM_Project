@@ -1,0 +1,30 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2105/wine-cooler",
+  "Name": "Wine Cooler",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "60 ml Sauvignon blanc wine",
+    "15 ml Ketel One Citroen Vodka",
+    "15 ml Lemon juice (freshly squeezed)",
+    "15 ml Orange juice (freshly squeezed)",
+    "45 ml Lemon-lime soda (Sprite/7-Up)"
+  ],
+  "Instructions": [
+    "SHAKE first four ingredients with ice and strain into ice-filled glass. TOP with lemonade and lightly stir."
+  ],
+  "Review": "Like a citrussy white wine Spritzer.",
+  "History": "",
+  "Nutrition": "One serving of Wine Cooler contains 89 calories",
+  "Alcohol_Content": [
+    [
+      "0.7 standard drinks"
+    ],
+    [
+      "6.47% alc./vol. (6.47° proof)"
+    ],
+    [
+      "9.7 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Lemon and orange slice"
+}

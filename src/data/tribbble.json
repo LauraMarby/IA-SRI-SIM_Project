@@ -1,0 +1,30 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1986/tribbble",
+  "Name": "Tribbble",
+  "Glass": "Shot glass",
+  "Ingredients": [
+    "15 ml Butterscotch liqueur",
+    "15 ml Giffard Banane du Brésil liqueur",
+    "15 ml Irish cream liqueur"
+  ],
+  "Instructions": [
+    "Select a Shot glass .",
+    "Refrigerate ingredients.",
+    "LAYER in chilled glass by carefully pouring ingredients in the order listed."
+  ],
+  "Review": "",
+  "History": "A drink created by bartenders at TGI Friday's UK in 2002. Named Tribbble with three 'B's' due to its three layers: butterscotch, banana and Baileys (the brand of Irish cream liqueur originally used).",
+  "Nutrition": "One serving of Tribbble contains 136 calories",
+  "Alcohol_Content": [
+    [
+      "0.6 standard drinks"
+    ],
+    [
+      "18.79% alc./vol. (18.79° proof)"
+    ],
+    [
+      "8.5 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

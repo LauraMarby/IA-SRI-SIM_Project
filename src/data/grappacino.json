@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2673/grappacino",
+  "Name": "Grappacino",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "60 ml Grappa di Moscato",
+    "15 ml Disaronno amaretto",
+    "15 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)",
+    "30 ml Espresso coffee (freshly brewed & hot)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of coffee beans.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "The character of the grappa shines through and is complemented by the amaretto and coffee.",
+  "History": "Adapted from a drink created in 2006 by George Sinclair.",
+  "Nutrition": "One serving of Grappacino contains 166 calories",
+  "Alcohol_Content": [
+    [
+      "1.5 standard drinks"
+    ],
+    [
+      "17.28% alc./vol. (17.28° proof)"
+    ],
+    [
+      "20.7 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

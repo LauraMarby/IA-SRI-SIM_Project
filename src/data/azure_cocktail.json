@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/130/azure-cocktail",
+  "Name": "Azure Cocktail",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "60 ml Cachaça",
+    "7.5 ml Goldwasser cinnamon schnapps liqueur",
+    "30 ml Apple juice/apple cider (cloudy & unsweetened)",
+    "15 ml Lime juice (freshly squeezed)",
+    "7.5 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of apple slice .",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "A tangy cocktail that's reminiscent of a cinnamon-laced apple pie. Shame it's not blue.",
+  "History": "Ben Reed created this cocktail in 1998 at the Met Bar in London, England. It was originally named the Azure Martini and was made with muddled fresh apple.",
+  "Nutrition": "One serving of Azure Cocktail contains 195 calories",
+  "Alcohol_Content": [
+    [
+      "1.4 standard drinks"
+    ],
+    [
+      "16.54% alc./vol. (16.54° proof)"
+    ],
+    [
+      "19.9 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

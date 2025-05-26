@@ -1,0 +1,32 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1292/mellow-cocktail",
+  "Name": "Mellow Cocktail",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "45 ml Ketel One Vodka",
+    "15 ml Kwai Feh lychee liqueur",
+    "15 ml Giffard Banane du Brésil liqueur",
+    "45 ml Pineapple juice"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of lychee.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "A fruity, tropical drink with a frothy head.",
+  "History": "",
+  "Nutrition": "One serving of Mellow Cocktail contains 186 calories",
+  "Alcohol_Content": [
+    [
+      "1.3 standard drinks"
+    ],
+    [
+      "15.17% alc./vol. (15.17° proof)"
+    ],
+    [
+      "18.2 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

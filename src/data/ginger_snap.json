@@ -1,0 +1,31 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2425/ginger-snap",
+  "Name": "Ginger Snap",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "30 ml Hayman's London Dry Gin",
+    "15 ml Ginger liqueur",
+    "15 ml De Kuyper Triple Sec (40%)",
+    "15 ml Lemon juice (freshly squeezed)",
+    "1 dash Angostura Aromatic Bitters",
+    "60 ml Thomas Henry Ginger Ale"
+  ],
+  "Instructions": [
+    "SHAKE first 5 ingredients with ice and strain into an ice-filled glass. TOP with ginger ale."
+  ],
+  "Review": "This balanced Gin Collins is sweetened by ginger and orange liqueurs.",
+  "History": "Adapted from a recipe created in 2007 by Gary \"gaz\" Regan , New York, USA.",
+  "Nutrition": "One serving of Ginger Snap contains 171 calories",
+  "Alcohol_Content": [
+    [
+      "1.2 standard drinks"
+    ],
+    [
+      "12.34% alc./vol. (12.34° proof)"
+    ],
+    [
+      "16.7 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Lemon zest twist"
+}

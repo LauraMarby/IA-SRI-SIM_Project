@@ -1,0 +1,31 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1982/tre-martini",
+  "Name": "Tre Martini",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "60 ml Light gold rum (1-3 year old molasses column)",
+    "15 ml Giffard Framboise de Ronce (raspberry liqueur)",
+    "40 ml Apple juice/apple cider (cloudy & unsweetened)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Martini glass .",
+    "Prepare garnish of lemon zest twist (expressed and discarded) & speared fresh raspberry or float dehydrated raspberry.",
+    "SHAKE all ingredients with ice.",
+    "FINE STRAIN into chilled glass."
+  ],
+  "Review": "A simple, well-balanced, fruity drink, laced with rum.",
+  "History": "Adapted from a recipe created in 2002 by Asa Nevestveit at Sosho bar in London, England.",
+  "Nutrition": "One serving of Tre Martini contains 200 calories",
+  "Alcohol_Content": [
+    [
+      "1.4 standard drinks"
+    ],
+    [
+      "17.07% alc./vol. (17.07° proof)"
+    ],
+    [
+      "19.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

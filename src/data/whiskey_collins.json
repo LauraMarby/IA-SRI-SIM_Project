@@ -1,0 +1,30 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/2080/whiskey-collins",
+  "Name": "Whiskey Collins",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "60 ml Bourbon whiskey",
+    "22.5 ml Lemon juice (freshly squeezed)",
+    "15 ml Sugar syrup 'rich' (2 sugar to 1 water, 65.0°Brix)",
+    "2 dash Angostura Aromatic Bitters",
+    "40 ml Thomas Henry Soda Water"
+  ],
+  "Instructions": [
+    "SHAKE first 4 ingredients with ice and strain into ice-filled glass. TOP with soda water and briefly stir."
+  ],
+  "Review": "A whiskey-based twist on the classic Tom Collins .",
+  "History": "A classic Collins variation.",
+  "Nutrition": "One serving of Whiskey Collins contains 201 calories",
+  "Alcohol_Content": [
+    [
+      "1.4 standard drinks"
+    ],
+    [
+      "14.52% alc./vol. (14.52° proof)"
+    ],
+    [
+      "20.1 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Orange slice &"
+}

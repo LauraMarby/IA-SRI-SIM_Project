@@ -1,0 +1,27 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/358/cajun-martini",
+  "Name": "Cajun Martini",
+  "Glass": "Martini glass",
+  "Ingredients": [
+    "75 ml Absolut Peppar Vodka",
+    "15 ml Strucchi Dry Vermouth"
+  ],
+  "Instructions": [
+    "STIR vermouth with ice. Strain, discarding vermouth to leave only a coating on the ice. Pour pepper vodka into mixing glass, stir with coated ice and strain into chilled glass."
+  ],
+  "Review": "A Vodka Martini made with jalapeño-infused vodka.",
+  "History": "Adapted from a recipe created during the 1980s at Paul and Kay Prudhomme's K-Paul's Louisiana Kitchen in New Orleans, USA.",
+  "Nutrition": "One serving of Cajun Martini contains 71 calories",
+  "Alcohol_Content": [
+    [
+      "1.8 standard drinks"
+    ],
+    [
+      "28.61% alc./vol. (28.61° proof)"
+    ],
+    [
+      "25.7 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Chilli pepper slice"
+}

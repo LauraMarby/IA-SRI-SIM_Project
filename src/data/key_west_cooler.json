@@ -1,0 +1,33 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/1104/key-west-cooler",
+  "Name": "Key West Cooler",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "60 ml Ketel One Vodka",
+    "30 ml Coconut rum liqueur (35-40% alc./vol.)",
+    "45 ml Cranberry juice (sweetened)",
+    "45 ml Orange juice (freshly squeezed)"
+  ],
+  "Instructions": [
+    "Select and pre-chill a Collins glass .",
+    "Prepare garnish of lime wedge.",
+    "SHAKE all ingredients with ice.",
+    "STRAIN into ice-filled glass.",
+    "Garnish with lime wedge."
+  ],
+  "Review": "A coconut-laced Breeze that's perfectly suited to the poolside.",
+  "History": "Named after the island near the southernmost tip of the Florida Keys in Florida, USA.",
+  "Nutrition": "One serving of Key West Cooler contains 238 calories",
+  "Alcohol_Content": [
+    [
+      "1.9 standard drinks"
+    ],
+    [
+      "14.4% alc./vol. (14.4° proof)"
+    ],
+    [
+      "25.9 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": ""
+}

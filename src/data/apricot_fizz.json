@@ -1,0 +1,29 @@
+{
+  "Url": "https://www.diffordsguide.com/cocktails/recipe/99/apricot-fizz",
+  "Name": "Apricot Fizz",
+  "Glass": "Collins glass",
+  "Ingredients": [
+    "60 ml De Kuyper Apricot Brandy liqueur",
+    "30 ml Orange juice (freshly squeezed)",
+    "15 ml Lime juice (freshly squeezed)",
+    "Top up with Soda from siphon"
+  ],
+  "Instructions": [
+    "SHAKE first three ingredients with ice and strain into ice-filled glass. TOP with soda water."
+  ],
+  "Review": "This low-alcohol, refreshing cocktail is perfect for a summer afternoon.",
+  "History": "",
+  "Nutrition": "One serving of Apricot Fizz contains 148 calories",
+  "Alcohol_Content": [
+    [
+      "0.8 standard drinks"
+    ],
+    [
+      "10.08% alc./vol. (10.08° proof)"
+    ],
+    [
+      "10.6 grams of pure alcohol"
+    ]
+  ],
+  "Garnish": "Lemon wedge"
+}
