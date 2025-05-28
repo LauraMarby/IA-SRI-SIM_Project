@@ -3,6 +3,7 @@ import nltk
 from langdetect import detect
 from nltk.corpus import stopwords
 import spacy
+import unicodedata
 
 # Descargar modelos si no están cargados
 try:
@@ -54,3 +55,8 @@ def preprocess_text(text: str) -> str:
 def preprocess_bulk(texts: list[str]) -> list[str]:
     """Preprocesa una lista de textos."""
     return [preprocess_text(t) for t in texts]
+
+def normalize(name):
+    # Quitar tildes, pasar a minúsculas, reemplazar espacios y otros caracteres
+    name = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode("utf-8")
+    return name.strip().lower().replace(" ", "_").replace("-", "_").replace(".", "").replace("/", "_")

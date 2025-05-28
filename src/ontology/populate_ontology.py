@@ -1,6 +1,7 @@
 import os
 import json
-from owlready2 import *
+import unicodedata
+from owlready2 import *\
 
 # Rutas
 ONTOLOGY_PATH = "src/ontology/ontology.owl"
@@ -9,9 +10,11 @@ DATA_DIR = "src/data"
 # Cargar la ontología existente
 onto = get_ontology(f"file://{os.path.abspath(ONTOLOGY_PATH)}").load()
 
-# Helper: normalizar nombres para IDs de instancias
+# Helper: normalizar nombres para IDs y búsquedas
 def normalize(name):
-    return name.strip().replace(" ", "_").replace("-", "_").replace(".", "").replace("/", "_")
+    # Quitar tildes, pasar a minúsculas, reemplazar espacios y otros caracteres
+    name = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode("utf-8")
+    return name.strip().lower().replace(" ", "_").replace("-", "_").replace(".", "").replace("/", "_")
 
 # Recorrer todos los archivos JSON
 for filename in os.listdir(DATA_DIR):
