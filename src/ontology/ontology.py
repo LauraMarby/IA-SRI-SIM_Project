@@ -1,6 +1,5 @@
 from owlready2 import *
 
-# Crear una nueva ontología
 onto = get_ontology("http://www.bartender-project.org/ontology#")
 
 with onto:
@@ -8,26 +7,27 @@ with onto:
     class Cocktail(Thing): pass
     class Ingredient(Thing): pass
     class Glass(Thing): pass
-    class Preparation(Thing): pass
-    class Country(Thing): pass
-    class Category(Thing): pass
-    class Rating(Thing): pass
-    class Person(Thing): pass
-    class PriceRange(Thing): pass
+    class AlcoholContent(Thing): pass
 
-    # Propiedades entre objetos (relaciones)
+    # Propiedades entre objetos
     class hasIngredient(Cocktail >> Ingredient): pass
     class servedIn(Cocktail >> Glass): pass
-    class hasPreparation(Cocktail >> Preparation): pass
-    class originCountry(Cocktail >> Country): pass
-    class belongsToCategory(Cocktail >> Category): pass
-    class createdBy(Cocktail >> Person): pass
+    class hasAlcoholContent(Cocktail >> AlcoholContent): pass
 
-    # Propiedades de datos (atributos)
+    # Propiedades de datos
+    class hasName(Cocktail >> str, DataProperty): pass
+    class hasUrl(Cocktail >> str, DataProperty): pass
+    class hasInstructions(Cocktail >> str, DataProperty): pass
+    class hasReview(Cocktail >> str, DataProperty): pass
     class hasHistory(Cocktail >> str, DataProperty): pass
-    class hasRating(Cocktail >> float, DataProperty): pass
-    class hasPrice(Cocktail >> str, DataProperty): pass
+    class hasNutrition(Cocktail >> str, DataProperty): pass
+    class hasGarnish(Cocktail >> str, DataProperty): pass
+
+    # Atributos para AlcoholContent
+    class standardDrinks(AlcoholContent >> str, DataProperty): pass
+    class alcoholVolume(AlcoholContent >> str, DataProperty): pass
+    class pureAlcohol(AlcoholContent >> str, DataProperty): pass
 
 # Guardar ontología
-onto.save(file = "src/ontology/ontology.owl", format = "rdfxml")
-print("Ontología guardada como bartender.owl")
+onto.save(file="src/ontology/ontology.owl", format="rdfxml")
+print("Ontología actualizada guardada en src/ontology/ontology.owl")
