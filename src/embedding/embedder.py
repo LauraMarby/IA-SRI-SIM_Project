@@ -4,12 +4,10 @@ import requests
 import pickle
 from pathlib import Path
 from typing import List
+from sentence_transformers import SentenceTransformer
 
 # ==== Configuración ====
-API_TOKEN = ""
-MODEL = "sentence-transformers/all-MiniLM-L6-v2"
-API_URL = f"https://api-inference.huggingface.co/pipeline/feature-extraction/{MODEL}"
-HEADERS = {"Authorization": f"Bearer {API_TOKEN}"}
+model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
 DATA_DIR = Path("src/data")
 OUTPUT_FILE = Path("src/embedding/embeddings.pkl")
@@ -28,7 +26,7 @@ def sliding_window_chunk(text: str, window_size: int = 100, stride: int = 60) ->
     """
     words = text.split()
     chunks = []
-    for i in range(0, len(words), stride):
+    for i in range(0, len(words), window_size - stride):
         chunk = " ".join(words[i:i + window_size])
         if len(chunk) > 10:
             chunks.append(chunk)
@@ -36,19 +34,19 @@ def sliding_window_chunk(text: str, window_size: int = 100, stride: int = 60) ->
             break
     return chunks
 
-def get_embedding(text: str):
-    """
-    Convierte un chunk en un vector
+def get_embedding(text:str):
+    """ Computa un embedding para un texto dado utilizando el modelo sentence-transformers/all-MiniLM-L6-v2.
     Args:
-        text (str): Chunk
+        text (str): Texto para el cual se desea generar un embedding.
+    Returns:
+        list: Embedding del texto dado.
     """
-    payload = {"inputs": text}
+
     try:
-        response = requests.post(API_URL, headers=HEADERS, json=payload)
-        response.raise_for_status()
-        return response.json()[0]
+        vector = model.encode(text)
+        return vector
     except requests.exceptions.RequestException as e:
-        print(f"❌ Error al obtener embedding: {e}")
+        print(f"Error al obtener el embedding: {e}")
         return None
 
 def preprocess_document(json_file: Path) -> str:
@@ -92,7 +90,7 @@ def embed_all_documents():
         chunks = sliding_window_chunk(full_text)
         for chunk in chunks:
             vector = get_embedding(chunk)
-            if vector:
+            if vector.any():
                 embeddings.append({
                     "source": file.name,
                     "chunk": chunk,

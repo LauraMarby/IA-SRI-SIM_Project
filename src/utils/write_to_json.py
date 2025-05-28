@@ -11,10 +11,10 @@ def slugify(name):
 
 def write_to_json(data):
     """
-    Write data to a json file
+    Escribe el data en un archivo json
 
     Arg:
-        - data (list<dict>) : List of dictionaries. It is assumed that each dictionary has the same keys.
+        data (dict) 
 
     """
 
