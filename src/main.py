@@ -1,6 +1,7 @@
 import os
 import asyncio
 import google.generativeai as genai
+from dotenv import load_dotenv
 from environment.agent_system import AgentSystem
 from agents.user_agent import UserAgent
 from agents.coordinator_agent import CoordinatorAgent
@@ -10,10 +11,29 @@ from agents.knowledge_agent import KnowledgeAgent
 from agents.intent_detector_agent import IntentDetectorAgent
 from ontology.query_ontology import consultar_tragos
 from embedding.query_embedding import retrieve
+from pathlib import Path
+
+def load_token(file_path="src/token.txt") -> str:
+    try:
+        token = Path(file_path).read_text(encoding="utf-8").strip()
+        if not token:
+            raise ValueError("El archivo está vacío.")
+        return token
+    except FileNotFoundError:
+        raise FileNotFoundError(f"❌ No se encontró el archivo '{file_path}'")
+    except Exception as e:
+        raise RuntimeError(f"❌ Error al leer el token: {e}")
 
 async def main():
 
-    genai.configure(api_key="AIzaSyDeWmnKHVRu-QVPPxKpU7EjT6rmrAWtvbY")
+    TOKEN = load_token()
+
+    if TOKEN is None:
+        raise ValueError("❌ No se encontró el token. ¿Está definido en config.env?")
+    
+    print(f"🔐 Token cargado: {TOKEN[:5]}...")  # Nunca muestres el token completo
+
+    genai.configure(api_key=TOKEN)
     gemini_model = genai.GenerativeModel("gemini-1.5-flash")
 
     system = AgentSystem()
