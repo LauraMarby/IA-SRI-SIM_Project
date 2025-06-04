@@ -1,62 +1,54 @@
-from agents.intent_detector_agent import detectar_intencion
+import json
+import re
+from agents.base_agent import BaseAgent
 
-class CoordinatorAgent:
-    def __init__(self, env):
-        self.env = env
+class CoordinatorAgent(BaseAgent):
+    async def handle(self, message):
+        content = message["content"]
 
-    def handle_query(self, user_input):
-        print(f"[Coordinador] Recibida la consulta: {user_input}")
+        # Limpiar formato tipo Markdown si viene con ```
+        cleaned = re.sub(r"```(?:json)?\n?", "", content.strip(), flags=re.IGNORECASE)
+        cleaned = re.sub(r"\n?```", "", cleaned.strip())
 
-        intencion = detectar_intencion(user_input)
-        print(f"[Coordinador] Intención detectada: {intencion}")
+        try:
+            data = json.loads(cleaned)
+        except json.JSONDecodeError as e:
+            print(f"[Coordinator] JSON inválido: {e}")
+            return
+    
+        query = data.get("translated_prompt", "unknown query")
 
-        ontology_agent = self.env.get_agent('ontology')
+        cocktails = data.get("cocktails", [])
+        search_type = data.get("make_search", "ontology")
 
-        if intencion == "listar_cocteles":
-            resultados = ontology_agent.listar_tragos()
-            print("Tragos disponibles:")
-            for r in resultados:
-                print(f" - {r}")
+        if not cocktails:
+            print("[Coordinator] No se detectaron cócteles.")
 
-        elif intencion == "ingredientes_de":
-            nombre = self._extraer_nombre_coctel(user_input)
-            ingredientes = ontology_agent.ingredientes_de(nombre)
-            print(f"Ingredientes de {nombre}:")
-            for ing in ingredientes:
-                print(f" - {ing}")
+        # Preparar listas para el payload conjunto
+        cocktail_names = []
+        field_sets = []
 
-        elif intencion == "preparacion_de":
-            nombre = self._extraer_nombre_coctel(user_input)
-            preparacion = ontology_agent.preparacion_de(nombre)
-            print(f"Preparación de {nombre}:\n{preparacion}")
+        for cocktail in cocktails:
+            nombre = cocktail.get("name")
+            campos = cocktail.get("fields_requested", [])
 
-        elif intencion == "origen_cocktail":
-            nombre = self._extraer_nombre_coctel(user_input)
-            origen = ontology_agent.origen_de(nombre)
-            print(f"Origen de {nombre}: {origen}")
+            if not nombre or not isinstance(campos, list):
+                print(f"[Coordinator] Datos incompletos para un cóctel: {cocktail}")
+                continue
 
-        elif intencion == "recomendar_por_ingrediente":
-            ingrediente = self._extraer_nombre_ingrediente(user_input)
-            recomendados = ontology_agent.recomendar_por_ingrediente(ingrediente)
-            print(f"Cócteles con {ingrediente}:")
-            for r in recomendados:
-                print(f" - {r}")
+            cocktail_names.append(nombre)
+            field_sets.append(campos)
 
-        else:
-            print("[Coordinador] Intención no soportada o no reconocida.")
+        # Construir payload común
+        payload_ontology = {"cocktails": cocktail_names, "fields": field_sets}
+        payload_embedding = {"query": query}
 
-    def _extraer_nombre_coctel(self, texto):
-        # TODO: Usar NER en producción. Aquí un parche simple:
-        palabras = texto.split()
-        for i, p in enumerate(palabras):
-            if p.lower() in ["del", "de", "del", "el", "la"] and i+1 < len(palabras):
-                return ' '.join(palabras[i+1:])
-        return palabras[-1]  # Última palabra como fallback
+        # Enviar a los agentes correspondientes
+        if "ontology" in search_type:
+            await self.send("ontology", payload_ontology)
 
-    def _extraer_nombre_ingrediente(self, texto):
-        # TODO: Mejorar con NLP si es necesario
-        palabras = texto.split()
-        if "con" in palabras:
-            idx = palabras.index("con")
-            return palabras[idx + 1] if idx + 1 < len(palabras) else ""
-        return palabras[-1]
+        if "embedding" in search_type:
+            await self.send("embedding", payload_embedding)
+
+
+        # El KnowledgeAgent será el encargado de combinar respuestas
