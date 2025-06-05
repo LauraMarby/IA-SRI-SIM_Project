@@ -43,12 +43,20 @@ class CoordinatorAgent(BaseAgent):
         payload_ontology = {"cocktails": cocktail_names, "fields": field_sets}
         payload_embedding = {"query": query}
 
-        # Enviar a los agentes correspondientes
+        expected_sources = []
+
         if "ontology" in search_type:
             await self.send("ontology", payload_ontology)
+            expected_sources.append("ontology")
 
         if "embedding" in search_type:
             await self.send("embedding", payload_embedding)
+            expected_sources.append("embedding")
 
-
-        # El KnowledgeAgent será el encargado de combinar respuestas
+        # Avisar al validador de qué fuentes esperar
+        if expected_sources:
+            await self.send("validator", {
+                "type": "expectation",
+                "sources": expected_sources,
+                "query": query  # útil para que el validador sepa qué validar
+            })

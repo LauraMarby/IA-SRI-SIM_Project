@@ -13,4 +13,4 @@ class OntologyAgent(BaseAgent):
         cocktail = message["content"]["cocktails"]
         fields = message["content"]["fields"]
         results = self.ontology_fn(cocktail, fields, self.onto)
-        await self.send("knowledge", {"source": "ontology", "results": results})
+        await self.send("validator", {"source": "ontology", "results": results})
