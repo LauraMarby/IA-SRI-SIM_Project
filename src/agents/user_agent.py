@@ -2,7 +2,15 @@ from agents.base_agent import BaseAgent
 from ui import user_interface as ui
 
 class UserAgent(BaseAgent):
+    """
+    Clase que representa el agente que interactúa con el usuario.
+    """
     async def run(self):
+        """
+        Ejecuta el agente usuario. Recibe la consulta y  en dependencia de esta se toma 
+        una decisión: salir del sistema o devolver una respuesta.
+        """
+
         ui.show_welcome_message()
 
         while True:

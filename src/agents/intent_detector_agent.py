@@ -2,6 +2,9 @@ from agents.base_agent import BaseAgent
 import google.generativeai as genai
 
 class IntentDetectorAgent(BaseAgent):
+    """
+    Clase que representa al agente detector de intenciones.
+    """
     def __init__(self, name, system, model):
         super().__init__(name, system)
         self.model = model
@@ -17,6 +20,15 @@ class IntentDetectorAgent(BaseAgent):
             await self.send(sender, intent_json)
 
     async def detect_intent(self, query):
+        """
+        Consulta con el modelo de lenguaje la intención del usuario.
+
+        Args: 
+            query(str): Consulta del usuario.
+            
+        Returns:
+            str: contenido del json que devuelve el modelo de lenguaje.
+        """
         CAMPOS_TRAGO = [
             "Url", "Glass", "Ingredients", "Instructions",
             "Review", "History", "Nutrition", "Alcohol_Content", "Garnish"
