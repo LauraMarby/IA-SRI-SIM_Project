@@ -46,11 +46,9 @@ class CoordinatorAgent(BaseAgent):
         expected_sources = []
 
         if "ontology" in search_type:
-            await self.send("ontology", payload_ontology)
             expected_sources.append("ontology")
 
         if "embedding" in search_type:
-            await self.send("embedding", payload_embedding)
             expected_sources.append("embedding")
 
         # Avisar al validador de qué fuentes esperar
@@ -60,3 +58,11 @@ class CoordinatorAgent(BaseAgent):
                 "sources": expected_sources,
                 "query": query  # útil para que el validador sepa qué validar
             })
+
+        if "ontology" in search_type:
+            await self.send("ontology", payload_ontology)
+
+        if "embedding" in search_type:
+            await self.send("embedding", payload_embedding)
+
+        

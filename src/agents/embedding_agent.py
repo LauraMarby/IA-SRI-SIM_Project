@@ -15,4 +15,4 @@ class EmbeddingAgent(BaseAgent):
         query = message["content"]["query"]
         # Preprocesar la query
         results = self.embedding_fn(query, self.data)
-        await self.send("validator", {"source": "embedding", "results": results})
+        await self.send("validator", {"source": "embedding", "results": results, "type": "result"})

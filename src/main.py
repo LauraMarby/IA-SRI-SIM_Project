@@ -9,6 +9,7 @@ from agents.ontology_agent import OntologyAgent
 from agents.embedding_agent import EmbeddingAgent
 from agents.knowledge_agent import KnowledgeAgent
 from agents.intent_detector_agent import IntentDetectorAgent
+from agents.validator_agent import ValidationAgent
 from ontology.query_ontology import consultar_tragos
 from embedding.query_embedding import retrieve
 from pathlib import Path
@@ -44,8 +45,9 @@ async def main():
     embedding = EmbeddingAgent("embedding", system, retrieve)
     knowledge = KnowledgeAgent("knowledge", system)
     intent_detector = IntentDetectorAgent("intent_detector", system, gemini_model)
+    validator = ValidationAgent("validator", system, gemini_model)
 
-    for agent in [coordinator, ontology, knowledge, user, intent_detector, embedding]:
+    for agent in [coordinator, ontology, knowledge, user, intent_detector, embedding, validator]:
         system.register_agent(agent)
 
     await asyncio.gather(
@@ -54,7 +56,8 @@ async def main():
         ontology.run(),
         embedding.run(),
         knowledge.run(),
-        intent_detector.run()
+        intent_detector.run(),
+        validator.run()
     )
 
 if __name__ == "__main__":
