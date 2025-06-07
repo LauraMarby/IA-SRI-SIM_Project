@@ -1,13 +1,11 @@
 import os
 import asyncio
 import google.generativeai as genai
-from dotenv import load_dotenv
 from environment.agent_system import AgentSystem
 from agents.user_agent import UserAgent
 from agents.coordinator_agent import CoordinatorAgent
 from agents.ontology_agent import OntologyAgent
 from agents.embedding_agent import EmbeddingAgent
-from agents.knowledge_agent import KnowledgeAgent
 from agents.intent_detector_agent import IntentDetectorAgent
 from agents.validator_agent import ValidationAgent
 from ontology.query_ontology import consultar_tragos
@@ -43,11 +41,10 @@ async def main():
     coordinator = CoordinatorAgent("coordinator", system)
     ontology = OntologyAgent("ontology", system, consultar_tragos)
     embedding = EmbeddingAgent("embedding", system, retrieve)
-    knowledge = KnowledgeAgent("knowledge", system)
     intent_detector = IntentDetectorAgent("intent_detector", system, gemini_model)
     validator = ValidationAgent("validator", system, gemini_model)
 
-    for agent in [coordinator, ontology, knowledge, user, intent_detector, embedding, validator]:
+    for agent in [coordinator, ontology, user, intent_detector, embedding, validator]:
         system.register_agent(agent)
 
     await asyncio.gather(
@@ -55,7 +52,6 @@ async def main():
         coordinator.run(),
         ontology.run(),
         embedding.run(),
-        knowledge.run(),
         intent_detector.run(),
         validator.run()
     )

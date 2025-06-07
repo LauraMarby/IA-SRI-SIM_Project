@@ -1,5 +1,4 @@
 from agents.base_agent import BaseAgent
-import google.generativeai as genai
 
 class IntentDetectorAgent(BaseAgent):
     """
@@ -47,7 +46,9 @@ Responde en JSON con las siguientes claves:
 - "cocktails": una lista con un objeto por cada cóctel mencionado. Cada objeto debe tener:
   - "name": nombre del cóctel.
   - "fields_requested": una lista de 9 valores booleanos, uno por cada campo del cóctel (en este orden: {', '.join(CAMPOS_TRAGO)}). Pon `true` si el usuario quiere saber sobre ese campo, `false` en caso contrario.
-- "make_search": debe ser uno de estos valores: "ontology" si la búsqueda es explícita sobre algún coctel en el cual se busca alguno de los campos anteriores, "embedding" si la búsqueda es semántica o requiere una búsqueda muy grande en la ontología, y "flavor" si se requiere conocer algún sabor de un trago. Pueden devolverse más de una respuesta en este campo, e incluso las 3 posibles respuestas.
+Este campo no debe tener nombres no especificados, aunque el requisito sea obtener algo de esos tragos. Si no se conoce el nombre del trago, no se incluye aquí, se incluye en las preguntas del embedding.
+- "flavor_of_drink": tragos de los cuales se requiere conocer el sabor, o se especifica que debe ser de alguna manera. Si el trago no se conoce, pero se especifica que debe ser un sabor específico, no se pone aquí.
+- "embedding_query": a partir de la consulta inicial, qué se debe consultar específicamente con el embedding. Esto debe incluir datos específicos de la consulta original, como contexto global o cantidades a resolver. Esta consulta debe estar en inglés. No debe incluir tragos mencionados de los cuales ya se conoce exactamente lo que se quiere (los que aparecen en cocktails), solo preguntas abiertas.
 
 """
 

@@ -17,9 +17,9 @@ class CoordinatorAgent(BaseAgent):
             return
     
         query = data.get("translated_prompt", "unknown query")
+        embedding_query = data.get("embedding_query", "unnecesary question")
 
         cocktails = data.get("cocktails", [])
-        search_type = data.get("make_search", "ontology")
 
         if not cocktails:
             print("[Coordinator] No se detectaron cócteles.")
@@ -41,15 +41,12 @@ class CoordinatorAgent(BaseAgent):
 
         # Construir payload común
         payload_ontology = {"cocktails": cocktail_names, "fields": field_sets}
-        payload_embedding = {"query": query}
+        payload_embedding = {"query": embedding_query}
 
-        expected_sources = []
-
-        if "ontology" in search_type:
-            expected_sources.append("ontology")
-
-        if "embedding" in search_type:
-            expected_sources.append("embedding")
+        expected_sources = ["ontology", "embedding"]
+        # flavors = data.get("flavor_of_drink", [])
+        # if flavors is not []:
+        #     expected_sources.append("flavors agent")
 
         # Avisar al validador de qué fuentes esperar
         if expected_sources:
@@ -59,10 +56,7 @@ class CoordinatorAgent(BaseAgent):
                 "query": query  # útil para que el validador sepa qué validar
             })
 
-        if "ontology" in search_type:
-            await self.send("ontology", payload_ontology)
 
-        if "embedding" in search_type:
-            await self.send("embedding", payload_embedding)
-
+        await self.send("ontology", payload_ontology)
+        await self.send("embedding", payload_embedding)
         

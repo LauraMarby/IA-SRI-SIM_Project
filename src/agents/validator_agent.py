@@ -2,7 +2,6 @@ import random
 from agents.base_agent import BaseAgent
 import json
 import re
-import asyncio
 
 class ValidationAgent(BaseAgent):
     def __init__(self, name, system, model, alpha=100, beta=1, gamma=2, num_ants=10, max_iters=20):
@@ -28,21 +27,43 @@ class ValidationAgent(BaseAgent):
 
         elif msg_type == "result":
             source = content.get("source")
-            results = content.get("results")
+            results = content.get("results", [])
 
-            if source:
+            # Guardar resultados solo si son de una fuente esperada
+            if source in self.expected_sources:
                 self.received_data[source] = results
 
+            # Esperar hasta recibir TODAS las fuentes esperadas
             if self.expected_sources.issubset(self.received_data.keys()):
-                candidates = self.received_data.get("embedding", [])
+                # Combinar candidatos de todas las fuentes recibidas
+                candidates = []
+                for src in self.expected_sources:
+                    candidates.extend(self.received_data.get(src, []))
+                
+                for i in range(len(candidates)):
+                    if not isinstance(candidates[i], str):
+                        candidates[i] = self.stringify_candidate(candidates[i])
+
                 restrictions = await self.extract_constraints(self.query, candidates)
                 selected = await self.ant_colony_optimization(candidates, restrictions)
                 explanation = self.explain(selected, restrictions)
 
                 # ⚠️ Verificación de suficiencia con el modelo de lenguaje
-                suficiencia = await self.verifica_suficiencia(self.query, selected, restrictions["restricciones_fuertes_conjuntas"])
+                restricciones_fuertes = restrictions.get("restricciones_fuertes_conjuntas", [])
+                suficiencia = await self.verifica_suficiencia(self.query, selected, restricciones_fuertes)
 
-                await self.send("coordinator", suficiencia)
+                # Enviar resultado completo al coordinator
+                await self.send("coordinator", {
+                    "type": "validation_result",
+                    "selected": selected,
+                    "explanation": explanation,
+                    "suficiencia": suficiencia,
+                })
+
+                # Limpiar estado interno
+                self.expected_sources = set()
+                self.received_data = {}
+                self.query = None
 
     async def extract_constraints(self, query, candidates):
         prompt = f"""
@@ -52,7 +73,7 @@ y las siguientes respuestas candidatas:
 
 Extrae las restricciones que debe cumplir una respuesta válida.
 Clasifica cada una en tres categorías:
-- restricciones_fuertes: obligatorias que debe cumplir cada respuesta individual.
+- restricciones_fuertes: obligatorias que debe cumplir cada respuesta individual. Si la consulta contiene varias preguntas y hay varias respuestas tal que no queda claro cuál es la restricción fuerte, prioriza que exista el trago que se mencione si es que alguno se menciona. De lo contrario analiza todas las respuestas y pones algún patrón que cumpla la mayoría de ellas.
 - restricciones_debiles: deseables que debe cumplir cada respuesta individual.
 - restricciones_fuertes_conjuntas: que deben cumplirse por el conjunto completo de respuestas (por ejemplo, “recomendar varios tragos”, “que todos los tragos sean del mismo país”, etc.)
 
@@ -255,3 +276,22 @@ Ten en cuenta que el usuario va a preguntar sobre tragos. Asume eso exccepto cua
                 "se_puede_responder_con_datos_locales": True,
                 "razonamiento": "No se pudo interpretar la salida del modelo."
             }
+        
+    def stringify_candidate(self, candidate):
+        if isinstance(candidate, str):
+            return candidate
+
+        if isinstance(candidate, dict):
+            parts = []
+            for key, value in candidate.items():
+                # Convertir listas a string legible
+                if isinstance(value, list):
+                    value_str = "[" + ", ".join(map(str, value)) + "]"
+                else:
+                    value_str = str(value)
+
+                parts.append(f"{key}: {value_str}")
+
+            return " | ".join(parts)
+
+        return str(candidate)

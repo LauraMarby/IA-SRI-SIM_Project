@@ -34,3 +34,4 @@ src/embedding/__pycache__/query_embedding.cpython-310.pyc
 src/environment/__pycache__/agent_system.cpython-313.pyc
 src/ontology/__pycache__/query_ontology.cpython-313.pyc
 src/token.txt
+src/agents/__pycache__/validator_agent.cpython-310.pyc
