@@ -48,8 +48,8 @@ class ValidationAgent(BaseAgent):
                 selected = await self.ant_colony_optimization(candidates, restrictions)
 
                 # ⚠️ Verificación de suficiencia con el modelo de lenguaje
-                restricciones_fuertes = restrictions.get("restricciones_fuertes_conjuntas", [])
-                suficiencia = await self.verifica_suficiencia(self.query, selected, candidates, restricciones_fuertes)
+                restricciones_conjuntas = restrictions.get("restricciones_fuertes_conjuntas", [])
+                suficiencia = await self.verifica_suficiencia(self.query, selected, candidates, restricciones_conjuntas)
 
                 # Enviar resultado completo al coordinator
                 await self.send("coordinator", {
@@ -84,6 +84,9 @@ Devuelve en formato JSON:
 """
         response = await self.model.generate_content_async(prompt)
         
+        if not response or not getattr(response, "text", None):
+            raise ValueError("La salida del modelo está vacía o malformada")
+
         try:
             text = response.text.strip()
             match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", text, re.DOTALL)
@@ -122,7 +125,7 @@ Devuelve en formato JSON:
                     continue  # ya fue evaluada
 
                 seen_keys.add(key)
-                score = await self.evaluate_fitness(solution, restrictions, verificados)
+                score = self.evaluate_fitness(solution, restrictions, verificados)
 
                 if score > best_score:
                     best_score = score
@@ -144,7 +147,7 @@ Devuelve en formato JSON:
                 solution.append(c)
         return solution
 
-    async def evaluate_fitness(self, solution, restrictions, verificados):
+    def evaluate_fitness(self, solution, restrictions, verificados):
         fuertes = restrictions["restricciones_fuertes"]
         debiles = restrictions["restricciones_debiles"]
 
@@ -175,20 +178,16 @@ Devuelve en formato JSON:
 
     async def verifica_matriz(self, respuestas, restricciones):
         prompt = f"""
-Tenemos una lista de respuestas candidatas y una lista de restricciones.
-
-Para cada respuesta, indica si cumple cada restricción (sí o no). 
-
-Responde en formato JSON como una lista de objetos, uno por respuesta. 
-Cada objeto debe tener esta estructura: 
-{{"respuesta": "texto", "cumple": ["sí", "no", "sí", ...]}}
-
-Respuestas:
-{json.dumps(respuestas[:200], ensure_ascii=False)}
-
-Restricciones:
-{json.dumps(restricciones, ensure_ascii=False)}
-"""
+        Tenemos una lista de respuestas candidatas y una lista de restricciones.
+        Para cada respuesta, indica si cumple cada restricción (sí o no). 
+        Responde en formato JSON como una lista de objetos, uno por respuesta. 
+        Cada objeto debe tener esta estructura: 
+        {{"respuesta": "texto", "cumple": ["sí", "no", "sí", ...]}}
+        Respuestas:
+        {json.dumps(respuestas[:200], ensure_ascii=False)}
+        Restricciones:
+        {json.dumps(restricciones, ensure_ascii=False)}
+        """
 
         try:
             output = await self.model.generate_content_async(prompt)
@@ -227,36 +226,22 @@ Restricciones:
         ]
 
         prompt = f"""
-Eres un asistente para procesar consultas de usuarios sobre cocteles y tragos. Dada la siguiente pregunta de usuario:
-
-\"{pregunta}\"
-
-Y la siguiente respuesta obtenidas del sistema:
-
-{json.dumps(respuestas, indent=2, ensure_ascii=False)}
-
-Ten en cuenta además los candidatos a respuesta:
-
-{json.dumps(candidates, indent=2, ensure_ascii=False)}
-
-Y también ten en cuenta que en nuestra base local tenemos estos campos por cada trago: {campos_disponibles}
-
-Evalúa lo siguiente:
-
-1. La respuesta cumple las siguientes restricciones: {', '.join(restricciones_grupales)}?
-2. Si no, ¿puede completarse con elementos de otros candidatos?
-4. ¿Se habría podido responder con todos los campos disponibles por cada trago solicitado?
-
-Responde en JSON con estas claves:
-- "first answer": primera respuesta
-- "add-ons": agregados de candidatos que ayudan a que la respuesta esté completa y sea suficiente
-- "suficiente": True o False que indica si la respuesta es o no suficiente incluyendo los add-ons
-- "se_puede_responder_con_datos_locales": se puede completar la respuesta buscando los campos disponibles por cada trago en la respuesta? True o False
-- "campos requeridos": para cada trago elegido de respuesta, campos locales que deben extraerse para tener una respuesta completa
-- "razonamiento"
-
-Recuerda: Debes ser minimalista en la respuesta y devolver específicamente lo que se pide en la pregunta. No intentes obtener campos para completar respuestas a menos que sea totalmente necesario según la consulta del usuario.
-"""
+        Eres un asistente para procesar consultas de usuarios sobre cocteles y tragos. Dada la siguiente consulta de usuario:
+        \"{pregunta}\"
+        Y la siguiente respuesta obtenida del sistema:
+        {json.dumps(respuestas, indent=2, ensure_ascii=False)}
+        Ten en cuenta además los candidatos a respuesta:
+        {json.dumps(candidates, indent=2, ensure_ascii=False)}
+        Y también ten en cuenta que en nuestra base local tenemos estos datos locales por cada trago: {campos_disponibles}
+        Responde en JSON con estas claves:
+        - "first answer": Respuesta
+        - "add-ons": Agregados de candidatos que ayudan a tener datos suficientes para cumplir las restricciones: {', '.join(restricciones_grupales)}. Si la respuesta ya lo cumple, esto debe ser vacío.
+        - "suficiente": True o False. Indica si los campos "first answer" y "add-ons" contienen todo lo necesario para dar una respuesta mínima y exacta a la consulta. Esta respuesta no tiene por qué contener todos los campos disponibles del trago, solo los que el usuario pide explícitamente.
+        - "datos_locales_suficientes": True o False. Indica si, teniendo los tragos mencionados en "first answer" y "add-ons", si a algunos de ellos le agrego algunos datos locales de nuestrabase local, entonces es suficiente o no para dar una respuesta a la consulta. Si suficiente es True, este campo debe ser True.
+        - "campos requeridos": [trago, [campo1, campo2,...]] En caso que se pueda completar con datos locales: Para cada trago elegido de respuesta, que datos locales que deben extraerse para tener una respuesta completa. El nombre de trago debe ser explícito, y no algo que lo describa.
+        - "razonamiento"
+        Recuerda: Debes ser minimalista en la respuesta y devolver específicamente lo que se pide en la pregunta. No intentes obtener campos para completar respuestas a menos que sea totalmente necesario según la consulta del usuario.
+        """
 
         try:
             response = await self.model.generate_content_async(prompt)
@@ -265,6 +250,9 @@ Recuerda: Debes ser minimalista en la respuesta y devolver específicamente lo q
                 raise ValueError("La salida del modelo está vacía o malformada")
 
             text = response.text.strip().replace("“", "\"").replace("”", "\"")
+
+            if not response or not getattr(response, "text", None):
+                raise ValueError("La salida del modelo está vacía o malformada")
 
             # Buscar JSON en bloque de código si existe
             match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", text, re.DOTALL)

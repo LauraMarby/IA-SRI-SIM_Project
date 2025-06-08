@@ -49,7 +49,7 @@ Responde en JSON con las siguientes claves:
 Este campo no debe tener nombres no especificados, aunque el requisito sea obtener algo de esos tragos. Si no se conoce el nombre del trago, no se incluye aquí, se incluye en las preguntas del embedding.
 - "flavor_of_drink": tragos de los cuales se requiere conocer el sabor, o se especifica que debe ser de alguna manera. Si el trago no se conoce, pero se especifica que debe ser un sabor específico, no se pone aquí.
 - "embedding_query": a partir de la consulta inicial, qué se debe consultar específicamente con el embedding. Esto debe incluir datos específicos de la consulta original, como contexto global o cantidades a resolver. Esta consulta debe estar en inglés. No debe incluir tragos mencionados de los cuales ya se conoce exactamente lo que se quiere (los que aparecen en cocktails), solo preguntas abiertas.
-
+NOTA: Si el usuario no menciona nada respecto a un trago, más que su nombre, asume que quiere saber sus ingredientes y su preparación, pero no dejes todos los datos del trago en false.
 """
 
         response = await self.model.generate_content_async(prompt)
