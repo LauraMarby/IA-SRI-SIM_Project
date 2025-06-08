@@ -46,17 +46,15 @@ class ValidationAgent(BaseAgent):
 
                 restrictions = await self.extract_constraints(self.query, candidates)
                 selected = await self.ant_colony_optimization(candidates, restrictions)
-                explanation = self.explain(selected, restrictions)
 
                 # ⚠️ Verificación de suficiencia con el modelo de lenguaje
                 restricciones_fuertes = restrictions.get("restricciones_fuertes_conjuntas", [])
-                suficiencia = await self.verifica_suficiencia(self.query, selected, restricciones_fuertes)
+                suficiencia = await self.verifica_suficiencia(self.query, selected, candidates, restricciones_fuertes)
 
                 # Enviar resultado completo al coordinator
                 await self.send("coordinator", {
                     "type": "validation_result",
                     "selected": selected,
-                    "explanation": explanation,
                     "suficiencia": suficiencia,
                 })
 
@@ -73,7 +71,7 @@ y las siguientes respuestas candidatas:
 
 Extrae las restricciones que debe cumplir una respuesta válida.
 Clasifica cada una en tres categorías:
-- restricciones_fuertes: obligatorias que debe cumplir cada respuesta individual. Si la consulta contiene varias preguntas y hay varias respuestas tal que no queda claro cuál es la restricción fuerte, prioriza que exista el trago que se mencione si es que alguno se menciona. De lo contrario analiza todas las respuestas y pones algún patrón que cumpla la mayoría de ellas.
+- restricciones_fuertes: obligatorias que debe cumplir cada respuesta individualmente. Este campo no debe quedar vacío. Si se mencionan varias recetas, este campo no debe contener algo específico de ninguna, solo una condición que todas deban cumplir.
 - restricciones_debiles: deseables que debe cumplir cada respuesta individual.
 - restricciones_fuertes_conjuntas: que deben cumplirse por el conjunto completo de respuestas (por ejemplo, “recomendar varios tragos”, “que todos los tragos sean del mismo país”, etc.)
 
@@ -108,33 +106,35 @@ Devuelve en formato JSON:
         verificados = await self.verifica_matriz(candidates, all_restrictions)
 
         pheromones = [1.0] * len(candidates)
-        all_solutions = {}
+        best_solution = None
+        best_score = float("-inf")
+        seen_keys = set()
 
         for _ in range(self.max_iters):
             for _ in range(self.num_ants):
                 solution = self.construct_solution(candidates, pheromones, restrictions)
 
-                # Aseguramos que sea hashable y orden-insensible
-                key = frozenset(solution)
+                # ⚠️ Normalizamos la solución: orden y sin repeticiones
+                solution = sorted(set(solution), key=lambda x: str(x))
+                key = tuple(solution)  # hashable y ordenado
+
+                if key in seen_keys:
+                    continue  # ya fue evaluada
+
+                seen_keys.add(key)
                 score = await self.evaluate_fitness(solution, restrictions, verificados)
 
-                # Guardar solo el mejor score para cada conjunto único
-                if key not in all_solutions or score > all_solutions[key]:
-                    all_solutions[key] = score
+                if score > best_score:
+                    best_score = score
+                    best_solution = solution
 
+            # Actualizar feromonas solo con la mejor solución de esta iteración
             pheromones = self.update_pheromones(
-                [(list(s), sc) for s, sc in all_solutions.items()],
+                [([s for s in best_solution], best_score)] if best_solution else [],
                 pheromones
             )
 
-        # Convertir a lista de soluciones únicas y ordenarlas por score
-        sorted_solutions = sorted(
-            [(sorted(list(s), key=lambda x: str(x)), sc) for s, sc in all_solutions.items()],
-            key=lambda x: x[1],
-            reverse=True
-        )
-
-        return sorted_solutions  # Lista de tuplas: [(solución_ordenada, score), ...]
+        return best_solution, best_score
 
     def construct_solution(self, candidates, pheromones, restrictions):
         solution = []
@@ -173,13 +173,6 @@ Devuelve en formato JSON:
                     pass
         return pheromones
 
-    def explain(self, respuestas, restrictions):
-        return (
-            f"Se seleccionaron {len(respuestas)} respuestas que cumplen con todas las restricciones fuertes: "
-            f"{restrictions['restricciones_fuertes']} y cumplen o maximizan las débiles: "
-            f"{restrictions['restricciones_debiles']}"
-        )
-    
     async def verifica_matriz(self, respuestas, restricciones):
         prompt = f"""
 Tenemos una lista de respuestas candidatas y una lista de restricciones.
@@ -191,35 +184,43 @@ Cada objeto debe tener esta estructura:
 {{"respuesta": "texto", "cumple": ["sí", "no", "sí", ...]}}
 
 Respuestas:
-{json.dumps(respuestas[:200], ensure_ascii=False)}  # limitar para no pasar tokens
+{json.dumps(respuestas[:200], ensure_ascii=False)}
 
 Restricciones:
 {json.dumps(restricciones, ensure_ascii=False)}
 """
 
-        output = await self.model.generate_content_async(prompt)
-
         try:
-            text = output.text.strip()
+            output = await self.model.generate_content_async(prompt)
+
+            if not output or not getattr(output, "text", None):
+                raise ValueError("La salida del modelo está vacía o malformada")
+
+            text = output.text.strip().replace("“", "\"").replace("”", "\"")
+
+            # Intentar extraer bloque JSON con regex
             match = re.search(r"```(?:json)?\s*(\[.*?\])\s*```", text, re.DOTALL)
             if match:
                 text = match.group(1)
-            text = text.replace("“", "\"").replace("”", "\"")
-            parsed = json.loads(text)
+
+            # parsed = json.loads(text)
+            parsed = extraer_respuestas_crudas(text)
 
             mapa = {}
             for obj in parsed:
-                respuesta = obj["respuesta"]
-                for i, estado in enumerate(obj["cumple"]):
-                    mapa[(respuesta, restricciones[i])] = "sí" in estado.lower()
-
+                respuesta = obj.get("respuesta", "").strip()
+                cumple = obj.get("cumple", [])
+                for i, estado in enumerate(cumple):
+                    key = (respuesta, restricciones[i])
+                    mapa[key] = "sí" in estado.lower()
             return mapa
 
         except Exception as e:
-            print(f"[ValidationAgent] Error parsing verificación:\n{output.text}\n{e}")
+            print(f"[ValidationAgent] Error en verifica_matriz:\n{e}")
+            print(f"[ValidationAgent] Output del modelo:\n{getattr(output, 'text', '')}")
             return {(r, c): False for c in respuestas for r in restricciones}
 
-    async def verifica_suficiencia(self, pregunta, respuestas, restricciones_grupales):
+    async def verifica_suficiencia(self, pregunta, respuestas, candidates, restricciones_grupales):
         campos_disponibles = [
             "Url", "Glass", "Ingredients", "Instructions",
             "Review", "History", "Nutrition", "Alcohol_Content", "Garnish"
@@ -230,53 +231,61 @@ Eres un asistente para procesar consultas de usuarios sobre cocteles y tragos. D
 
 \"{pregunta}\"
 
-Y la(s) siguiente(s) respuesta(s) obtenidas del sistema:
+Y la siguiente respuesta obtenidas del sistema:
 
 {json.dumps(respuestas, indent=2, ensure_ascii=False)}
 
+Ten en cuenta además los candidatos a respuesta:
+
+{json.dumps(candidates, indent=2, ensure_ascii=False)}
+
+Y también ten en cuenta que en nuestra base local tenemos estos campos por cada trago: {campos_disponibles}
+
 Evalúa lo siguiente:
 
-1. La primera respuesta cumple las siguientes restricciones: {', '.join(campos_disponibles)}?
-En caso que no, verifique si se pueden cumplir estas restricciones agregando elementos de otras respuestas y detente cuando lo logres. Considera los agregados como add-ons
-2. ¿Se puede responder completamente la pregunta con estas respuestas y sus add-ons? (sí o no).
-3. Si no es suficiente, ¿se podría haber respondido si tuviéramos todos estos campos disponibles por trago?
-Campos por documento:
-{', '.join(campos_disponibles)}
-Ten en cuenta solo los campos indispensables para la respuesta a la pregunta, no te extiendas más de lo necesario.
+1. La respuesta cumple las siguientes restricciones: {', '.join(restricciones_grupales)}?
+2. Si no, ¿puede completarse con elementos de otros candidatos?
+4. ¿Se habría podido responder con todos los campos disponibles por cada trago solicitado?
 
-4. Da un razonamiento final en lenguaje natural.
+Responde en JSON con estas claves:
+- "first answer": primera respuesta
+- "add-ons": agregados de candidatos que ayudan a que la respuesta esté completa y sea suficiente
+- "suficiente": True o False que indica si la respuesta es o no suficiente incluyendo los add-ons
+- "se_puede_responder_con_datos_locales": se puede completar la respuesta buscando los campos disponibles por cada trago en la respuesta? True o False
+- "campos requeridos": para cada trago elegido de respuesta, campos locales que deben extraerse para tener una respuesta completa
+- "razonamiento"
 
-Responde en formato JSON con estas claves:
-- "first answer": respuesta inicial
-- "add-ons": lista de agregados a la respuesta inicial
-- "suficiente": true/false
-- "se_puede_responder_con_datos_locales": true/false
-- "para cada trago elegido de respuesta, campos locales que deben extraerse para tener una respuesta completa": [[trago1, [campo1, campo2...], [trago2, [campo1, campo2, campo 3...]]]]
-- "razonamiento": string
-
-Ten en cuenta que el usuario va a preguntar sobre tragos. Asume eso exccepto cuando se especifique explícitamente lo contrario en la consulta.
+Recuerda: Debes ser minimalista en la respuesta y devolver específicamente lo que se pide en la pregunta. No intentes obtener campos para completar respuestas a menos que sea totalmente necesario según la consulta del usuario.
 """
 
-        response = await self.model.generate_content_async(prompt)
-
         try:
-            text = response.text.strip()
+            response = await self.model.generate_content_async(prompt)
+
+            if not response or not getattr(response, "text", None):
+                raise ValueError("La salida del modelo está vacía o malformada")
+
+            text = response.text.strip().replace("“", "\"").replace("”", "\"")
+
+            # Buscar JSON en bloque de código si existe
             match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", text, re.DOTALL)
             if match:
                 text = match.group(1)
 
-            text = text.replace("“", "\"").replace("”", "\"")
             parsed = json.loads(text)
             return parsed
 
         except Exception as e:
-            print(f"[ValidationAgent] Error parsing verificación de suficiencia:\n{response.text}\n{e}")
+            print(f"[ValidationAgent] Error en verifica_suficiencia:\n{e}")
+            print(f"[ValidationAgent] Output del modelo:\n{getattr(response, 'text', '')}")
             return {
+                "first answer": respuestas[0] if respuestas else "",
+                "add-ons": [],
                 "suficiente": False,
                 "se_puede_responder_con_datos_locales": True,
+                "para cada trago elegido de respuesta, campos locales que deben extraerse para tener una respuesta completa": [],
                 "razonamiento": "No se pudo interpretar la salida del modelo."
             }
-        
+
     def stringify_candidate(self, candidate):
         if isinstance(candidate, str):
             return candidate
@@ -295,3 +304,33 @@ Ten en cuenta que el usuario va a preguntar sobre tragos. Asume eso exccepto cua
             return " | ".join(parts)
 
         return str(candidate)
+
+def extraer_respuestas_crudas(texto):
+    """
+    Extrae manualmente los pares respuesta + cumple de un texto tipo JSON malformado.
+    Retorna una lista de diccionarios válidos para json.loads.
+    """
+    # Extraer manualmente cada bloque de respuesta con su lista "cumple"
+    pattern = re.compile(
+        r'"respuesta"\s*:\s*"(?P<respuesta>.*?)"\s*,\s*"cumple"\s*:\s*(?P<cumple>\[[^\]]+\])',
+        re.DOTALL
+    )
+
+    resultados = []
+    for match in pattern.finditer(texto):
+        raw_respuesta = match.group("respuesta")
+        raw_cumple = match.group("cumple")
+
+        # Limpiar respuesta y cumple
+        respuesta = raw_respuesta.strip().replace('\n', ' ').replace('\\"', '"').replace('"', "'")
+        try:
+            cumple = json.loads(raw_cumple)
+        except json.JSONDecodeError:
+            continue  # Saltar si no puede interpretarse la lista cumple
+
+        resultados.append({
+            "respuesta": respuesta,
+            "cumple": cumple
+        })
+
+    return resultados

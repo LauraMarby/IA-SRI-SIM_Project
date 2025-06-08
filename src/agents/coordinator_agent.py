@@ -47,6 +47,7 @@ class CoordinatorAgent(BaseAgent):
         # flavors = data.get("flavor_of_drink", [])
         # if flavors is not []:
         #     expected_sources.append("flavors agent")
+        #     await self.send("flavors agent", {"cocktails": poner cocteles a averiguar sabor, "flavors": poner sabores buscados en cocteles})
 
         # Avisar al validador de qué fuentes esperar
         if expected_sources:
