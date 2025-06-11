@@ -30,7 +30,7 @@ class UserAgent(BaseAgent):
             # Enviar datos al coordinator
             await self.send("coordinator", intent_data)
 
-            # Esperar respuesta final del knowledge agent
+            # Esperar respuesta final del coordinator
             final_response = await self.receive()
             result = final_response["content"]
 

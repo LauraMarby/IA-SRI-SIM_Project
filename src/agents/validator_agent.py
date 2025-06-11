@@ -53,8 +53,6 @@ class ValidationAgent(BaseAgent):
 
                 # Enviar resultado completo al coordinator
                 await self.send("coordinator", {
-                    "type": "validation_result",
-                    "selected": selected,
                     "suficiencia": suficiencia,
                 })
 
@@ -154,7 +152,7 @@ Devuelve en formato JSON:
         # Validar fuertes individuales
         for r in fuertes:
             if not any(verificados.get((c, r), False) for c in solution):
-                return float('-inf')
+                return -10000
 
         # Validar débiles
         debiles_cumplidas = sum(
@@ -226,21 +224,20 @@ Devuelve en formato JSON:
         ]
 
         prompt = f"""
-        Eres un asistente para procesar consultas de usuarios sobre cocteles y tragos. Dada la siguiente consulta de usuario:
+        You are a bartender assistant for answer questions about drinks. Given this consult:
         \"{pregunta}\"
-        Y la siguiente respuesta obtenida del sistema:
+        And the next answer:
         {json.dumps(respuestas, indent=2, ensure_ascii=False)}
-        Ten en cuenta además los candidatos a respuesta:
+        And these other candidates for answer:
         {json.dumps(candidates, indent=2, ensure_ascii=False)}
-        Y también ten en cuenta que en nuestra base local tenemos estos datos locales por cada trago: {campos_disponibles}
-        Responde en JSON con estas claves:
-        - "first answer": Respuesta
-        - "add-ons": Agregados de candidatos que ayudan a tener datos suficientes para cumplir las restricciones: {', '.join(restricciones_grupales)}. Si la respuesta ya lo cumple, esto debe ser vacío.
-        - "suficiente": True o False. Indica si los campos "first answer" y "add-ons" contienen todo lo necesario para dar una respuesta mínima y exacta a la consulta. Esta respuesta no tiene por qué contener todos los campos disponibles del trago, solo los que el usuario pide explícitamente.
-        - "datos_locales_suficientes": True o False. Indica si, teniendo los tragos mencionados en "first answer" y "add-ons", si a algunos de ellos le agrego algunos datos locales de nuestrabase local, entonces es suficiente o no para dar una respuesta a la consulta. Si suficiente es True, este campo debe ser True.
-        - "campos requeridos": [trago, [campo1, campo2,...]] En caso que se pueda completar con datos locales: Para cada trago elegido de respuesta, que datos locales que deben extraerse para tener una respuesta completa. El nombre de trago debe ser explícito, y no algo que lo describa.
-        - "razonamiento"
-        Recuerda: Debes ser minimalista en la respuesta y devolver específicamente lo que se pide en la pregunta. No intentes obtener campos para completar respuestas a menos que sea totalmente necesario según la consulta del usuario.
+        We also have these information about all of our drinks: {campos_disponibles}
+        Make a JSON like this:
+        - "first answer": The answer as it is given to you.
+        - "add-ons": Some of the candidates that helps to have enough data to accomplish these restrictions: {', '.join(restricciones_grupales)}. If the answer by itself already accomplish this, then this field should be empty.
+        - "suficiente": True or False. Indicates if "first answer" and "add-ons" contains all the necesary data to give an apropiate basic answer, without the fields of information that are not mentioned about each drink of the answer.
+        - "datos_locales_suficientes": True or False. Indicates if, having the drinks on "first answer" and "add-ons", if any of them requires one or more of the data fields that we have for each drink, that are not in the answer, for having information to give an apropiate answer. If "suficiente" is True, then this should be True.
+        - "campos_requeridos": [drink1, [field1, field2,...]] In case that datos_locales_suficientes is True, what info is necessary about each drink that we must retrieve. It must contain the exact name of the drink, and all the required fields including the ones given on the answer.
+        - "razonamiento": The reasoning behind your choices.
         """
 
         try:
@@ -249,18 +246,10 @@ Devuelve en formato JSON:
             if not response or not getattr(response, "text", None):
                 raise ValueError("La salida del modelo está vacía o malformada")
 
-            text = response.text.strip().replace("“", "\"").replace("”", "\"")
+            raw_text = response.text
+            cleaned = manual_json_extract(raw_text)
 
-            if not response or not getattr(response, "text", None):
-                raise ValueError("La salida del modelo está vacía o malformada")
-
-            # Buscar JSON en bloque de código si existe
-            match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", text, re.DOTALL)
-            if match:
-                text = match.group(1)
-
-            parsed = json.loads(text)
-            return parsed
+            return cleaned
 
         except Exception as e:
             print(f"[ValidationAgent] Error en verifica_suficiencia:\n{e}")
@@ -322,3 +311,85 @@ def extraer_respuestas_crudas(texto):
         })
 
     return resultados
+
+def manual_json_extract(text):
+    campos = [
+        "first answer",
+        "add-ons",
+        "suficiente",
+        "datos_locales_suficientes",
+        "campos requeridos",
+        "razonamiento"
+    ]
+
+    resultado = {}
+
+    pattern = '|'.join(re.escape(c) for c in campos)
+    campo_regex = re.compile(rf'("({pattern})"\s*:\s*)', flags=re.IGNORECASE)
+
+    posiciones = []
+    for match in campo_regex.finditer(text):
+        campo = match.group(2)
+        inicio_valor = match.end()
+        inicio_campo = match.start()
+        posiciones.append((campo, inicio_valor, inicio_campo))
+
+    posiciones.append(("__END__", len(text), len(text)))
+
+    for i in range(len(posiciones) - 1):
+        campo, inicio_valor, _ = posiciones[i]
+        _, _, siguiente_campo = posiciones[i + 1]
+
+        valor_bruto = text[inicio_valor:siguiente_campo].strip()
+        if valor_bruto.endswith(','):
+            valor_bruto = valor_bruto[:-1].strip()
+
+        if campo == "campos requeridos":
+            try:
+                pares = re.findall(r'\[\s*"([^"]+)"\s*,\s*\[([^\]]+)\]\s*\]', valor_bruto)
+                procesado = []
+                for nombre, campos_str in pares:
+                    campos_lista = [c.strip().strip('"') for c in campos_str.split(',')]
+                    procesado.append(f"[{nombre}: {', '.join(campos_lista)}]")
+                resultado[campo] = ', '.join(procesado)
+            except Exception:
+                resultado[campo] = "[Formato inválido]"
+
+        elif campo in ["first answer", "add-ons"]:
+            try:
+                match_lista = re.search(r'\[(.*?)\]', valor_bruto, re.DOTALL)
+                if match_lista:
+                    json_raw = '[' + match_lista.group(1).strip() + ']'
+                    json_raw = json_raw.replace("'", '"')
+                    objetos = json.loads(json_raw)
+                    representaciones = []
+                    for item in objetos:
+                        if isinstance(item, dict):
+                            nombre = item.get("drink") or item.get("name")
+                            if nombre:
+                                representaciones.append(nombre)
+                            else:
+                                plano = ' '.join(f"{k} {v}" for k, v in item.items())
+                                representaciones.append(plano)
+                        elif isinstance(item, str):
+                            representaciones.append(item.strip())
+                        else:
+                            representaciones.append(str(item))
+                    resultado[campo] = ' | '.join(representaciones)
+                else:
+                    raise ValueError("No es lista válida")
+            except Exception:
+                # Fallback: texto plano sin intentar parsear
+                valor_limpio = re.sub(r'[\n\r\t]', ' ', valor_bruto)
+                valor_limpio = re.sub(r'[\{\}\[\]]', '', valor_limpio)
+                valor_limpio = re.sub(r'\s+', ' ', valor_limpio)
+                valor_limpio = valor_limpio.strip()
+                resultado[campo] = valor_limpio
+        else:
+            valor_limpio = re.sub(r'[\n\r\t]', ' ', valor_bruto)
+            valor_limpio = re.sub(r'[\[\]\{\}\"\'\:\,()]', '', valor_limpio)
+            valor_limpio = re.sub(r'\s+', ' ', valor_limpio)
+            valor_limpio = valor_limpio.strip()
+            resultado[campo] = valor_limpio
+
+    return resultado

@@ -38,7 +38,7 @@ async def main():
     system = AgentSystem()
 
     user = UserAgent("user", system)
-    coordinator = CoordinatorAgent("coordinator", system)
+    coordinator = CoordinatorAgent("coordinator", system, gemini_model)
     ontology = OntologyAgent("ontology", system, consultar_tragos)
     embedding = EmbeddingAgent("embedding", system, retrieve)
     intent_detector = IntentDetectorAgent("intent_detector", system, gemini_model)
