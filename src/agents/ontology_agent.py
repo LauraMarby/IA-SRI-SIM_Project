@@ -12,5 +12,10 @@ class OntologyAgent(BaseAgent):
     async def handle(self, message):
         cocktail = message["content"]["cocktails"]
         fields = message["content"]["fields"]
+        print("[CONSULTANDO A LA ONTOLOGÍA]")
         results = self.ontology_fn(cocktail, fields, self.onto)
-        await self.send("validator", {"source": "ontology", "results": results, "type": "result"})
+        filtered_results = []
+        for result in results:
+            if "Error" not in result:
+                filtered_results.append(result)
+        await self.send("validator", {"source": "ontology", "results": filtered_results, "type": "result"})

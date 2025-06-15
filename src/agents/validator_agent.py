@@ -2,6 +2,8 @@ import random
 from agents.base_agent import BaseAgent
 import json
 import re
+import ast
+import asyncio
 
 class ValidationAgent(BaseAgent):
     def __init__(self, name, system, model, alpha=100, beta=1, gamma=2, num_ants=10, max_iters=20):
@@ -17,49 +19,86 @@ class ValidationAgent(BaseAgent):
         self.query = None
 
     async def handle(self, message):
-        content = message["content"]
-        msg_type = content.get("type")
+        try:
+            content = message.get("content", {})
+            msg_type = content.get("type")
 
-        if msg_type == "expectation":
-            self.expected_sources = set(content.get("sources", []))
-            self.received_data = {}
-            self.query = content.get("query")
+            if msg_type == "expectation":
+                self.expected_sources = set(content.get("sources", []))
+                self.received_data.clear()
+                self.query = content.get("query")
+                return
 
-        elif msg_type == "result":
+            if msg_type != "result":
+                return  # Ignorar otros tipos por ahora
+
             source = content.get("source")
             results = content.get("results", [])
 
             # Guardar resultados solo si son de una fuente esperada
-            if source in self.expected_sources:
-                self.received_data[source] = results
+            if source not in self.expected_sources:
+                return
 
-            # Esperar hasta recibir TODAS las fuentes esperadas
-            if self.expected_sources.issubset(self.received_data.keys()):
-                # Combinar candidatos de todas las fuentes recibidas
-                candidates = []
-                for src in self.expected_sources:
-                    candidates.extend(self.received_data.get(src, []))
-                
-                for i in range(len(candidates)):
-                    if not isinstance(candidates[i], str):
-                        candidates[i] = self.stringify_candidate(candidates[i])
+            self.received_data[source] = results
 
-                restrictions = await self.extract_constraints(self.query, candidates)
-                selected = await self.ant_colony_optimization(candidates, restrictions)
+            # Si aún no recibimos todos, esperar
+            if not self.expected_sources.issubset(self.received_data.keys()):
+                return
 
-                # ⚠️ Verificación de suficiencia con el modelo de lenguaje
-                restricciones_conjuntas = restrictions.get("restricciones_fuertes_conjuntas", [])
-                suficiencia = await self.verifica_suficiencia(self.query, selected, candidates, restricciones_conjuntas)
+            print("[CONFORMANDO CONJUNTO DE DATOS PARA LA RESPUESTA]")
 
-                # Enviar resultado completo al coordinator
-                await self.send("coordinator", {
-                    "suficiencia": suficiencia,
-                })
+            # Recolectar y normalizar candidatos
+            candidates = []
+            for src in self.expected_sources:
+                for result in self.received_data.get(src, []):
+                    candidates.append(self.stringify_candidate(result))
 
-                # Limpiar estado interno
-                self.expected_sources = set()
-                self.received_data = {}
-                self.query = None
+            if not candidates:
+                await self.send("coordinator", {"error": "No se encontraron candidatos para evaluar."})
+                self._clear_state()
+                return
+
+            # Extraer restricciones
+            restrictions = await self.extract_constraints(self.query, candidates)
+            if not restrictions.get("fuertes"):
+                await self.send("coordinator", {"error": "No se pudieron extraer restricciones fuertes válidas."})
+                self._clear_state()
+                return
+
+            # Crear matriz de verificación
+            all_restrictions = restrictions["fuertes"] + restrictions["débiles"]
+            matriz = await self.verifica_matriz(candidates, all_restrictions)
+
+            # optimizer = TabuSearchRestricciones(max_iters=200, tabu_size=30)
+            # selected, puntuacion = optimizer.optimize(candidates, restrictions["fuertes"], restrictions["débiles"], matriz)
+            while True:
+                try:
+                    selected, score = await self.ant_colony_optimization(candidates, restrictions, matriz)
+                    break  # Éxito, salimos del bucle
+                except Exception as e:
+                    print(f"[ACO] Error durante la ejecución: {e}. Reintentando...")
+                    await asyncio.sleep(0.1)  # Pequeña pausa opcional para evitar bucles frenéticos
+
+
+            # Verificar suficiencia
+            restricciones_conjuntas = restrictions.get("conjuntas", [])
+            print("[VALIDANDO CONTENIDO DE LA RESPUESTA]")
+            suficiencia = await self.verifica_suficiencia(self.query, selected, candidates, restricciones_conjuntas)
+            tragos_extra = extraer_por_prefijo(candidates, suficiencia["respuesta_expandida"])
+
+
+            # Enviar resultado final al coordinator
+            await self.send("coordinator", {"suficiencia": suficiencia, "drinks": selected, "extra": tragos_extra})
+
+            self._clear_state()
+
+        except Exception as e:
+            await self.send("coordinator", {"error": f"Error inesperado en ValidationAgent: {str(e)}"})
+
+    def _clear_state(self):
+        self.expected_sources.clear()
+        self.received_data.clear()
+        self.query = None
 
     async def extract_constraints(self, query, candidates):
         prompt = f"""
@@ -67,20 +106,17 @@ Eres un asistente para procesar consultas de usuarios sobre cocteles y tragos. D
 y las siguientes respuestas candidatas:
 {[c[:200] for c in candidates]}
 
-Extrae las restricciones que debe cumplir una respuesta válida.
-Clasifica cada una en tres categorías:
-- restricciones_fuertes: obligatorias que debe cumplir cada respuesta individualmente. Este campo no debe quedar vacío. Si se mencionan varias recetas, este campo no debe contener algo específico de ninguna, solo una condición que todas deban cumplir.
-- restricciones_debiles: deseables que debe cumplir cada respuesta individual.
-- restricciones_fuertes_conjuntas: que deben cumplirse por el conjunto completo de respuestas (por ejemplo, “recomendar varios tragos”, “que todos los tragos sean del mismo país”, etc.)
-
-Devuelve en formato JSON:
-{{
-  "restricciones_fuertes": [...],
-  "restricciones_debiles": [...],
-  "restricciones_fuertes_conjuntas": [...]
-}}
+Extrae las restricciones de contenido que debe cumplir una buena respuesta. Estas restricciones deben clasificarse en fuertes y débiles.\n"
+Las restricciones fuertes son aquellas que garantizan todo lo que se menciona explícitamente en la pregunta respecto a un trago o tragos, y debe ser un conjunto pequeño de restricciones separadas, representando cada problemática a resolver de la pregunta. Cada restricción debe ser un texto lo más básico y pequeño posible. No incluya restricciones de tragos conjuntos, separe en problemáticas por cada trago."
+Las restricciones débiles son aquellas que no se tienen que cumplir necesariamente, pero aporta valor a la calidad de la respuesta. Debe ser un conjunto pequeño también, de restricciones separadas. No incluya restricciones de tragos conjuntos, separe en problemáticas por cada trago."
+Cada restricción debe estar orientada exclusivamente a un problema que debe cumplirse respecto a un único trago. Además, cada candidato de respuesta corresponde también a un único trago, así que ningún documento contendrá independientemente varias recetas sobre varios tragos, por lo cual este tipo de restricciones debe quedar situada en otro campo.
+Devuelva un JSON con el siguiente formato:\n
+fuertes: [Todas las restricciones fuertes respecto a cada trago. Esto debe ser una lista de string]\n
+débiles: [Lista o conjunto de restricciones débiles. Esto debe ser una lista de string]\n
+conjuntas: [Conjunto de restricciones que se debe cumplir en general, y depende de la cantidad de tragos y especificación de los mismos que requiere la pregunta.]
+NOTA: Ninguna de las restricciones extraidas debe ser algo ambiguo, tienen que ser afirmaciones fácilmente verificables y explícitas. Además, ignora restricciones que no traten explícitamente sobre la bebida en cuestión.
 """
-        response = await self.model.generate_content_async(prompt)
+        response = self.model.generate_content(prompt)
         
         if not response or not getattr(response, "text", None):
             raise ValueError("La salida del modelo está vacía o malformada")
@@ -102,77 +138,142 @@ Devuelve en formato JSON:
             print(f"[ValidationAgent] Error parsing restricciones:\n{response.text}\n{e}")
             return {"restricciones_fuertes": [], "restricciones_debiles": []}
 
-    async def ant_colony_optimization(self, candidates, restrictions):
-        all_restrictions = restrictions["restricciones_fuertes"] + restrictions["restricciones_debiles"]
-        verificados = await self.verifica_matriz(candidates, all_restrictions)
+    async def ant_colony_optimization(self, candidates, restrictions, matriz):
+        self.all_candidates = candidates  # ✅ Asignamos para uso global en esta instancia
 
         pheromones = [1.0] * len(candidates)
         best_solution = None
         best_score = float("-inf")
         seen_keys = set()
 
-        for _ in range(self.max_iters):
-            for _ in range(self.num_ants):
-                solution = self.construct_solution(candidates, pheromones, restrictions)
+        try:
+            for _ in range(self.max_iters):
+                for _ in range(self.num_ants):
+                    solution = self.construct_solution(candidates, pheromones)
 
-                # ⚠️ Normalizamos la solución: orden y sin repeticiones
-                solution = sorted(set(solution), key=lambda x: str(x))
-                key = tuple(solution)  # hashable y ordenado
+                    # ⚠️ Normalizamos la solución: orden y sin repeticiones
+                    solution = sorted(set(solution), key=lambda x: str(x))
+                    key = tuple(solution)
 
-                if key in seen_keys:
-                    continue  # ya fue evaluada
+                    if key in seen_keys:
+                        continue
 
-                seen_keys.add(key)
-                score = self.evaluate_fitness(solution, restrictions, verificados)
+                    seen_keys.add(key)
+                    score = self.evaluate_fitness(solution, restrictions, matriz)
 
-                if score > best_score:
-                    best_score = score
-                    best_solution = solution
+                    if score > best_score:
+                        best_score = score
+                        best_solution = solution
 
-            # Actualizar feromonas solo con la mejor solución de esta iteración
-            pheromones = self.update_pheromones(
-                [([s for s in best_solution], best_score)] if best_solution else [],
-                pheromones
-            )
+                pheromones = self.update_pheromones(
+                    [([s for s in best_solution], best_score)] if best_solution else [],
+                    pheromones
+                )
 
-        return best_solution, best_score
+            if best_solution:
+                return best_solution, best_score
+            else:
+                raise ValueError("No se encontró solución óptima")
 
-    def construct_solution(self, candidates, pheromones, restrictions):
+        except Exception as e:
+            print(f"[WARNING] Error en ACO: {e}")
+
+            # Buscar un candidato que cumpla la mayoría de restricciones
+            num_fuertes = len(restrictions["fuertes"])
+            num_debiles = len(restrictions["débiles"])
+            mejor_idx = None
+            mejor_score = float("-inf")
+
+            for idx, vector in enumerate(matriz):
+                fuertes_cumplidas = sum(vector[:num_fuertes])
+                debiles_cumplidas = sum(vector[num_fuertes:])
+                score = self.alpha * fuertes_cumplidas + self.beta * debiles_cumplidas - self.gamma * 1
+
+                if score > mejor_score:
+                    mejor_score = score
+                    mejor_idx = idx
+
+            if mejor_idx is not None:
+                return [candidates[mejor_idx]], mejor_score
+            else:
+                # Si ni siquiera eso se puede, devuelve el primero
+                return [candidates[0]], -10000
+
+    def construct_solution(self, candidates, pheromones):
         solution = []
-        for i, c in enumerate(candidates):
-            p = pheromones[i] * random.uniform(0.5, 1.5)
-            if random.random() < p / (p + 1):
-                solution.append(c)
-        return solution
+        num_to_select = min(5, len(candidates))
+        total_pheromones = sum(pheromones)
+        selected_indices = set()
 
-    def evaluate_fitness(self, solution, restrictions, verificados):
-        fuertes = restrictions["restricciones_fuertes"]
-        debiles = restrictions["restricciones_debiles"]
+        while len(selected_indices) < num_to_select:
+            # Recalcular el total de feromonas solo de los disponibles
+            available_indices = [i for i in range(len(candidates)) if i not in selected_indices]
+            if not available_indices:
+                break  # ya no hay más para seleccionar
 
-        # Validar fuertes individuales
-        for r in fuertes:
-            if not any(verificados.get((c, r), False) for c in solution):
-                return -10000
+            total_pheromones = sum(pheromones[i] for i in available_indices)
+            r = random.uniform(0, total_pheromones)
+            cumulative = 0.0
 
-        # Validar débiles
-        debiles_cumplidas = sum(
-            any(verificados.get((c, r), False) for c in solution) for r in debiles
-        )
+            for i in available_indices:
+                cumulative += pheromones[i]
+                if cumulative >= r:
+                    selected_indices.add(i)
+                    break
 
-        return self.alpha * len(fuertes) + self.beta * debiles_cumplidas - self.gamma * len(solution)
+        return [candidates[i] for i in selected_indices]
+
+    def evaluate_fitness(self, solution, restrictions, matriz):
+        fuertes = restrictions["fuertes"]
+        debiles = restrictions["débiles"]
+
+        # Índices de restricciones
+        num_fuertes = len(fuertes)
+        num_debiles = len(debiles)
+
+        # Inicializamos vectores de cumplimiento conjunto
+        cumples_f = [False] * num_fuertes
+        cumples_d = [False] * num_debiles
+
+        for cand in solution:
+            try:
+                idx = next((i for i, c in enumerate(self.all_candidates) if str(c) == str(cand)), None)
+                if idx is None:
+                    continue
+                vector = matriz[idx]
+                for i in range(num_fuertes):
+                    cumples_f[i] = cumples_f[i] or vector[i]
+                for j in range(num_debiles):
+                    cumples_d[j] = cumples_d[j] or vector[num_fuertes + j]
+            except ValueError:
+                continue  # Si por alguna razón el candidato no está
+
+        # Ponderación: penaliza si no cumple todas las fuertes
+        if not all(cumples_f):
+            return -10000
+
+        debiles_cumplidas = sum(cumples_d)
+        return self.alpha * num_fuertes + self.beta * debiles_cumplidas - self.gamma * len(solution)
 
     def update_pheromones(self, solutions, pheromones):
         decay = 0.3
-        for i in range(len(pheromones)):
-            pheromones[i] *= (1 - decay)
+        pheromones = [p * (1 - decay) for p in pheromones]
+
         for solution, score in solutions:
             for c in solution:
                 try:
-                    index = solution.index(c)
-                    pheromones[index] += score / 100.0
+                    idx = self.all_candidates.index(c)
+                    pheromones[idx] += score / 100.0
                 except ValueError:
                     pass
         return pheromones
+
+    def candidate_index(self, candidate):
+        # Aseguramos comparación segura
+        for i, c in enumerate(self.all_candidates):
+            if str(c) == str(candidate):  # cuidado si son objetos
+                return i
+        raise ValueError("Candidate not found")
 
     async def verifica_matriz(self, respuestas, restricciones):
         prompt = f"""
@@ -188,7 +289,7 @@ Devuelve en formato JSON:
         """
 
         try:
-            output = await self.model.generate_content_async(prompt)
+            output = self.model.generate_content(prompt)
 
             if not output or not getattr(output, "text", None):
                 raise ValueError("La salida del modelo está vacía o malformada")
@@ -203,14 +304,16 @@ Devuelve en formato JSON:
             # parsed = json.loads(text)
             parsed = extraer_respuestas_crudas(text)
 
-            mapa = {}
+            cumplimientos = []
+
             for obj in parsed:
-                respuesta = obj.get("respuesta", "").strip()
                 cumple = obj.get("cumple", [])
-                for i, estado in enumerate(cumple):
-                    key = (respuesta, restricciones[i])
-                    mapa[key] = "sí" in estado.lower()
-            return mapa
+
+                # Convertir cada "sí"/"no" en bool
+                vector_bool = ["sí" in estado.lower() for estado in cumple]
+                cumplimientos.append(vector_bool)
+
+            return cumplimientos
 
         except Exception as e:
             print(f"[ValidationAgent] Error en verifica_matriz:\n{e}")
@@ -218,50 +321,43 @@ Devuelve en formato JSON:
             return {(r, c): False for c in respuestas for r in restricciones}
 
     async def verifica_suficiencia(self, pregunta, respuestas, candidates, restricciones_grupales):
-        campos_disponibles = [
-            "Url", "Glass", "Ingredients", "Instructions",
-            "Review", "History", "Nutrition", "Alcohol_Content", "Garnish"
-        ]
 
         prompt = f"""
-        You are a bartender assistant for answer questions about drinks. Given this consult:
-        \"{pregunta}\"
-        And the next answer:
-        {json.dumps(respuestas, indent=2, ensure_ascii=False)}
-        And these other candidates for answer:
-        {json.dumps(candidates, indent=2, ensure_ascii=False)}
-        We also have these information about all of our drinks: {campos_disponibles}
-        Make a JSON like this:
-        - "first answer": The answer as it is given to you.
-        - "add-ons": Some of the candidates that helps to have enough data to accomplish these restrictions: {', '.join(restricciones_grupales)}. If the answer by itself already accomplish this, then this field should be empty.
-        - "suficiente": True or False. Indicates if "first answer" and "add-ons" contains all the necesary data to give an apropiate basic answer, without the fields of information that are not mentioned about each drink of the answer.
-        - "datos_locales_suficientes": True or False. Indicates if, having the drinks on "first answer" and "add-ons", if any of them requires one or more of the data fields that we have for each drink, that are not in the answer, for having information to give an apropiate answer. If "suficiente" is True, then this should be True.
-        - "campos_requeridos": [drink1, [field1, field2,...]] In case that datos_locales_suficientes is True, what info is necessary about each drink that we must retrieve. It must contain the exact name of the drink, and all the required fields including the ones given on the answer.
-        - "razonamiento": The reasoning behind your choices.
-        """
+        Tengo una pregunta que realizó un usuario, y tengo información que puedo usar para conformar una respuesta.
 
-        try:
-            response = await self.model.generate_content_async(prompt)
+Pregunta del usuario:
+"{pregunta}"
 
-            if not response or not getattr(response, "text", None):
-                raise ValueError("La salida del modelo está vacía o malformada")
+Información que considero importante:
+{[r for r in respuestas]}
 
-            raw_text = response.text
-            cleaned = manual_json_extract(raw_text)
+Información que considero útil y secundaria:
+{[r for r in candidates]}
 
-            return cleaned
+Además, estas son las restricciones que debe cumplir una buena respuesta, además de las que puedas inferir por la pregunta del usuario:
+{[r for r in restricciones_grupales]}
 
-        except Exception as e:
-            print(f"[ValidationAgent] Error en verifica_suficiencia:\n{e}")
-            print(f"[ValidationAgent] Output del modelo:\n{getattr(response, 'text', '')}")
-            return {
-                "first answer": respuestas[0] if respuestas else "",
-                "add-ons": [],
-                "suficiente": False,
-                "se_puede_responder_con_datos_locales": True,
-                "para cada trago elegido de respuesta, campos locales que deben extraerse para tener una respuesta completa": [],
-                "razonamiento": "No se pudo interpretar la salida del modelo."
-            }
+Tu respuesta debe ser un OBJETO JSON con la siguiente estructura exacta, usando solo tipos válidos de JSON (booleanos, listas, cadenas, etc.), **sin poner todo como texto ni concatenar campos**:
+
+```json
+{{
+  "suficiente": Indica si con la información importante es suficiente o no dar una respuesta correcta que cumpla las restricciones.
+  "expandida_suficiente": Indica si agregando algunos de los fragmentos extra, es suficiente o no dar una respuesta correcta que cumpla las restricciones.
+  "respuesta_expandida": [...] Lista con fragmentos extra útiles para poder dar una respuesta completa. **Debes poner los fragmentos completos en caso que haya alguno**
+  "razonamiento": "..."
+  "requiere_búsqueda_online": True o False. Esto depende del contexto de la pregunta. Por ejemplo si me piden un trago que no encuentro, esto debe ser True, pero si me piden algo como (Recomiendame algo) sin dar detalles de sus gustos, esto debe ser falso porque cualquier trago podría gustar.
+}}
+"""
+
+        response = self.model.generate_content(prompt)
+
+        if not response or not getattr(response, "text", None):
+            raise ValueError("La salida del modelo está vacía o malformada")
+
+        raw_text = response.text
+        cleaned = manual_json_extract(raw_text)
+
+        return cleaned
 
     def stringify_candidate(self, candidate):
         if isinstance(candidate, str):
@@ -313,83 +409,60 @@ def extraer_respuestas_crudas(texto):
     return resultados
 
 def manual_json_extract(text):
-    campos = [
-        "first answer",
-        "add-ons",
-        "suficiente",
-        "datos_locales_suficientes",
-        "campos requeridos",
-        "razonamiento"
-    ]
+    """
+    Extrae manualmente los campos de interés desde un bloque textual que aparenta ser un JSON malformado.
+    Devuelve un diccionario válido con los campos esperados.
+    """
+    campos = {
+        "suficiente": None,
+        "expandida_suficiente": None,
+        "respuesta_expandida": [],
+        "campos_suficientes": [],
+        "razonamiento": ""
+    }
 
-    resultado = {}
+    def extract_bool(name):
+        pattern = rf'"{name}"\s*:\s*(true|false)'
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match:
+            return match.group(1).lower() == "true"
+        return None
 
-    pattern = '|'.join(re.escape(c) for c in campos)
-    campo_regex = re.compile(rf'("({pattern})"\s*:\s*)', flags=re.IGNORECASE)
-
-    posiciones = []
-    for match in campo_regex.finditer(text):
-        campo = match.group(2)
-        inicio_valor = match.end()
-        inicio_campo = match.start()
-        posiciones.append((campo, inicio_valor, inicio_campo))
-
-    posiciones.append(("__END__", len(text), len(text)))
-
-    for i in range(len(posiciones) - 1):
-        campo, inicio_valor, _ = posiciones[i]
-        _, _, siguiente_campo = posiciones[i + 1]
-
-        valor_bruto = text[inicio_valor:siguiente_campo].strip()
-        if valor_bruto.endswith(','):
-            valor_bruto = valor_bruto[:-1].strip()
-
-        if campo == "campos requeridos":
+    def extract_list(name):
+        pattern = rf'"{name}"\s*:\s*\[(.*?)\]'
+        match = re.search(pattern, text, re.DOTALL)
+        if match:
+            content = f"[{match.group(1)}]"
             try:
-                pares = re.findall(r'\[\s*"([^"]+)"\s*,\s*\[([^\]]+)\]\s*\]', valor_bruto)
-                procesado = []
-                for nombre, campos_str in pares:
-                    campos_lista = [c.strip().strip('"') for c in campos_str.split(',')]
-                    procesado.append(f"[{nombre}: {', '.join(campos_lista)}]")
-                resultado[campo] = ', '.join(procesado)
+                return ast.literal_eval(content)
             except Exception:
-                resultado[campo] = "[Formato inválido]"
+                return []
+        return []
 
-        elif campo in ["first answer", "add-ons"]:
-            try:
-                match_lista = re.search(r'\[(.*?)\]', valor_bruto, re.DOTALL)
-                if match_lista:
-                    json_raw = '[' + match_lista.group(1).strip() + ']'
-                    json_raw = json_raw.replace("'", '"')
-                    objetos = json.loads(json_raw)
-                    representaciones = []
-                    for item in objetos:
-                        if isinstance(item, dict):
-                            nombre = item.get("drink") or item.get("name")
-                            if nombre:
-                                representaciones.append(nombre)
-                            else:
-                                plano = ' '.join(f"{k} {v}" for k, v in item.items())
-                                representaciones.append(plano)
-                        elif isinstance(item, str):
-                            representaciones.append(item.strip())
-                        else:
-                            representaciones.append(str(item))
-                    resultado[campo] = ' | '.join(representaciones)
-                else:
-                    raise ValueError("No es lista válida")
-            except Exception:
-                # Fallback: texto plano sin intentar parsear
-                valor_limpio = re.sub(r'[\n\r\t]', ' ', valor_bruto)
-                valor_limpio = re.sub(r'[\{\}\[\]]', '', valor_limpio)
-                valor_limpio = re.sub(r'\s+', ' ', valor_limpio)
-                valor_limpio = valor_limpio.strip()
-                resultado[campo] = valor_limpio
-        else:
-            valor_limpio = re.sub(r'[\n\r\t]', ' ', valor_bruto)
-            valor_limpio = re.sub(r'[\[\]\{\}\"\'\:\,()]', '', valor_limpio)
-            valor_limpio = re.sub(r'\s+', ' ', valor_limpio)
-            valor_limpio = valor_limpio.strip()
-            resultado[campo] = valor_limpio
+    def extract_string(name):
+        pattern = rf'"{name}"\s*:\s*"(.*?)"'
+        match = re.search(pattern, text, re.DOTALL)
+        if match:
+            return match.group(1).strip()
+        return ""
 
+    campos["suficiente"] = extract_bool("suficiente")
+    campos["expandida_suficiente"] = extract_bool("expandida_suficiente")
+    campos["respuesta_expandida"] = extract_list("respuesta_expandida")
+    campos["campos_suficientes"] = extract_list("campos_suficientes")
+    campos["razonamiento"] = extract_string("razonamiento")
+    campos["online"] = extract_bool("requiere_búsqueda_online")
+
+    return campos
+
+def extraer_por_prefijo(X, Y):
+    """
+    Devuelve un diccionario donde cada clave de Y contiene todos los fragmentos de X
+    que comienzan con ese prefijo exacto.
+    """
+    resultado = {y: [] for y in Y}
+    for y in Y:
+        for x in X:
+            if x.startswith(y):
+                resultado[y].append(x)
     return resultado

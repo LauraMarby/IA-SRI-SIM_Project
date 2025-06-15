@@ -14,6 +14,8 @@ class CoordinatorAgent(BaseAgent):
         sender = message["from"]
         if sender == "user":
     
+            print("[BUSCANDO INFORMACIÓN EN LAS BASES DE CONOCIMIENTOS]")
+
             content = message["content"]
 
             # Limpiar formato tipo Markdown si viene con ```
@@ -70,22 +72,34 @@ class CoordinatorAgent(BaseAgent):
             await self.send("embedding", payload_embedding)
             
         elif sender=="validator":
-            content = message["content"]["suficiencia"]
-            suficiente = content["suficiente"]
-            if suficiente == 'true':
-                respuesta = content["first answer"]
-                complementos = content["add-ons"]
-                razonamiento = content["razonamiento"]
-
-                # Enviando respuesta
-                await self.send_response(respuesta, complementos, razonamiento)
-
-                # Limpiando memoria
-                self.lang = "en"
-                self.query = "Empty query"
-                
+            if 'error' in message["content"]:
+                print("[EMITIENDO RESPUESTA]\n")
+                await self.send_response([], [], "Información al respecto no encontrada")
             else:
-                pass
+                content = message["content"]["suficiencia"]
+                drinks = message["content"]["drinks"]
+                extra = message["content"]["extra"]
+                suficiente = content["suficiente"]
+                expandida_suficiente = content["expandida_suficiente"]
+                razonamiento = content["razonamiento"]
+                online = content["online"]
+                if suficiente == True or expandida_suficiente==True:
+                    
+                    # Enviando respuesta
+                    print("[EMITIENDO RESPUESTA]\n")
+                    await self.send_response(drinks, extra, razonamiento)
+
+                    # Limpiando memoria
+                    self.lang = "en"
+                    self.query = "Empty query"
+                
+                elif online:
+                    print("[EMITIENDO RESPUESTA]\n")
+                    await self.send_response([], [], "Información al respecto no encontrada. Realizando búsqueda online.")
+                
+                else:
+                    print("[EMITIENDO RESPUESTA]\n")
+                    await self.send_response(drinks, extra, "Información al respecto no encontrada. Voy a proceder a buscar en la web al respecto.")
 
     async def send_response(self, respuesta, complementos, razonamiento):
         # Construir el prompt en base a la query original, la respuesta seleccionada, 
@@ -101,11 +115,13 @@ class CoordinatorAgent(BaseAgent):
     The reasoning used to choose this answer:
     \"\"\"{razonamiento}\"\"\"
     Now, write a final answer in {self.lang.upper()} to send to the user, using the selected data and reasoning. Do not mention that it came from a model or that it was selected. Just provide the final, helpful answer.
+    If you see in the reasoning something like "Información al respecto no encontrada. Realizando búsqueda online." You should mention to the user that his request is being searched online and that he should wait.
+    On that case, the user should wait for your answer and will not be able to insert an input, so don't try to tell him to do anything else but wait.
     """
 
         try:
             # Enviar el prompt al modelo (asumiendo método generate)
-            output = await self.model.generate_content_async(prompt)
+            output = self.model.generate_content(prompt)
 
             # Extraer texto limpio
             final_answer = output.text.strip() if hasattr(output, 'text') else str(output).strip()

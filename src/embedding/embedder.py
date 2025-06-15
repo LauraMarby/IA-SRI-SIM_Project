@@ -6,7 +6,9 @@ from typing import List
 from sentence_transformers import SentenceTransformer
 
 # ==== Configuración ====
-model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+model_path = "C:/Users/ASUS/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/c9745ed1d9f207416be6d2e6f8de32d1f16199bf"
+model = SentenceTransformer(model_path)
+#model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
 DATA_DIR = Path("src/data")
 OUTPUT_FILE = Path("src/embedding/embeddings.pkl")

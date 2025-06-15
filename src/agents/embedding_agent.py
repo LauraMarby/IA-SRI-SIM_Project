@@ -12,5 +12,6 @@ class EmbeddingAgent(BaseAgent):
     async def handle(self, message):
         query = message["content"]["query"]
         # Preprocesar la query
+        print("[CONSULTANDO AL REPOSITORIO VECTORIAL]")
         results = self.embedding_fn(query, self.data)
         await self.send("validator", {"source": "embedding", "results": results, "type": "result"})

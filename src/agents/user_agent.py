@@ -32,7 +32,7 @@ class UserAgent(BaseAgent):
 
             # Esperar respuesta final del coordinator
             final_response = await self.receive()
-            result = final_response["content"]
+            result = final_response["content"]["content"]
 
             # Mostrar respuesta final al usuario
             ui.show_response(result)
