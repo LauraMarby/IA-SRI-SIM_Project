@@ -1,279 +1,87 @@
-import requests
-from bs4 import BeautifulSoup
-import re
-from tenacity import retry, stop_after_attempt, wait_exponential
-from utils.extract_robots import analyze_robots
+from agents.base_agent import BaseAgent
+from googlesearch import search
+from utils.save_visited_urls import is_url_visited, save_url_visited_urls
 from utils.write_to_json import write_to_json
+from utils.initial_crawling_scrapping import fetch_url, find_alcohol_content, find_garnish, find_glass, find_history, find_ingredients, find_instructions, find_name, find_nutrition, find_review
+from trafilatura import extract
+from bs4 import BeautifulSoup
+from embedding.embedder import embed_new_document
+from pathlib import Path
 
-target_url = "https://www.diffordsguide.com/"
-
-robot_data, sitemaps = analyze_robots(target_url) 
-
-visited_urls = set()
-
-max_crawl = 4000
-
-url_pattern = re.compile(r"^https://www\.diffordsguide\.com/cocktails/recipe/\d+/")
-sitemap_pattern = re.compile(r"^https://www\.diffordsguide\.com/sitemap/cocktail\.xml")
-
-# drinks_data = []
-
-session = requests.Session()
-
-@retry(
-    stop=stop_after_attempt(4),  
-    wait=wait_exponential(multiplier=5, min=4, max=5),  
-)
-def fetch_url(url):
-    """
-    Obtiene la url y devuelve el Response neecsario para BeautifulSoup 
-    """
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
-    }
-    response = session.get(url, headers=headers)
-    response.raise_for_status()
-    return response
-
-def find_name(soup):
-    """
-    Encuentra el nombre del coctel en la pagina web
-    """
-    try:
-        container1 = soup.find('div', class_='layout-container__body')
-        container2 = container1.find('div', class_='legacy-strip legacy-strip--content legacy-strip--notch legacy-strip--cocktails')
-        grid = container2.find('div', class_='grid-container')
-        name = grid.find('h1', class_='legacy-strip__heading').text.strip()
-        return name
-    except Exception as e:
-        return f"Ocurrió un error: {e}"
-
-def find_glass(soup):
-    """
-    Encuentra el recipiente en el que se sirve el coctel en cuestión
-    """
-    try:
-        serve_span = soup.find('span', string=lambda s: s and 'Serve in a' in s)
-
-        if serve_span:
-            serve_a = serve_span.find_next_sibling('a')
-            glass = serve_a.text.strip() if serve_a else None
-            # print(glass)
-            return glass
-        else:
-            # print("No se encontró el recipiente.")
-            return ''
-    except Exception as e:
-        return f"Ocurrió un error: {e}"
-    
-def find_ingredients(soup):
-    """
-    Encuentra los ingredientes necesarios para hacer el coctel
-    """
-    try:
-        ingredients = []
-
-        table = soup.find('table', class_='legacy-ingredients-table')
-        tbody = table.find('tbody')
-
-        for row in tbody.find_all('tr'):
-            tds = row.find_all('td')
-            if len(tds) >= 2:
-                amount = ''.join(tds[0].stripped_strings)
-                ingredient = tds[1].get_text(separator=" ", strip=True)
-
-                ingredients.append(f"{amount} {ingredient}")
-                # print(f"{amount} - {ingredient}")
+class Crawler_Agent(BaseAgent):
+    def __init__(self, name, system):
+        super().__init__(name, system)
         
-        return ingredients
-    except Exception as e:
-        return f"Ocurrió un error: {e}"
+        self.DATA_DIR = "src/data/"
 
-def find_instructions(soup):
-    """
-    Encuentra las instrucciones para crear el coctel
-    """
-    try:
-        instructions = []
-
-        how_to_make = soup.find('h2', string="How to make:")
-        instructions_list = how_to_make.find_next_sibling('ol')
-
-        if instructions_list:
-            for li in instructions_list.find_all('li'):
-                parts = []
-                for element in li.contents:
-                    if element.name == 'a':
-                        parts.append(element.get_text(separator=" ", strip=True))
-                    elif isinstance(element, str):
-                        parts.append(element.strip())
-                    else:
-                        parts.append(element.get_text(separator=" ", strip=True))
-
-                instruction = ' '.join(parts)
-                instruction = ' '.join(instruction.split())
-                instructions.append(instruction)
-        else:
-            instructions_list = how_to_make.find_next_sibling('p')
-            instructions.append(instructions_list.get_text(separator=" ", strip=True))
-
-        # for i, instr in enumerate(instructions, 1):
-        #     print(f"{i}. {instr}")
-
-        return instructions
-    except Exception as e:
-        return f"Ocurrió un error: {e}"
-
-def find_review(soup):
-    """
-    Encuentra el criterio que se tiene de este coctel
-    """
-    try:
-        review_content = ''
-        review = soup.find('h2', string="Review:")
-        if review:
-            review_content = review.find_next_sibling('p').get_text(separator=" ", strip=True)
-        return review_content
-    except Exception as e:
-        return f"Ocurrió un error: {e}"
-
-def find_history(soup):
-    """
-    Encuentra un breve resumen de la historia del coctel
-    """
-    try:
-        history_content = ''
-        history = soup.find('h2', string="History:")
-        if history:
-            history_content = history.find_next_sibling('p').get_text(separator=" ", strip=True)
-        return history_content
-    except Exception as e:
-        return f"Ocurrió un error: {e}"
-
-def find_nutrition(soup):
-    """
-    Encuentra los datos nutritivos del coctel
-    """
-    try:
-        nutrition_content = ''
-        nutrition = soup.find('h2', string="Nutrition:")
-        if nutrition:
-            nutrition_content = nutrition.find_next_sibling('p').get_text(separator=" ", strip=True)
-        return nutrition_content
-    except Exception as e:
-        return f"Ocurrió un error: {e}"
-
-def find_alcohol_content(soup):
-    """
-    Encuentra el contenido en alcohol del coctel
-    """
-    try:
-        alcohol_contents=[]
-        alcohol_content = soup.find('h2', class_='m-0', string="Alcohol content:")
-        if alcohol_content:
-            alcohol_content_container = alcohol_content.find_next_sibling('ul')
-            for li in alcohol_content_container.find_all('li'):
-                    parts = []
-                    for element in li.contents:
-                        parts.append(element.get_text(separator=" ", strip=True))
-                    alcohol_contents.append(parts)
-
-        return alcohol_contents
-    except Exception as e:
-        return f"Ocurrió un error: {e}"
-
-def find_garnish(soup):
-    """
-    Encuentra con qué se decora el coctel
-    """
-    try:
-        garnish_content = ''
-        garnish = soup.find('span', string="Garnish:")
-        if garnish:
-            garnish_sibling = garnish.next_sibling
-            garnish_content = garnish_sibling.strip() if garnish_sibling else None
-        return garnish_content
-    except Exception as e:
-        return f"Ocurrió un error: {e}"
-
-def crawler():
-    """
-    Evalúa las urls que nos ofrecen los sitemaps de robots.txt y extrae recetas de 2000 cocteles (sujeto a cambios-crawler inicial)
-    """
-
-    crawl_count = 0
-
-    while(crawl_count < max_crawl):
-
-        for sitemap in sitemaps:
-            if crawl_count == max_crawl:
-                break
-            if not sitemap_pattern.search(sitemap):
-                continue
-
-            response_sitemap = fetch_url(sitemap)
-            soup_sitemap = BeautifulSoup(response_sitemap.content, "xml")
-
-            for url in soup_sitemap.find_all('url'):
-                if crawl_count == max_crawl:
-                    break
-
-                current_url = url.find('loc').text
-
-                if current_url in visited_urls:
-                    continue
-
-                visited_urls.add(current_url)
-
-                print(f'Url: {current_url}')
-
-                response = fetch_url(current_url)
-
-                soup = BeautifulSoup(response.content, "html.parser")
-
-                #scrapper
-                if url_pattern.search(current_url):
-                    data = {}
-                    data['Url'] = current_url
-
-                    data['Name'] = find_name(soup)
-                    if isinstance(data['Name'], str) and data['Name'].startswith("Ocurrió un error:"):
-                        continue
-
-                    data['Glass'] = find_glass(soup)
-                    if isinstance(data['Glass'], str) and data['Glass'].startswith("Ocurrió un error:"):
-                        continue
-
-                    data['Ingredients'] = find_ingredients(soup)
-                    if isinstance(data['Ingredients'], str) and data['Ingredients'].startswith("Ocurrió un error:"):
-                        continue
-
-                    data['Instructions'] = find_instructions(soup)
-                    if isinstance(data['Instructions'], str) and data['Instructions'].startswith("Ocurrió un error:"):
-                        continue
-
-                    data['Review'] = find_review(soup)
-                    if isinstance(data['Review'], str) and data['Review'].startswith("Ocurrió un error:"):
-                        continue
-
-                    data['History'] = find_history(soup)
-                    if isinstance(data['History'], str) and data['History'].startswith("Ocurrió un error:"):
-                        continue
-
-                    data['Nutrition'] = find_nutrition(soup)
-                    if isinstance(data['Nutrition'], str) and data['Nutrition'].startswith("Ocurrió un error:"):
-                        continue
-
-                    data['Alcohol_Content'] = find_alcohol_content(soup)
-                    if isinstance(data['Alcohol_Content'], str) and data['Alcohol_Content'].startswith("Ocurrió un error:"):
-                        continue
-
-                    data['Garnish'] = find_garnish(soup)
-                    if isinstance(data['Garnish'], str) and data['Garnish'].startswith("Ocurrió un error:"):
-                        continue
+    def crawl_srap(self, message: str) -> str:
+        """Realiza una búsqueda en google teniendo en cuenta la query del usuario y toma el contenido de la primera página que encuentra."""
+        
+        try:
+            search_results = search(f"{message}, site:https://www.diffordsguide.com/cocktails/recipe/ OR site:https://www.liquor.com/recipes/ OR site:https://punchdrink.com/recipes/", advanced=True, unique=True, lang="en")
+            if not search_results:
+                return f"Error en la búsqueda. No se encontró resultados para: {message}."
+            
+            for search_result in search_results:
+                if search_result.url != "" and not is_url_visited(search_result.url):
+                    try:
+                        response = fetch_url(search_result.url)
                     
-                    # drinks_data.append(data)
-                    write_to_json(data)
-                    crawl_count+=1
+                        soup = BeautifulSoup(response.content, "html.parser")
 
-    # return drinks_data
+                        if 'diffordsguide.com' in search_result.url:
+                            print("diffords")
+                            content = {}
+                            content['Url'] = search_result.url
+                            content['Name'] = find_name(soup)
+                            content['Glass'] = find_glass(soup)
+                            content['Ingredients'] = find_ingredients(soup)
+                            content['Instructions'] = find_instructions(soup)
+                            content['Review'] = find_review(soup)
+                            content['History'] = find_history(soup)
+                            content['Nutrition'] = find_nutrition(soup)
+                            content['Alcohol_Content'] = find_alcohol_content(soup)
+                            content['Garnish'] = find_garnish(soup)
+                        
+                        else:
+                            if 'liquor.com' in search_result.url:
+                                name = soup.find('h1', class_='heading__title').text.strip()
+
+                                data = extract(filecontent=str(soup))
+                                if data is None:
+                                    continue
+
+                                content = {}
+                                content["Url"] = search_result.url
+                                content["Name"] = name
+                                content["Recipe"] = data
+
+                            elif 'punchdrink.com' in search_result.url:
+                                name = soup.find('h1', class_='entry-title text-center').text.strip() 
+                                recipe = soup.find('div', class_='save-recipe').text.strip()
+                                intro = soup.find('div', class_='entry-content').text.strip()
+
+                                content = {}
+                                content["Url"] = search_result.url
+                                content["Name"] = name
+                                content["Intro"] = intro
+                                content["Recipe"] = recipe
+
+                        p = write_to_json(content)
+                        save_url_visited_urls(search_result.url)
+                        return p
+
+                    except Exception as e:
+                        print(f"Error al procesar {search_result.url}: {str(e)}")
+                        continue
+
+        except Exception as e:
+            return f"Error en la búsqueda: {str(e)}"
+
+    async def handle(self, message):
+        result = self.crawl_srap(message["content"])
+
+        if not result.startswith('Error en la búsqueda'):
+            embed_new_document(Path(result))
+
+        #mandar mensaje a alguien? devolver algo?
