@@ -28,3 +28,4 @@ def write_to_json(data):
         json.dump(data, jsonfile, indent=2, ensure_ascii=False)
 
     print(f'Guardado: {filepath}')
+    return filepath
