@@ -4,6 +4,7 @@ import json
 import re
 import ast
 import asyncio
+from utils.metaheuristic import TabuSearchSelector
 
 class ValidationAgent(BaseAgent):
     def __init__(self, name, system, model, alpha=100, beta=1, gamma=2, num_ants=10, max_iters=20):
@@ -59,7 +60,7 @@ class ValidationAgent(BaseAgent):
                 return
 
             # Extraer restricciones
-            restrictions = await self.extract_constraints(self.query, candidates)
+            restrictions = self.extract_constraints(self.query, candidates)
             if not restrictions.get("fuertes"):
                 await self.send("coordinator", {"error": "No se pudieron extraer restricciones fuertes válidas."})
                 self._clear_state()
@@ -67,28 +68,34 @@ class ValidationAgent(BaseAgent):
 
             # Crear matriz de verificación
             all_restrictions = restrictions["fuertes"] + restrictions["débiles"]
-            matriz = await self.verifica_matriz(candidates, all_restrictions)
+            matriz = self.verifica_matriz(candidates, all_restrictions)
 
-            # optimizer = TabuSearchRestricciones(max_iters=200, tabu_size=30)
-            # selected, puntuacion = optimizer.optimize(candidates, restrictions["fuertes"], restrictions["débiles"], matriz)
+            
             while True:
                 try:
-                    selected, score = await self.ant_colony_optimization(candidates, restrictions, matriz)
+                    selector = TabuSearchSelector(alpha=10, beta=1, gamma=2, max_iters=200)
+                    selected, puntaje = selector.select(candidates, restrictions, matriz)
                     break  # Éxito, salimos del bucle
                 except Exception as e:
                     print(f"[ACO] Error durante la ejecución: {e}. Reintentando...")
                     await asyncio.sleep(0.1)  # Pequeña pausa opcional para evitar bucles frenéticos
+            
+            # while True:
+            #     try:
+            #         selected, score = self.ant_colony_optimization(candidates, restrictions, matriz)
+            #         break  # Éxito, salimos del bucle
+            #     except Exception as e:
+            #         print(f"[ACO] Error durante la ejecución: {e}. Reintentando...")
+            #         await asyncio.sleep(0.1)  # Pequeña pausa opcional para evitar bucles frenéticos
 
 
             # Verificar suficiencia
             restricciones_conjuntas = restrictions.get("conjuntas", [])
             print("[VALIDANDO CONTENIDO DE LA RESPUESTA]")
-            suficiencia = await self.verifica_suficiencia(self.query, selected, candidates, restricciones_conjuntas)
-            tragos_extra = extraer_por_prefijo(candidates, suficiencia["respuesta_expandida"])
-
+            suficiencia = self.verifica_suficiencia(self.query, selected, candidates, restricciones_conjuntas)
 
             # Enviar resultado final al coordinator
-            await self.send("coordinator", {"suficiencia": suficiencia, "drinks": selected, "extra": tragos_extra})
+            await self.send("coordinator", {"suficiencia": suficiencia, "drinks": selected, "extra": candidates})
 
             self._clear_state()
 
@@ -100,7 +107,7 @@ class ValidationAgent(BaseAgent):
         self.received_data.clear()
         self.query = None
 
-    async def extract_constraints(self, query, candidates):
+    def extract_constraints(self, query, candidates):
         prompt = f"""
 Eres un asistente para procesar consultas de usuarios sobre cocteles y tragos. Dada esta consulta de usuario: \"{query}\"
 y las siguientes respuestas candidatas:
@@ -138,144 +145,135 @@ NOTA: Ninguna de las restricciones extraidas debe ser algo ambiguo, tienen que s
             print(f"[ValidationAgent] Error parsing restricciones:\n{response.text}\n{e}")
             return {"restricciones_fuertes": [], "restricciones_debiles": []}
 
-    async def ant_colony_optimization(self, candidates, restrictions, matriz):
-        self.all_candidates = candidates  # ✅ Asignamos para uso global en esta instancia
+    # def ant_colony_optimization(self, candidates, restrictions, matriz):
+    #     self.all_candidates = candidates  # ✅ Asignamos para uso global en esta instancia
 
-        pheromones = [1.0] * len(candidates)
-        best_solution = None
-        best_score = float("-inf")
-        seen_keys = set()
+    #     pheromones = [1.0] * len(candidates)
+    #     best_solution = None
+    #     best_score = float("-inf")
+    #     seen_keys = set()
 
-        try:
-            for _ in range(self.max_iters):
-                for _ in range(self.num_ants):
-                    solution = self.construct_solution(candidates, pheromones)
+    #     try:
+    #         for _ in range(self.max_iters):
+    #             for _ in range(self.num_ants):
+    #                 solution = self.construct_solution(candidates, pheromones)
 
-                    # ⚠️ Normalizamos la solución: orden y sin repeticiones
-                    solution = sorted(set(solution), key=lambda x: str(x))
-                    key = tuple(solution)
+    #                 # ⚠️ Normalizamos la solución: orden y sin repeticiones
+    #                 solution = sorted(set(solution), key=lambda x: str(x))
+    #                 key = tuple(solution)
 
-                    if key in seen_keys:
-                        continue
+    #                 if key in seen_keys:
+    #                     continue
 
-                    seen_keys.add(key)
-                    score = self.evaluate_fitness(solution, restrictions, matriz)
+    #                 seen_keys.add(key)
+    #                 score = self.evaluate_fitness(solution, restrictions, matriz)
 
-                    if score > best_score:
-                        best_score = score
-                        best_solution = solution
+    #                 if score > best_score:
+    #                     best_score = score
+    #                     best_solution = solution
 
-                pheromones = self.update_pheromones(
-                    [([s for s in best_solution], best_score)] if best_solution else [],
-                    pheromones
-                )
+    #             pheromones = self.update_pheromones(
+    #                 [([s for s in best_solution], best_score)] if best_solution else [],
+    #                 pheromones
+    #             )
 
-            if best_solution:
-                return best_solution, best_score
-            else:
-                raise ValueError("No se encontró solución óptima")
+    #         if best_solution:
+    #             return best_solution, best_score
+    #         else:
+    #             raise ValueError("No se encontró solución óptima")
 
-        except Exception as e:
-            print(f"[WARNING] Error en ACO: {e}")
+    #     except Exception as e:
+    #         print(f"[WARNING] Error en ACO: {e}")
 
-            # Buscar un candidato que cumpla la mayoría de restricciones
-            num_fuertes = len(restrictions["fuertes"])
-            num_debiles = len(restrictions["débiles"])
-            mejor_idx = None
-            mejor_score = float("-inf")
+    #         # Buscar un candidato que cumpla la mayoría de restricciones
+    #         num_fuertes = len(restrictions["fuertes"])
+    #         mejor_idx = None
+    #         mejor_score = float("-inf")
 
-            for idx, vector in enumerate(matriz):
-                fuertes_cumplidas = sum(vector[:num_fuertes])
-                debiles_cumplidas = sum(vector[num_fuertes:])
-                score = self.alpha * fuertes_cumplidas + self.beta * debiles_cumplidas - self.gamma * 1
+    #         for idx, vector in enumerate(matriz):
+    #             fuertes_cumplidas = sum(vector[:num_fuertes])
+    #             debiles_cumplidas = sum(vector[num_fuertes:])
+    #             score = self.alpha * fuertes_cumplidas + self.beta * debiles_cumplidas - self.gamma * 1
 
-                if score > mejor_score:
-                    mejor_score = score
-                    mejor_idx = idx
+    #             if score > mejor_score:
+    #                 mejor_score = score
+    #                 mejor_idx = idx
 
-            if mejor_idx is not None:
-                return [candidates[mejor_idx]], mejor_score
-            else:
-                # Si ni siquiera eso se puede, devuelve el primero
-                return [candidates[0]], -10000
+    #         if mejor_idx is not None:
+    #             return [candidates[mejor_idx]], mejor_score
+    #         else:
+    #             # Si ni siquiera eso se puede, devuelve el primero
+    #             return [candidates[0]], -10000
 
-    def construct_solution(self, candidates, pheromones):
-        solution = []
-        num_to_select = min(5, len(candidates))
-        total_pheromones = sum(pheromones)
-        selected_indices = set()
+    # def construct_solution(self, candidates, pheromones):
+    #     num_to_select = min(5, len(candidates))
+    #     total_pheromones = sum(pheromones)
+    #     selected_indices = set()
 
-        while len(selected_indices) < num_to_select:
-            # Recalcular el total de feromonas solo de los disponibles
-            available_indices = [i for i in range(len(candidates)) if i not in selected_indices]
-            if not available_indices:
-                break  # ya no hay más para seleccionar
+    #     while len(selected_indices) < num_to_select:
+    #         # Recalcular el total de feromonas solo de los disponibles
+    #         available_indices = [i for i in range(len(candidates)) if i not in selected_indices]
+    #         if not available_indices:
+    #             break  # ya no hay más para seleccionar
 
-            total_pheromones = sum(pheromones[i] for i in available_indices)
-            r = random.uniform(0, total_pheromones)
-            cumulative = 0.0
+    #         total_pheromones = sum(pheromones[i] for i in available_indices)
+    #         r = random.uniform(0, total_pheromones)
+    #         cumulative = 0.0
 
-            for i in available_indices:
-                cumulative += pheromones[i]
-                if cumulative >= r:
-                    selected_indices.add(i)
-                    break
+    #         for i in available_indices:
+    #             cumulative += pheromones[i]
+    #             if cumulative >= r:
+    #                 selected_indices.add(i)
+    #                 break
 
-        return [candidates[i] for i in selected_indices]
+    #     return [candidates[i] for i in selected_indices]
 
-    def evaluate_fitness(self, solution, restrictions, matriz):
-        fuertes = restrictions["fuertes"]
-        debiles = restrictions["débiles"]
+    # def evaluate_fitness(self, solution, restrictions, matriz):
+    #     fuertes = restrictions["fuertes"]
+    #     debiles = restrictions["débiles"]
 
-        # Índices de restricciones
-        num_fuertes = len(fuertes)
-        num_debiles = len(debiles)
+    #     # Índices de restricciones
+    #     num_fuertes = len(fuertes)
+    #     num_debiles = len(debiles)
 
-        # Inicializamos vectores de cumplimiento conjunto
-        cumples_f = [False] * num_fuertes
-        cumples_d = [False] * num_debiles
+    #     # Inicializamos vectores de cumplimiento conjunto
+    #     cumples_f = [False] * num_fuertes
+    #     cumples_d = [False] * num_debiles
 
-        for cand in solution:
-            try:
-                idx = next((i for i, c in enumerate(self.all_candidates) if str(c) == str(cand)), None)
-                if idx is None:
-                    continue
-                vector = matriz[idx]
-                for i in range(num_fuertes):
-                    cumples_f[i] = cumples_f[i] or vector[i]
-                for j in range(num_debiles):
-                    cumples_d[j] = cumples_d[j] or vector[num_fuertes + j]
-            except ValueError:
-                continue  # Si por alguna razón el candidato no está
+    #     for cand in solution:
+    #         try:
+    #             idx = next((i for i, c in enumerate(self.all_candidates) if str(c) == str(cand)), None)
+    #             if idx is None:
+    #                 continue
+    #             vector = matriz[idx]
+    #             for i in range(num_fuertes):
+    #                 cumples_f[i] = cumples_f[i] or vector[i]
+    #             for j in range(num_debiles):
+    #                 cumples_d[j] = cumples_d[j] or vector[num_fuertes + j]
+    #         except ValueError:
+    #             continue  # Si por alguna razón el candidato no está
 
-        # Ponderación: penaliza si no cumple todas las fuertes
-        if not all(cumples_f):
-            return -10000
+    #     # Ponderación: penaliza si no cumple todas las fuertes
+    #     if not all(cumples_f):
+    #         return -10000
 
-        debiles_cumplidas = sum(cumples_d)
-        return self.alpha * num_fuertes + self.beta * debiles_cumplidas - self.gamma * len(solution)
+    #     debiles_cumplidas = sum(cumples_d)
+    #     return self.alpha * num_fuertes + self.beta * debiles_cumplidas - self.gamma * len(solution)
 
-    def update_pheromones(self, solutions, pheromones):
-        decay = 0.3
-        pheromones = [p * (1 - decay) for p in pheromones]
+    # def update_pheromones(self, solutions, pheromones):
+    #     decay = 0.3
+    #     pheromones = [p * (1 - decay) for p in pheromones]
 
-        for solution, score in solutions:
-            for c in solution:
-                try:
-                    idx = self.all_candidates.index(c)
-                    pheromones[idx] += score / 100.0
-                except ValueError:
-                    pass
-        return pheromones
+    #     for solution, score in solutions:
+    #         for c in solution:
+    #             try:
+    #                 idx = self.all_candidates.index(c)
+    #                 pheromones[idx] += score / 100.0
+    #             except ValueError:
+    #                 pass
+    #     return pheromones
 
-    def candidate_index(self, candidate):
-        # Aseguramos comparación segura
-        for i, c in enumerate(self.all_candidates):
-            if str(c) == str(candidate):  # cuidado si son objetos
-                return i
-        raise ValueError("Candidate not found")
-
-    async def verifica_matriz(self, respuestas, restricciones):
+    def verifica_matriz(self, respuestas, restricciones):
         prompt = f"""
         Tenemos una lista de respuestas candidatas y una lista de restricciones.
         Para cada respuesta, indica si cumple cada restricción (sí o no). 
@@ -320,7 +318,7 @@ NOTA: Ninguna de las restricciones extraidas debe ser algo ambiguo, tienen que s
             print(f"[ValidationAgent] Output del modelo:\n{getattr(output, 'text', '')}")
             return {(r, c): False for c in respuestas for r in restricciones}
 
-    async def verifica_suficiencia(self, pregunta, respuestas, candidates, restricciones_grupales):
+    def verifica_suficiencia(self, pregunta, respuestas, candidates, restricciones_grupales):
 
         prompt = f"""
         Tengo una pregunta que realizó un usuario, y tengo información que puedo usar para conformar una respuesta.
@@ -343,7 +341,6 @@ Tu respuesta debe ser un OBJETO JSON con la siguiente estructura exacta, usando 
 {{
   "suficiente": Indica si con la información importante es suficiente o no dar una respuesta correcta que cumpla las restricciones.
   "expandida_suficiente": Indica si agregando algunos de los fragmentos extra, es suficiente o no dar una respuesta correcta que cumpla las restricciones.
-  "respuesta_expandida": [...] Lista con fragmentos extra útiles para poder dar una respuesta completa. **Debes poner los fragmentos completos en caso que haya alguno**
   "razonamiento": "..."
   "requiere_búsqueda_online": True o False. Esto depende del contexto de la pregunta. Por ejemplo si me piden un trago que no encuentro, esto debe ser True, pero si me piden algo como (Recomiendame algo) sin dar detalles de sus gustos, esto debe ser falso porque cualquier trago podría gustar.
 }}
@@ -420,7 +417,7 @@ def manual_json_extract(text):
         "campos_suficientes": [],
         "razonamiento": ""
     }
-
+        
     def extract_bool(name):
         pattern = rf'"{name}"\s*:\s*(true|false)'
         match = re.search(pattern, text, re.IGNORECASE)
@@ -448,7 +445,6 @@ def manual_json_extract(text):
 
     campos["suficiente"] = extract_bool("suficiente")
     campos["expandida_suficiente"] = extract_bool("expandida_suficiente")
-    campos["respuesta_expandida"] = extract_list("respuesta_expandida")
     campos["campos_suficientes"] = extract_list("campos_suficientes")
     campos["razonamiento"] = extract_string("razonamiento")
     campos["online"] = extract_bool("requiere_búsqueda_online")
