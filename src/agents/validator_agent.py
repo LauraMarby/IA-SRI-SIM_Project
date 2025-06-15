@@ -59,6 +59,8 @@ class ValidationAgent(BaseAgent):
                 self._clear_state()
                 return
 
+            candidates = eliminar_repetidos(candidates)
+
             # Extraer restricciones
             restrictions = self.extract_constraints(self.query, candidates)
             if not restrictions.get("fuertes"):
@@ -69,12 +71,12 @@ class ValidationAgent(BaseAgent):
             # Crear matriz de verificación
             all_restrictions = restrictions["fuertes"] + restrictions["débiles"]
             matriz = self.verifica_matriz(candidates, all_restrictions)
-
+            filtered_candidates, _ = divide(candidates, len(matriz))
             
             while True:
                 try:
                     selector = TabuSearchSelector(alpha=10, beta=1, gamma=2, max_iters=200)
-                    selected, puntaje = selector.select(candidates, restrictions, matriz)
+                    selected, puntaje = selector.select(filtered_candidates, restrictions, matriz)
                     break  # Éxito, salimos del bucle
                 except Exception as e:
                     print(f"[ACO] Error durante la ejecución: {e}. Reintentando...")
@@ -110,8 +112,6 @@ class ValidationAgent(BaseAgent):
     def extract_constraints(self, query, candidates):
         prompt = f"""
 Eres un asistente para procesar consultas de usuarios sobre cocteles y tragos. Dada esta consulta de usuario: \"{query}\"
-y las siguientes respuestas candidatas:
-{[c[:200] for c in candidates]}
 
 Extrae las restricciones de contenido que debe cumplir una buena respuesta. Estas restricciones deben clasificarse en fuertes y débiles.\n"
 Las restricciones fuertes son aquellas que garantizan todo lo que se menciona explícitamente en la pregunta respecto a un trago o tragos, y debe ser un conjunto pequeño de restricciones separadas, representando cada problemática a resolver de la pregunta. Cada restricción debe ser un texto lo más básico y pequeño posible. No incluya restricciones de tragos conjuntos, separe en problemáticas por cada trago."
@@ -462,3 +462,29 @@ def extraer_por_prefijo(X, Y):
             if x.startswith(y):
                 resultado[y].append(x)
     return resultado
+
+def eliminar_repetidos(lista_textos):
+    vistos = set()
+    resultado = []
+    for texto in lista_textos:
+        if texto not in vistos:
+            resultado.append(texto)
+            vistos.add(texto)
+    return resultado
+
+def divide(lista, n):
+    """
+    Divide la lista en dos partes:
+    - La primera con los primeros n elementos
+    - La segunda con el resto de elementos
+
+    Parámetros:
+        lista (list): lista original
+        n (int): tamaño del primer segmento
+
+    Retorna:
+        tuple: (lista picada, resto de la lista)
+    """
+    primera_parte = lista[:n]
+    resto = lista[n:]
+    return primera_parte, resto
