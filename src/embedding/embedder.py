@@ -6,9 +6,9 @@ from typing import List
 from sentence_transformers import SentenceTransformer
 
 # ==== Configuración ====
-model_path = "C:/Users/ASUS/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/c9745ed1d9f207416be6d2e6f8de32d1f16199bf"
-model = SentenceTransformer(model_path)
-#model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+# model_path = "C:/Users/ASUS/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/c9745ed1d9f207416be6d2e6f8de32d1f16199bf"
+# model = SentenceTransformer(model_path)
+model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
 DATA_DIR = Path("src/data")
 OUTPUT_FILE = Path("src/embedding/embeddings.pkl")
@@ -100,6 +100,29 @@ def embed_all_documents():
     with open(OUTPUT_FILE, "wb") as f:
         pickle.dump(embeddings, f)
     print(f"✅ Embeddings guardados en: {OUTPUT_FILE}")
+
+def embed_new_document(path: Path):
+    """Toma el nuevo documento añadido a la base de datos y lo añade al repositorio vectorial."""
+
+    embeddings = []
+    full_text = preprocess_document(path)
+    chunks = sliding_window_chunk(full_text)
+    for chunk in chunks:
+        vector = get_embedding(chunk)
+        if vector.any():
+            embeddings.append({
+                "source": path.name,
+                "chunk": chunk,
+                "embedding": vector
+            })
+
+    with open(OUTPUT_FILE, 'rb') as f:
+        emb = pickle.load(f)
+
+    new_emb = emb + embeddings
+
+    with open(OUTPUT_FILE, 'wb') as f:
+        pickle.dump(new_emb, f)
 
 # ==== Ejecución principal ====
 if __name__ == "__main__":
