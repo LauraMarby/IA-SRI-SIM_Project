@@ -1,0 +1,4678 @@
+{
+  "absinthe vermouth": [
+    0.35,
+    0.0,
+    0.45,
+    0.15,
+    0.2
+  ],
+  "absolut hunni vodka": [
+    0.25,
+    0.0,
+    0.1,
+    0.0,
+    0.0
+  ],
+  "absolut lime vodka": [
+    0.15,
+    0.0,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "absolut mango vodka": [
+    0.4,
+    0.0,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "absolut nights nordic spice": [
+    0.25,
+    0.0,
+    0.15,
+    0.1,
+    0.3
+  ],
+  "absolut pears vodka": [
+    0.3,
+    0.0,
+    0.1,
+    0.0,
+    0.0
+  ],
+  "absolut peppar vodka": [
+    0.1,
+    0.0,
+    0.15,
+    0.0,
+    0.6
+  ],
+  "absolut raspberri vodka": [
+    0.35,
+    0.0,
+    0.1,
+    0.15,
+    0.0
+  ],
+  "absolut vanilia vodka": [
+    0.4,
+    0.0,
+    0.1,
+    0.0,
+    0.0
+  ],
+  "absolut wild berri vodka": [
+    0.35,
+    0.0,
+    0.1,
+    0.15,
+    0.0
+  ],
+  "agave sec liqueur": [
+    0.4,
+    0.1,
+    0.3,
+    0.2,
+    0.2
+  ],
+  "agave syrup": [
+    1.0,
+    0.05,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "akashi-tai daiginjo genshu sake": [
+    0.55,
+    0.2,
+    0.1,
+    0.3,
+    0.4
+  ],
+  "akashi-tai shiraume ginjo umeshu": [
+    0.85,
+    0.1,
+    0.2,
+    0.6,
+    0.1
+  ],
+  "akvavit": [
+    0.25,
+    0.1,
+    0.4,
+    0.2,
+    0.7
+  ],
+  "aquavit": [
+    0.25,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "algarrobo extract": [
+    0.75,
+    0.0,
+    0.1,
+    0.25,
+    0.0
+  ],
+  "allspice": [
+    0.5,
+    0.0,
+    0.3,
+    0.1,
+    0.7
+  ],
+  "pimento pepper": [
+    0.65,
+    0.0,
+    0.1,
+    0.2,
+    0.2
+  ],
+  "aloe liqueur": [
+    0.8,
+    0.1,
+    0.15,
+    0.25,
+    0.0
+  ],
+  "amargo chuncho bitters": [
+    0.3,
+    0.0,
+    0.8,
+    0.2,
+    0.45
+  ],
+  "amaro": [
+    0.56,
+    0.0,
+    0.8,
+    0.1,
+    0.4
+  ],
+  "ambrato": [
+    0.55,
+    0.0,
+    0.5,
+    0.25,
+    0.35
+  ],
+  "ambre": [
+    0.6,
+    0.0,
+    0.4,
+    0.1,
+    0.5
+  ],
+  "amber vermouth": [
+    0.5,
+    0.0,
+    0.45,
+    0.25,
+    0.35
+  ],
+  "amer picon": [
+    0.4,
+    0.0,
+    0.85,
+    0.3,
+    0.2
+  ],
+  "americano bianco": [
+    0.8,
+    0.1,
+    0.5,
+    0.2,
+    0.1
+  ],
+  "angostura aromatic bitters": [
+    0.15,
+    0.0,
+    1.0,
+    0.05,
+    0.3
+  ],
+  "angostura cocoa bitters": [
+    0.6,
+    0.0,
+    0.8,
+    0.1,
+    0.4
+  ],
+  "anise": [
+    0.35,
+    0.0,
+    0.15,
+    0.0,
+    0.35
+  ],
+  "aniseed syrup": [
+    0.85,
+    0.0,
+    0.15,
+    0.0,
+    0.25
+  ],
+  "aniseed (anise) liqueur": [
+    0.8,
+    0.0,
+    0.2,
+    0.1,
+    0.3
+  ],
+  "anisette liqueur": [
+    0.8,
+    0.0,
+    0.1,
+    0.0,
+    0.2
+  ],
+  "antésite anise": [
+    0.8,
+    0.0,
+    0.1,
+    0.0,
+    0.2
+  ],
+  "aphrodite bitters": [
+    0.3,
+    0.0,
+    0.6,
+    0.2,
+    0.4
+  ],
+  "apple": [
+    0.6,
+    0.0,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "apple cider vinegar": [
+    0.2,
+    0.0,
+    0.1,
+    0.8,
+    0.0
+  ],
+  "apple juice": [
+    0.7,
+    0.0,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "apple cider": [
+    0.7,
+    0.0,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "apple schnapps liqueur": [
+    0.8,
+    0.0,
+    0.0,
+    0.2,
+    0.0
+  ],
+  "apple sugar syrup": [
+    1.0,
+    0.0,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "applejack brandy": [
+    0.5,
+    0.0,
+    0.4,
+    0.3,
+    0.4
+  ],
+  "apricot (abricot) eau-de-vie": [
+    0.2,
+    0.0,
+    0.2,
+    0.4,
+    0.3
+  ],
+  "apricot jam": [
+    0.8,
+    0.0,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "aquafaba": [
+    0.0,
+    0.1,
+    0.05,
+    0.0,
+    0.0
+  ],
+  "egg white": [
+    0.0,
+    0.05,
+    0.05,
+    0.0,
+    0.0
+  ],
+  "armagnac brandy": [
+    0.4,
+    0.0,
+    0.4,
+    0.2,
+    0.5
+  ],
+  "aromatic tonic water": [
+    0.4,
+    0.0,
+    0.8,
+    0.3,
+    0.3
+  ],
+  "aromatized wine": [
+    0.6,
+    0.0,
+    0.5,
+    0.15,
+    0.25
+  ],
+  "artichoke essence": [
+    0.3,
+    0.0,
+    0.7,
+    0.2,
+    0.1
+  ],
+  "bacardi carta blanca superior white rum": [
+    0.1,
+    0.0,
+    0.0,
+    0.0,
+    0.2
+  ],
+  "bacardi carta blanca superior white rum cinnamon infused": [
+    0.3,
+    0.0,
+    0.2,
+    0.0,
+    0.6
+  ],
+  "bacardi carta negra superior": [
+    0.3,
+    0.0,
+    0.2,
+    0.0,
+    0.3
+  ],
+  "bacardi gold rum": [
+    0.3,
+    0.0,
+    0.2,
+    0.0,
+    0.2
+  ],
+  "bacardi 8 year old rum": [
+    0.4,
+    0.0,
+    0.3,
+    0.0,
+    0.4
+  ],
+  "bacon fat-washed bourbon": [
+    0.4,
+    0.7,
+    0.2,
+    0.1,
+    0.3
+  ],
+  "lapsang souchong tea": [
+    0.1,
+    0.1,
+    0.5,
+    0.1,
+    0.2
+  ],
+  "balsamic vinegar of modena": [
+    0.6,
+    0.1,
+    0.2,
+    1.0,
+    0.1
+  ],
+  "banana": [
+    0.9,
+    0.1,
+    0.0,
+    0.1,
+    0.0
+  ],
+  "banana tea": [
+    0.4,
+    0.0,
+    0.5,
+    0.1,
+    0.0
+  ],
+  "barenjager honey liqueur": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.2
+  ],
+  "barley malt syrup": [
+    0.8,
+    0.0,
+    0.3,
+    0.2,
+    0.0
+  ],
+  "barolo wine": [
+    0.2,
+    0.1,
+    0.5,
+    0.6,
+    0.3
+  ],
+  "barsol mosto verde italia pisco": [
+    0.4,
+    0.0,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "basil leaves": [
+    0.2,
+    0.0,
+    0.5,
+    0.1,
+    0.3
+  ],
+  "basil sugar syrup": [
+    1.0,
+    0.0,
+    0.2,
+    0.1,
+    0.2
+  ],
+  "batavia arrack": [
+    0.2,
+    0.0,
+    0.3,
+    0.1,
+    0.3
+  ],
+  "becherovka liqueur": [
+    0.5,
+    0.0,
+    0.6,
+    0.2,
+    0.4
+  ],
+  "beef bouillon": [
+    0.1,
+    0.8,
+    0.2,
+    0.1,
+    0.0
+  ],
+  "beetroot juice": [
+    0.6,
+    0.0,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "belle de brillet pear liqueur": [
+    0.8,
+    0.0,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "berry fruit tea": [
+    0.6,
+    0.0,
+    0.5,
+    0.5,
+    0.0
+  ],
+  "bigallet china china amer": [
+    0.4,
+    0.1,
+    0.9,
+    0.5,
+    0.3
+  ],
+  "bigallet genepi grand tetras": [
+    0.4,
+    0.0,
+    0.6,
+    0.2,
+    0.3
+  ],
+  "bigallet thym": [
+    0.4,
+    0.0,
+    0.5,
+    0.1,
+    0.3
+  ],
+  "birch sap liqueur": [
+    0.6,
+    0.0,
+    0.2,
+    0.1,
+    0.0
+  ],
+  "birch water": [
+    0.2,
+    0.0,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "bison grass vodka": [
+    0.2,
+    0.0,
+    0.1,
+    0.0,
+    0.3
+  ],
+  "black pepper": [
+    0.1,
+    0.0,
+    0.1,
+    0.0,
+    0.9
+  ],
+  "black sambuca liqueur": [
+    0.7,
+    0.0,
+    0.1,
+    0.1,
+    0.5
+  ],
+  "black truffle honey": [
+    1.0,
+    0.1,
+    0.2,
+    0.0,
+    0.0
+  ],
+  "black walnut bitters": [
+    0.3,
+    0.1,
+    0.8,
+    0.2,
+    0.2
+  ],
+  "blackberries": [
+    0.7,
+    0.0,
+    0.2,
+    0.4,
+    0.0
+  ],
+  "blackcurrant": [
+    0.6,
+    0.0,
+    0.2,
+    0.7,
+    0.0
+  ],
+  "cassis sugar syrup": [
+    1.0,
+    0.0,
+    0.2,
+    0.4,
+    0.0
+  ],
+  "blackcurrant jam": [
+    0.8,
+    0.0,
+    0.2,
+    0.4,
+    0.0
+  ],
+  "blackstrap molasses": [
+    0.7,
+    0.1,
+    0.4,
+    0.2,
+    0.0
+  ],
+  "blackthorn berry liqueur": [
+    0.6,
+    0.0,
+    0.3,
+    0.5,
+    0.0
+  ],
+  "blanc quinquina": [
+    0.5,
+    0.0,
+    0.6,
+    0.2,
+    0.0
+  ],
+  "blended scotch whisky": [
+    0.3,
+    0.0,
+    0.3,
+    0.0,
+    0.4
+  ],
+  "blended scotch whisky bacon fat washed": [
+    0.3,
+    0.4,
+    0.3,
+    0.0,
+    0.2
+  ],
+  "blood orange juice": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "blood orange liqueur": [
+    0.8,
+    0.0,
+    0.2,
+    0.4,
+    0.0
+  ],
+  "blueberries": [
+    0.8,
+    0.0,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "bilberry liqueur": [
+    0.8,
+    0.0,
+    0.2,
+    0.4,
+    0.0
+  ],
+  "bénédictine D.O.M. liqueur": [
+    0.8,
+    0.0,
+    0.4,
+    0.2,
+    0.2
+  ],
+  "bob's abbotts bitters": [
+    0.2,
+    0.0,
+    0.8,
+    0.2,
+    0.4
+  ],
+  "bob's cardamom bitters": [
+    0.2,
+    0.0,
+    0.8,
+    0.2,
+    0.6
+  ],
+  "bob's chocolate bitters": [
+    0.3,
+    0.0,
+    0.8,
+    0.2,
+    0.2
+  ],
+  "bob's coriander bitters": [
+    0.2,
+    0.0,
+    0.8,
+    0.2,
+    0.5
+  ],
+  "bob's ginger bitters": [
+    0.2,
+    0.0,
+    0.7,
+    0.2,
+    0.7
+  ],
+  "bob's grapefruit bitters": [
+    0.2,
+    0.0,
+    0.8,
+    0.9,
+    0.2
+  ],
+  "bob's lavender bitters": [
+    0.2,
+    0.0,
+    0.6,
+    0.2,
+    0.0
+  ],
+  "bob's liquorice bitters": [
+    0.3,
+    0.0,
+    0.7,
+    0.1,
+    0.2
+  ],
+  "bob's peppermint bitters": [
+    0.2,
+    0.0,
+    0.6,
+    0.1,
+    0.4
+  ],
+  "bob's vanilla bitters": [
+    0.4,
+    0.0,
+    0.6,
+    0.1,
+    0.0
+  ],
+  "boiling water": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "boker's bitters": [
+    0.2,
+    0.0,
+    0.8,
+    0.2,
+    0.3
+  ],
+  "boston bittahs bitters": [
+    0.2,
+    0.0,
+    0.8,
+    0.2,
+    0.4
+  ],
+  "wkd original blue": [
+    0.8,
+    0.0,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "bottlegreen cox's apple and plum cordial": [
+    0.7,
+    0.0,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "bourbon whiskey": [
+    0.55,
+    0.0,
+    0.3,
+    0.1,
+    0.3
+  ],
+  "bourgogne aligoté wine white": [
+    0.2,
+    0.0,
+    0.1,
+    0.7,
+    0.0
+  ],
+  "brancamenta": [
+    0.4,
+    0.0,
+    0.7,
+    0.1,
+    0.4
+  ],
+  "breakfast tea": [
+    0.1,
+    0.0,
+    0.6,
+    0.2,
+    0.0
+  ],
+  "british bitter ale": [
+    0.3,
+    0.0,
+    0.7,
+    0.1,
+    0.1
+  ],
+  "brut champagne": [
+    0.2,
+    0.0,
+    0.1,
+    0.8,
+    0.0
+  ],
+  "sparkling wine": [
+    0.4,
+    0.0,
+    0.1,
+    0.65,
+    0.0
+  ],
+  "butterscotch liqueur": [
+    0.9,
+    0.0,
+    0.1,
+    0.1,
+    0.1
+  ],
+  "byrrh aperitif aromatised wine": [
+    0.6,
+    0.0,
+    0.5,
+    0.3,
+    0.0
+  ],
+  "cachaça": [
+    0.2,
+    0.1,
+    0.1,
+    0.1,
+    0.3
+  ],
+  "calamansi juice": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "calvados": [
+    0.4,
+    0.0,
+    0.2,
+    0.3,
+    0.1
+  ],
+  "apple brandy": [
+    0.4,
+    0.0,
+    0.2,
+    0.3,
+    0.1
+  ],
+  "straight applejack": [
+    0.4,
+    0.0,
+    0.2,
+    0.3,
+    0.1
+  ],
+  "canadian blended whisky": [
+    0.6,
+    0.1,
+    0.3,
+    0.2,
+    0.4
+  ],
+  "canadian icewine": [
+    0.9,
+    0.0,
+    0.1,
+    0.5,
+    0.1
+  ],
+  "canadian rye whisky": [
+    0.6,
+    0.2,
+    0.35,
+    0.25,
+    0.5
+  ],
+  "candied fresh ginger root": [
+    0.8,
+    0.0,
+    0.1,
+    0.2,
+    0.7
+  ],
+  "candied hibiscus flower in syrup": [
+    1.0,
+    0.0,
+    0.1,
+    0.65,
+    0.2
+  ],
+  "caper brine": [
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "caramel sugar syrup": [
+    1.0,
+    0.2,
+    0.5,
+    0.15,
+    0.0
+  ],
+  "caraway seeds": [
+    0.2,
+    0.0,
+    0.4,
+    0.1,
+    0.6
+  ],
+  "mineral water": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "caribbean blended rum aged 6-10 years": [
+    0.6,
+    0.0,
+    0.4,
+    0.1,
+    0.5
+  ],
+  "carpano antica formula vermouth": [
+    0.7,
+    0.0,
+    0.8,
+    0.2,
+    0.3
+  ],
+  "carrot juice": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "cartron no. 7 liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "sugar": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "cayenne pepper": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.9
+  ],
+  "celery juice": [
+    0.2,
+    0.4,
+    0.5,
+    0.1,
+    0.0
+  ],
+  "celery salt": [
+    0.0,
+    1.0,
+    0.4,
+    0.0,
+    0.2
+  ],
+  "celery stick": [
+    0.1,
+    0.35,
+    0.25,
+    0.0,
+    0.0
+  ],
+  "chai tea": [
+    0.5,
+    0.0,
+    0.5,
+    0.1,
+    0.65
+  ],
+  "chairman's reserve spiced rum": [
+    0.65,
+    0.0,
+    0.3,
+    0.0,
+    0.7
+  ],
+  "chamomile": [
+    0.45,
+    0.0,
+    0.25,
+    0.0,
+    0.1
+  ],
+  "camomile tea": [
+    0.5,
+    0.0,
+    0.5,
+    0.1,
+    0.0
+  ],
+  "lavender": [
+    0.4,
+    0.0,
+    0.5,
+    0.1,
+    0.1
+  ],
+  "camomile tea syrup": [
+    1.0,
+    0.0,
+    0.3,
+    0.1,
+    0.2
+  ],
+  "charcoal powder": [
+    0.0,
+    0.0,
+    0.4,
+    0.0,
+    0.0
+  ],
+  "chardonnay (chablis) white wine": [
+    0.1,
+    0.0,
+    0.25,
+    0.8,
+    0.0
+  ],
+  "chartreuse élixir végétal": [
+    0.55,
+    0.0,
+    0.75,
+    0.1,
+    0.9
+  ],
+  "cherries": [
+    0.8,
+    0.0,
+    0.2,
+    0.5,
+    0.0
+  ],
+  "cherry bitters": [
+    0.6,
+    0.1,
+    0.8,
+    0.4,
+    0.0
+  ],
+  "cherry blossom/sakura syrup": [
+    1.0,
+    0.2,
+    0.1,
+    0.0,
+    0.0
+  ],
+  "cherry tomato": [
+    0.6,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "chianti red wine": [
+    0.1,
+    0.0,
+    0.6,
+    0.55,
+    0.4
+  ],
+  "chili pepper (spicy) syrup": [
+    0.8,
+    0.1,
+    0.2,
+    0.3,
+    0.9
+  ],
+  "chilpotle oleo-saccharum": [
+    0.75,
+    0.0,
+    0.35,
+    0.4,
+    0.7
+  ],
+  "chinola mango liqueur": [
+    0.8,
+    0.0,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "chocolate cream liqueur": [
+    0.8,
+    0.1,
+    0.3,
+    0.1,
+    0.2
+  ],
+  "chocolate ice cream": [
+    0.8,
+    0.1,
+    0.4,
+    0.0,
+    0.2
+  ],
+  "chocolate sugar syrup": [
+    1.0,
+    0.1,
+    0.5,
+    0.0,
+    0.3
+  ],
+  "cigar syrup": [
+    0.7,
+    0.0,
+    0.8,
+    0.0,
+    0.4
+  ],
+  "cinnamon powder": [
+    0.5,
+    0.0,
+    0.25,
+    0.0,
+    0.8
+  ],
+  "cinnamon stick": [
+    0.4,
+    0.0,
+    0.3,
+    0.0,
+    0.7
+  ],
+  "cinnamon syrup": [
+    1.0,
+    0.0,
+    0.2,
+    0.0,
+    0.6
+  ],
+  "clamato juice": [
+    0.4,
+    0.7,
+    0.1,
+    0.5,
+    0.2
+  ],
+  "claret wine": [
+    0.1,
+    0.0,
+    0.6,
+    0.5,
+    0.4
+  ],
+  "clément sirop de canne": [
+    0.9,
+    0.0,
+    0.1,
+    0.0,
+    0.0
+  ],
+  "clove": [
+    0.1,
+    0.0,
+    0.4,
+    0.0,
+    0.6
+  ],
+  "quince syrup": [
+    1.0,
+    0.0,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "cockburn's ruby soho port": [
+    0.8,
+    0.0,
+    0.2,
+    0.4,
+    0.1
+  ],
+  "cockburn's tawny eyes port": [
+    0.75,
+    0.0,
+    0.2,
+    0.2,
+    0.1
+  ],
+  "cockburn's white heights port": [
+    0.6,
+    0.0,
+    0.1,
+    0.5,
+    0.1
+  ],
+  "coconut liqueur": [
+    0.9,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "coconut oil": [
+    0.2,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "coconut rum liqueur": [
+    0.85,
+    0.0,
+    0.0,
+    0.1,
+    0.05
+  ],
+  "coconut sugar syrup": [
+    1.0,
+    0.0,
+    0.1,
+    0.0,
+    0.0
+  ],
+  "coconut water": [
+    0.4,
+    0.2,
+    0.0,
+    0.1,
+    0.0
+  ],
+  "coffee ice cream": [
+    0.8,
+    0.0,
+    0.5,
+    0.0,
+    0.0
+  ],
+  "cognac": [
+    0.4,
+    0.0,
+    0.25,
+    0.1,
+    0.35
+  ],
+  "cola": [
+    0.85,
+    0.0,
+    0.1,
+    0.3,
+    0.1
+  ],
+  "cola syrup": [
+    1.0,
+    0.0,
+    0.15,
+    0.25,
+    0.15
+  ],
+  "black breakfast tea": [
+    0.1,
+    0.1,
+    0.5,
+    0.1,
+    0.0
+  ],
+  "black tea": [
+    0.1,
+    0.1,
+    0.5,
+    0.1,
+    0.0
+  ],
+  "brew coffee": [
+    0.1,
+    0.1,
+    0.8,
+    0.1,
+    0.0
+  ],
+  "commandaria cypriot wine": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "condensed milk": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "coriander seeds": [
+    0.3,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "cilantro leaves": [
+    0.1,
+    0.1,
+    0.5,
+    0.1,
+    0.0
+  ],
+  "cranberry bitters": [
+    0.6,
+    0.1,
+    0.8,
+    0.4,
+    0.0
+  ],
+  "cranberry flavoured vodka": [
+    0.4,
+    0.0,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "cranberry juice": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "cranberry liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "cranberry & morello cherry puree": [
+    0.6,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "cream of coconut": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "crème de noyau liqueur": [
+    0.8,
+    0.1,
+    0.25,
+    0.1,
+    0.0
+  ],
+  "crème de violette liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "crème yvette liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "cucumber": [
+    0.15,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "cucumber flavoured vodka": [
+    0.1,
+    0.0,
+    0.05,
+    0.05,
+    0.0
+  ],
+  "cucumber juice": [
+    0.15,
+    0.0,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "cucumber tonic water": [
+    0.25,
+    0.1,
+    0.5,
+    0.3,
+    0.0
+  ],
+  "cumin seeds": [
+    0.15,
+    0.1,
+    0.25,
+    0.1,
+    0.0
+  ],
+  "lemon juice": [
+    0.05,
+    0.0,
+    0.15,
+    1.0,
+    0.0
+  ],
+  "pallini limoncello liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.6,
+    0.0
+  ],
+  "popcorn": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "watermelon": [
+    0.7,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "cynar": [
+    0.3,
+    0.1,
+    0.8,
+    0.15,
+    0.0
+  ],
+  "damson jam": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "damson liqueur": [
+    0.8,
+    0.1,
+    0.15,
+    0.4,
+    0.0
+  ],
+  "dandelion & burdock bitters": [
+    0.4,
+    0.1,
+    0.6,
+    0.15,
+    0.0
+  ],
+  "dark chocolate liqueur": [
+    0.8,
+    0.1,
+    0.4,
+    0.1,
+    0.0
+  ],
+  "dark/black/blackstrap rum": [
+    0.7,
+    0.0,
+    0.3,
+    0.0,
+    0.15
+  ],
+  "de kuyper apricot brandy liqueur": [
+    0.8,
+    0.0,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "de kuyper blue curaçao": [
+    0.75,
+    0.1,
+    0.25,
+    0.4,
+    0.0
+  ],
+  "de kuyper brown crème de cacao": [
+    0.8,
+    0.1,
+    0.3,
+    0.1,
+    0.0
+  ],
+  "de kuyper crème de cafe": [
+    0.75,
+    0.1,
+    0.35,
+    0.1,
+    0.0
+  ],
+  "de kuyper triple sec": [
+    0.8,
+    0.0,
+    0.2,
+    0.45,
+    0.0
+  ],
+  "de kuyper watermelon liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "del maguey vida clásico mezcal": [
+    0.3,
+    0.0,
+    0.2,
+    0.0,
+    0.3
+  ],
+  "demerara": [
+    0.9,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "dark muscovado": [
+    0.85,
+    0.1,
+    0.15,
+    0.1,
+    0.0
+  ],
+  "difford's daiquiri bitters": [
+    0.2,
+    0.1,
+    0.65,
+    0.3,
+    0.0
+  ],
+  "difford's falernum liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "difford's margarita bitters": [
+    0.1,
+    0.1,
+    0.6,
+    0.35,
+    0.0
+  ],
+  "disaronno amaretto": [
+    0.85,
+    0.0,
+    0.15,
+    0.05,
+    0.1
+  ],
+  "double cream / heavy cream": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "fennel seeds": [
+    0.4,
+    0.1,
+    0.2,
+    0.1,
+    0.0
+  ],
+  "green cardamom pods": [
+    0.35,
+    0.1,
+    0.1,
+    0.15,
+    0.3
+  ],
+  "raisins": [
+    0.8,
+    0.1,
+    0.1,
+    0.15,
+    0.0
+  ],
+  "cider": [
+    0.5,
+    0.1,
+    0.1,
+    0.6,
+    0.0
+  ],
+  "dubonnet/french rouge aromatised wine": [
+    0.7,
+    0.1,
+    0.4,
+    0.2,
+    0.0
+  ],
+  "dutch cacao white crème de cacao": [
+    1.0,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "earl grey tea": [
+    0.1,
+    0.1,
+    0.5,
+    0.2,
+    0.0
+  ],
+  "egg": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "egg yolk": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "elderflower cordial": [
+    0.85,
+    0.1,
+    0.1,
+    0.2,
+    0.0
+  ],
+  "elderflower liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.2,
+    0.0
+  ],
+  "energy drink": [
+    0.8,
+    0.1,
+    0.15,
+    0.4,
+    0.0
+  ],
+  "espresso coffee": [
+    0.1,
+    0.1,
+    0.8,
+    0.1,
+    0.0
+  ],
+  "extra virgin olive oil": [
+    0.0,
+    0.0,
+    0.4,
+    0.0,
+    0.3
+  ],
+  "fee brothers celery bitters": [
+    0.1,
+    0.1,
+    0.8,
+    0.1,
+    0.15
+  ],
+  "fee brothers lemon bitters": [
+    0.6,
+    0.1,
+    0.8,
+    0.9,
+    0.0
+  ],
+  "feijoa flavoured vodka": [
+    0.5,
+    0.0,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "fernet branca liqueur": [
+    0.8,
+    0.1,
+    0.9,
+    0.2,
+    0.3
+  ],
+  "ferro china baliva": [
+    0.15,
+    0.1,
+    0.85,
+    0.1,
+    0.0
+  ],
+  "fig liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "fig syrup": [
+    0.85,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "figs": [
+    0.6,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "pilsner lager": [
+    0.25,
+    0.1,
+    0.3,
+    0.1,
+    0.0
+  ],
+  "stout beer": [
+    0.3,
+    0.1,
+    0.5,
+    0.1,
+    0.0
+  ],
+  "filter coffee": [
+    0.15,
+    0.1,
+    0.8,
+    0.4,
+    0.0
+  ],
+  "fiol extra dry prosecco": [
+    0.35,
+    0.1,
+    0.1,
+    0.6,
+    0.0
+  ],
+  "single cream": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "raspberry eaudevie": [
+    0.6,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "dill": [
+    0.1,
+    0.1,
+    0.3,
+    0.1,
+    0.0
+  ],
+  "ginger root": [
+    0.15,
+    0.0,
+    0.1,
+    0.0,
+    0.8
+  ],
+  "peach": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "tarragon": [
+    0.1,
+    0.1,
+    0.5,
+    0.1,
+    0.0
+  ],
+  "thyme": [
+    0.1,
+    0.1,
+    0.5,
+    0.1,
+    0.0
+  ],
+  "nutmeg": [
+    0.2,
+    0.1,
+    0.1,
+    0.1,
+    0.4
+  ],
+  "lemon": [
+    0.6,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "fruit cup liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "fruit juice": [
+    0.8,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "galander fine mustard liqueur": [
+    0.2,
+    0.1,
+    0.3,
+    0.1,
+    0.7
+  ],
+  "galliano l'autentico liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "gentian liqueur": [
+    0.1,
+    0.1,
+    0.9,
+    0.1,
+    0.0
+  ],
+  "giffard banane du brésil liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "giffard caramel toffee liqueur": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "giffard caribbean pineapple liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "giffard creme de chataigne": [
+    0.75,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "giffard crème  de framboise": [
+    0.7,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "giffard crème de mûre liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.35,
+    0.0
+  ],
+  "giffard crème de myrtille liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.35,
+    0.0
+  ],
+  "giffard crème de pêche de vigne liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.2,
+    0.0
+  ],
+  "giffard fraise des bois liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.35,
+    0.0
+  ],
+  "giffard framboise de ronce": [
+    0.1,
+    0.1,
+    0.1,
+    0.35,
+    0.0
+  ],
+  "giffard menthe pastille white crème de menthe": [
+    0.65,
+    0.1,
+    0.1,
+    0.1,
+    0.15
+  ],
+  "giffard mirabelle de lorraine": [
+    0.7,
+    0.1,
+    0.1,
+    0.25,
+    0.0
+  ],
+  "giffard pamplemousse liqueur": [
+    0.6,
+    0.1,
+    0.15,
+    0.4,
+    0.0
+  ],
+  "giffard parfait amour liqueur": [
+    0.8,
+    0.1,
+    0.2,
+    0.15,
+    0.0
+  ],
+  "giffard peppermint pastille crème de menthe": [
+    0.65,
+    0.1,
+    0.1,
+    0.1,
+    0.2
+  ],
+  "giffard piment d'espelette chile liqueur": [
+    0.25,
+    0.1,
+    0.1,
+    0.1,
+    0.9
+  ],
+  "giffard poire william": [
+    0.7,
+    0.1,
+    0.1,
+    0.2,
+    0.0
+  ],
+  "giffard rhubarbe liqueur": [
+    0.8,
+    0.1,
+    0.15,
+    0.4,
+    0.0
+  ],
+  "giffard vanille de madagascar": [
+    0.85,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "ginger cordial": [
+    0.6,
+    0.0,
+    0.1,
+    0.0,
+    0.7
+  ],
+  "ginger & lemongrass cordial": [
+    0.6,
+    0.0,
+    0.1,
+    0.15,
+    0.65
+  ],
+  "ginger liqueur": [
+    0.65,
+    0.0,
+    0.1,
+    0.0,
+    0.7
+  ],
+  "ginger syrup": [
+    0.8,
+    0.0,
+    0.2,
+    0.1,
+    0.7
+  ],
+  "ginger wine": [
+    0.6,
+    0.0,
+    0.1,
+    0.15,
+    0.5
+  ],
+  "gingerbread sugar syrup": [
+    0.85,
+    0.0,
+    0.1,
+    0.0,
+    0.3
+  ],
+  "ginseng liqueur": [
+    0.5,
+    0.0,
+    0.3,
+    0.0,
+    0.0
+  ],
+  "gold rum": [
+    0.7,
+    0.0,
+    0.1,
+    0.0,
+    0.0
+  ],
+  "goldwasser cinnamon schnapps liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.4
+  ],
+  "gomme syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "gooseberry & mint cordial": [
+    0.6,
+    0.1,
+    0.5,
+    0.4,
+    0.0
+  ],
+  "gram citric acid solution": [
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0
+  ],
+  "hibiscus flowers": [
+    0.1,
+    0.1,
+    0.2,
+    0.6,
+    0.0
+  ],
+  "roasted coffee beans": [
+    0.1,
+    0.1,
+    0.8,
+    0.3,
+    0.0
+  ],
+  "sweetcorn": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "grand marnier": [
+    0.7,
+    0.0,
+    0.3,
+    0.1,
+    0.1
+  ],
+  "grapefruit juice": [
+    0.8,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "grapefruit preserve": [
+    0.8,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "grapefruit sugar syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "grappa di moscato": [
+    0.4,
+    0.1,
+    0.15,
+    0.1,
+    0.0
+  ],
+  "grated zest of lime": [
+    0.6,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "green banana liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "green chartreuse": [
+    0.45,
+    0.0,
+    0.4,
+    0.1,
+    0.5
+  ],
+  "green grapes": [
+    0.5,
+    0.1,
+    0.1,
+    0.45,
+    0.0
+  ],
+  "green hot pepper sauce": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.9
+  ],
+  "green melon liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "green mint (menthe verte)/peppermint syrup": [
+    1.0,
+    0.0,
+    0.5,
+    0.0,
+    0.3
+  ],
+  "peppermint syrup": [
+    1.0,
+    0.0,
+    0.5,
+    0.0,
+    0.9
+  ],
+  "green tea": [
+    0.1,
+    0.1,
+    0.5,
+    0.1,
+    0.0
+  ],
+  "green tea liqueur": [
+    0.8,
+    0.1,
+    0.5,
+    0.1,
+    0.0
+  ],
+  "grenadine syrup": [
+    0.85,
+    0.0,
+    0.0,
+    0.3,
+    0.0
+  ],
+  "pomegranate syrup": [
+    0.85,
+    0.0,
+    0.0,
+    0.3,
+    0.0
+  ],
+  "grind black pepper": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.9
+  ],
+  "groseille (redcurrant) syrup": [
+    0.6,
+    0.0,
+    0.05,
+    0.4,
+    0.0
+  ],
+  "guava juice drink": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "hayman's london dry gin": [
+    0.0,
+    0.0,
+    0.4,
+    0.1,
+    0.3
+  ],
+  "hayman's old tom gin": [
+    0.4,
+    0.0,
+    0.1,
+    0.0,
+    0.15
+  ],
+  "hayman's sloe gin": [
+    0.7,
+    0.0,
+    0.1,
+    0.2,
+    0.0
+  ],
+  "hazelnut liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "hazelnut oil": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "hazelnut sugar syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "heering cherry liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "hibiscus sugar syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "hibiscus tea": [
+    0.1,
+    0.1,
+    0.5,
+    0.1,
+    0.0
+  ],
+  "highland single malt scotch whisky": [
+    0.0,
+    0.0,
+    0.1,
+    0.0,
+    0.0
+  ],
+  "honey": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "honey herbal liqueur": [
+    1.0,
+    0.0,
+    0.5,
+    0.0,
+    0.0
+  ],
+  "honey sugar syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "honey syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "honey water": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "grapefruit bitters": [
+    0.8,
+    0.1,
+    0.8,
+    0.9,
+    0.0
+  ],
+  "horseradish sauce": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.9
+  ],
+  "hot pepper sauce": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.9
+  ],
+  "water": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+  ],
+  "hpnotiq tropical liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "india pale ale (ipa) beer": [
+    0.25,
+    0.1,
+    0.7,
+    0.15,
+    0.0
+  ],
+  "lager": [
+    0.2,
+    0.1,
+    0.2,
+    0.1,
+    0.0
+  ],
+  "irish cream liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "irish whiskey": [
+    0.3,
+    0.0,
+    0.25,
+    0.05,
+    0.2
+  ],
+  "island single malt scotch whisky": [
+    0.5,
+    0.4,
+    0.3,
+    0.1,
+    0.4
+  ],
+  "italian brandy": [
+    0.6,
+    0.0,
+    0.3,
+    0.2,
+    0.4
+  ],
+  "italicus liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "izarra green (vert) liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "jalapeno slice": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.9
+  ],
+  "jamaican aged blended rum with funk": [
+    0.5,
+    0.0,
+    0.3,
+    0.2,
+    0.4
+  ],
+  "jamaican-style overproof aged pot still rum": [
+    0.4,
+    0.0,
+    0.5,
+    0.6,
+    0.7
+  ],
+  "japanese blended whisky": [
+    0.6,
+    0.2,
+    0.3,
+    0.2,
+    0.4
+  ],
+  "jasmine tea": [
+    0.4,
+    0.0,
+    0.3,
+    0.1,
+    0.0
+  ],
+  "jasmine tea sugar syrup": [
+    1.0,
+    0.0,
+    0.5,
+    0.0,
+    0.0
+  ],
+  "jerry thomas bitters": [
+    0.1,
+    0.1,
+    0.8,
+    0.1,
+    0.0
+  ],
+  "jägermeisteror": [
+    0.6,
+    0.1,
+    0.8,
+    0.2,
+    0.5
+  ],
+  "joseph cartron double crème de cassis de bourgogne": [
+    0.9,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "kaffir lime flavoured vodka": [
+    0.3,
+    0.0,
+    0.3,
+    0.8,
+    0.2
+  ],
+  "ketel one citroen vodka": [
+    0.3,
+    0.0,
+    0.1,
+    0.6,
+    0.0
+  ],
+  "ketel one oranje vodka": [
+    0.4,
+    0.0,
+    0.2,
+    0.3,
+    0.0
+  ],
+  "ketel one vodka": [
+    0.1,
+    0.0,
+    0.1,
+    0.0,
+    0.0
+  ],
+  "kirschwasser": [
+    0.05,
+    0.0,
+    0.1,
+    0.15,
+    0.15
+  ],
+  "kiwi fruit": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "kiwi sugar syrup": [
+    1.0,
+    0.0,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "butter": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "krupnik spiced honey liqueur": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.9
+  ],
+  "kummel liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "kumquats": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "kwai feh lychee liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "la fée absinthe blanche": [
+    0.1,
+    0.1,
+    0.3,
+    0.2,
+    0.4
+  ],
+  "la fée parisienne absinthe": [
+    0.1,
+    0.0,
+    0.8,
+    0.05,
+    0.3
+  ],
+  "la vieille prune plum brandy": [
+    0.6,
+    0.0,
+    0.2,
+    0.4,
+    0.3
+  ],
+  "lapponia lakka cloudberry": [
+    0.6,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "lapsang souchong sugar syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "lapsang souchong tea liqueur": [
+    0.8,
+    0.1,
+    0.5,
+    0.1,
+    0.0
+  ],
+  "lavender sugar syrup": [
+    1.0,
+    0.0,
+    0.5,
+    0.0,
+    0.0
+  ],
+  "leaf kaffir lime": [
+    0.6,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "lemon oleo saccharum": [
+    0.8,
+    0.0,
+    0.4,
+    0.3,
+    0.0
+  ],
+  "lemon peel": [
+    0.6,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "lemon sorbet": [
+    0.6,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "lemon syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.7,
+    0.0
+  ],
+  "lemon thyme": [
+    0.6,
+    0.1,
+    0.5,
+    0.9,
+    0.0
+  ],
+  "lemonade": [
+    0.6,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "lemongrass stem": [
+    0.6,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "lemongrass syrup": [
+    1.0,
+    0.0,
+    0.2,
+    0.6,
+    0.0
+  ],
+  "lemon-lime soda": [
+    0.6,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "l'esprit de june liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "licor 43 original liqueur": [
+    0.9,
+    0.0,
+    0.1,
+    0.2,
+    0.4
+  ],
+  "light gold rum": [
+    0.4,
+    0.0,
+    0.2,
+    0.1,
+    0.3
+  ],
+  "light vermouth amaro": [
+    0.1,
+    0.1,
+    0.8,
+    0.1,
+    0.0
+  ],
+  "light white rum": [
+    0.3,
+    0.0,
+    0.05,
+    0.0,
+    0.05
+  ],
+  "lillet-style rouge light quinquina": [
+    0.6,
+    0.0,
+    0.4,
+    0.3,
+    0.2
+  ],
+  "lime": [
+    0.6,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "lime juice": [
+    0.1,
+    0.0,
+    0.3,
+    1.0,
+    0.0
+  ],
+  "lime shell": [
+    0.6,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "liquorice liqueur": [
+    0.8,
+    0.1,
+    0.5,
+    0.1,
+    0.2
+  ],
+  "lowland single malt scotch whisky": [
+    0.3,
+    0.0,
+    0.4,
+    0.2,
+    0.4
+  ],
+  "lucano amaro": [
+    0.4,
+    0.1,
+    0.8,
+    0.2,
+    0.3
+  ],
+  "lustau amontillado los arcos sherry": [
+    0.1,
+    0.3,
+    0.5,
+    0.2,
+    0.2
+  ],
+  "lustau east india solera sherry": [
+    0.9,
+    0.1,
+    0.3,
+    0.2,
+    0.1
+  ],
+  "lustau jarana fino sherry": [
+    0.05,
+    0.4,
+    0.25,
+    0.3,
+    0.1
+  ],
+  "lustau manzanilla papirusa sherry": [
+    0.1,
+    0.5,
+    0.3,
+    0.2,
+    0.1
+  ],
+  "lustau oloroso don nuño sherry": [
+    0.25,
+    0.05,
+    0.35,
+    0.1,
+    0.15
+  ],
+  "lustau palo cortado península sherry": [
+    0.1,
+    0.2,
+    0.6,
+    0.2,
+    0.2
+  ],
+  "lustau san emilio pedro ximénez sherry": [
+    0.85,
+    0.0,
+    0.05,
+    0.1,
+    0.0
+  ],
+  "luxardo aperitivo": [
+    0.5,
+    0.0,
+    0.3,
+    0.15,
+    0.1
+  ],
+  "luxardo bitter bianco liqueur": [
+    0.8,
+    0.1,
+    0.7,
+    0.2,
+    0.1
+  ],
+  "luxardo maraschino liqueur": [
+    0.8,
+    0.0,
+    0.2,
+    0.1,
+    0.1
+  ],
+  "lychee juice drink": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "lychee rose tea smoked": [
+    0.4,
+    0.1,
+    0.5,
+    0.1,
+    0.1
+  ],
+  "lychee/litchi syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.2,
+    0.0
+  ],
+  "macadamia nut syrup": [
+    1.0,
+    0.1,
+    0.1,
+    0.0,
+    0.0
+  ],
+  "malt extract": [
+    0.7,
+    0.1,
+    0.2,
+    0.1,
+    0.0
+  ],
+  "malt vinegar": [
+    0.1,
+    0.0,
+    0.1,
+    0.8,
+    0.0
+  ],
+  "mancino vermouth di torino chinato": [
+    0.6,
+    0.1,
+    0.7,
+    0.3,
+    0.3
+  ],
+  "mandarine napoleon liqueur": [
+    0.8,
+    0.1,
+    0.3,
+    0.4,
+    0.1
+  ],
+  "mango": [
+    0.8,
+    0.1,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "maple bitters": [
+    0.8,
+    0.1,
+    0.8,
+    0.1,
+    0.2
+  ],
+  "maple shrub": [
+    0.5,
+    0.1,
+    0.2,
+    0.7,
+    0.2
+  ],
+  "maple syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "maraschino cherry": [
+    0.85,
+    0.0,
+    0.05,
+    0.4,
+    0.0
+  ],
+  "marinated pineapple wedges": [
+    0.8,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "marsala secco": [
+    0.2,
+    0.1,
+    0.3,
+    0.3,
+    0.1
+  ],
+  "marsala semisecco": [
+    0.4,
+    0.1,
+    0.3,
+    0.3,
+    0.1
+  ],
+  "martini riserva speciale bitter": [
+    0.5,
+    0.1,
+    0.8,
+    0.3,
+    0.3
+  ],
+  "martinique v.s.o.p rum": [
+    0.6,
+    0.0,
+    0.2,
+    0.1,
+    0.2
+  ],
+  "mascarpone cheese": [
+    0.3,
+    0.5,
+    0.1,
+    0.2,
+    0.0
+  ],
+  "mastiha liqueur": [
+    0.8,
+    0.1,
+    0.3,
+    0.1,
+    0.2
+  ],
+  "mead": [
+    0.7,
+    0.1,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "melon": [
+    0.7,
+    0.1,
+    0.1,
+    0.2,
+    0.0
+  ],
+  "merlot red wine": [
+    0.4,
+    0.1,
+    0.4,
+    0.4,
+    0.0
+  ],
+  "metaxa ouzo": [
+    0.3,
+    0.1,
+    0.2,
+    0.1,
+    0.4
+  ],
+  "mieleaceto apicoltura gianni castellari": [
+    0.4,
+    0.0,
+    0.1,
+    1.0,
+    0.1
+  ],
+  "milk": [
+    0.4,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "mimosa syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.3,
+    0.0
+  ],
+  "mincemeat": [
+    0.7,
+    0.1,
+    0.2,
+    0.3,
+    0.4
+  ],
+  "mint leaves": [
+    0.1,
+    0.1,
+    0.5,
+    0.1,
+    0.6
+  ],
+  "moscatel": [
+    0.8,
+    0.1,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "mozart chocolate vodka": [
+    0.7,
+    0.0,
+    0.2,
+    0.1,
+    0.0
+  ],
+  "mulberry jam": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "muscat wine": [
+    0.8,
+    0.1,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "nardini rosso": [
+    0.6,
+    0.1,
+    0.7,
+    0.3,
+    0.2
+  ],
+  "navy rum": [
+    0.7,
+    0.0,
+    0.3,
+    0.0,
+    0.3
+  ],
+  "nettle cordial": [
+    0.6,
+    0.1,
+    0.3,
+    0.2,
+    0.1
+  ],
+  "oak smoked vodka": [
+    0.1,
+    0.0,
+    0.3,
+    0.0,
+    0.3
+  ],
+  "olive brine": [
+    0.0,
+    1.0,
+    0.3,
+    0.4,
+    0.0
+  ],
+  "oolong tea": [
+    0.1,
+    0.1,
+    0.5,
+    0.2,
+    0.0
+  ],
+  "orange": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "orange bitters": [
+    0.05,
+    0.0,
+    0.8,
+    0.25,
+    0.2
+  ],
+  "orange blossom water": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "orange flower water": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "orange curaçao liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "orange curd": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "orange juice": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "orange marmalade": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "orange peel": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "orange sherbet": [
+    0.6,
+    0.1,
+    0.5,
+    0.5,
+    0.0
+  ],
+  "oregano": [
+    0.1,
+    0.1,
+    0.4,
+    0.1,
+    0.3
+  ],
+  "oreo cookies": [
+    0.9,
+    0.1,
+    0.2,
+    0.1,
+    0.0
+  ],
+  "orgeat (almond) sugar syrup": [
+    1.0,
+    0.0,
+    0.1,
+    0.0,
+    0.0
+  ],
+  "orinoco bitters": [
+    0.2,
+    0.1,
+    0.8,
+    0.2,
+    0.3
+  ],
+  "pacharan liqueur": [
+    0.8,
+    0.1,
+    0.2,
+    0.4,
+    0.0
+  ],
+  "pale ale": [
+    0.3,
+    0.1,
+    0.6,
+    0.2,
+    0.1
+  ],
+  "passion fruit": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "passion fruit juice": [
+    0.8,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "passion fruit syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "passoã passion fruit liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "pastis": [
+    0.3,
+    0.1,
+    0.4,
+    0.1,
+    0.5
+  ],
+  "patrón añejo tequila": [
+    0.5,
+    0.0,
+    0.3,
+    0.2,
+    0.4
+  ],
+  "patrón reposado tequila": [
+    0.4,
+    0.0,
+    0.3,
+    0.2,
+    0.3
+  ],
+  "patrón silver blanco tequila": [
+    0.2,
+    0.0,
+    0.2,
+    0.3,
+    0.4
+  ],
+  "peach aperitif liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "peach bitters": [
+    0.8,
+    0.1,
+    0.8,
+    0.4,
+    0.0
+  ],
+  "peachtree peach schnapps": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "peanut butter": [
+    0.3,
+    0.5,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "pear juice": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "pear": [
+    0.6,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "pecan liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "peppercorn syrup": [
+    1.0,
+    0.0,
+    0.2,
+    0.1,
+    0.9
+  ],
+  "peychaud's bitters": [
+    0.2,
+    0.0,
+    0.8,
+    0.05,
+    0.35
+  ],
+  "physalis / cape gooseberry fruits": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "pickle juice": [
+    0.1,
+    1.0,
+    0.2,
+    0.8,
+    0.2
+  ],
+  "brine": [
+    0.0,
+    1.0,
+    0.0,
+    0.3,
+    0.0
+  ],
+  "vinegar from pickled cucumber": [
+    0.0,
+    0.3,
+    0.1,
+    1.0,
+    0.1
+  ],
+  "picon biere": [
+    0.4,
+    0.1,
+    0.7,
+    0.3,
+    0.2
+  ],
+  "pimento bitters": [
+    0.1,
+    0.1,
+    0.8,
+    0.1,
+    0.9
+  ],
+  "pimento dram": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.9
+  ],
+  "allspice liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.9
+  ],
+  "pine liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "pineapple": [
+    0.8,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "pineapple flavoured vodka": [
+    0.6,
+    0.0,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "pineapple juice": [
+    0.8,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "pineapple marinade syrup": [
+    0.7,
+    0.2,
+    0.1,
+    0.5,
+    0.1
+  ],
+  "pineapple rum": [
+    0.7,
+    0.0,
+    0.1,
+    0.4,
+    0.1
+  ],
+  "pineapple sugar syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.3,
+    0.0
+  ],
+  "pineau des charentes blanc": [
+    0.6,
+    0.1,
+    0.2,
+    0.4,
+    0.0
+  ],
+  "pineau des charentes rouge": [
+    0.6,
+    0.1,
+    0.3,
+    0.4,
+    0.1
+  ],
+  "pink grapefruit juice": [
+    0.15,
+    0.0,
+    0.3,
+    0.6,
+    0.0
+  ],
+  "pink peppercorns": [
+    0.1,
+    0.1,
+    0.2,
+    0.1,
+    0.9
+  ],
+  "pinot grigio white wine": [
+    0.4,
+    0.1,
+    0.1,
+    0.6,
+    0.0
+  ],
+  "belgium dubbel abbey ale": [
+    0.5,
+    0.1,
+    0.4,
+    0.2,
+    0.1
+  ],
+  "pistachio cream liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "plum": [
+    0.6,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "plum bitters": [
+    0.6,
+    0.1,
+    0.8,
+    0.4,
+    0.0
+  ],
+  "plum jam": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "poire william eau-de-vie": [
+    0.4,
+    0.1,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "pomegranate juice": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "pomegranate liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "porter beer": [
+    0.6,
+    0.1,
+    0.5,
+    0.1,
+    0.2
+  ],
+  "poteen/poitín": [
+    0.4,
+    0.1,
+    0.3,
+    0.2,
+    0.7
+  ],
+  "prune eau-de-vie": [
+    0.7,
+    0.1,
+    0.2,
+    0.5,
+    0.4
+  ],
+  "prune syrup": [
+    1.0,
+    0.0,
+    0.2,
+    0.5,
+    0.1
+  ],
+  "punt e mes vermouth amaro": [
+    0.6,
+    0.1,
+    0.8,
+    0.3,
+    0.4
+  ],
+  "quince mustard jam": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.4
+  ],
+  "rabarbaro liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "rainwater/verdelho (med-dry) madeira wine": [
+    0.4,
+    0.1,
+    0.2,
+    0.7,
+    0.3
+  ],
+  "raisin sugar syrup": [
+    1.0,
+    0.0,
+    0.1,
+    0.2,
+    0.1
+  ],
+  "raspberries": [
+    0.8,
+    0.1,
+    0.2,
+    0.8,
+    0.0
+  ],
+  "raspberry jam": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "raspberry (framboise) sugar syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.4,
+    0.0
+  ],
+  "red bell pepper": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.9
+  ],
+  "red chili pepper": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.9
+  ],
+  "red curaçao liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "red grapes": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "redcurrant jelly": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "redcurrants": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "rhubarb bitters": [
+    0.1,
+    0.1,
+    0.8,
+    0.1,
+    0.0
+  ],
+  "rhubarb orange preserve": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "rhubarb syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "rhum clément blanc": [
+    0.4,
+    0.1,
+    0.2,
+    0.3,
+    0.5
+  ],
+  "rhum clément créole shrubb liqueur": [
+    0.8,
+    0.1,
+    0.3,
+    0.4,
+    0.4
+  ],
+  "riesling wine": [
+    0.8,
+    0.1,
+    0.2,
+    0.8,
+    0.2
+  ],
+  "red onion": [
+    0.6,
+    0.1,
+    0.3,
+    0.2,
+    0.5
+  ],
+  "yellow bell pepper": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.9
+  ],
+  "rioja (crianza) red wine": [
+    0.4,
+    0.1,
+    0.3,
+    0.5,
+    0.2
+  ],
+  "rocket/arugula salad leaves": [
+    0.1,
+    0.1,
+    0.5,
+    0.1,
+    0.0
+  ],
+  "rosé champagne": [
+    0.2,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "rosé/rosato vermouth": [
+    0.7,
+    0.1,
+    0.4,
+    0.3,
+    0.1
+  ],
+  "rose petal liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "rose sugar syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "rose water": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "rosemary sprig": [
+    0.1,
+    0.1,
+    0.5,
+    0.1,
+    0.2
+  ],
+  "rosemary sugar syrup": [
+    1.0,
+    0.0,
+    0.5,
+    0.0,
+    0.0
+  ],
+  "rubino vermouth": [
+    0.7,
+    0.1,
+    0.5,
+    0.3,
+    0.2
+  ],
+  "ruby red grapefruit": [
+    0.8,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "rutte celery dry gin": [
+    0.1,
+    0.0,
+    0.4,
+    0.0,
+    0.2
+  ],
+  "rutte old simon genever": [
+    0.3,
+    0.1,
+    0.3,
+    0.1,
+    0.3
+  ],
+  "rutte & zn 12 oude graan jenever": [
+    0.4,
+    0.1,
+    0.2,
+    0.1,
+    0.3
+  ],
+  "saffron fronds": [
+    0.2,
+    0.1,
+    0.4,
+    0.1,
+    0.1
+  ],
+  "saffron syrup": [
+    1.0,
+    0.0,
+    0.4,
+    0.0,
+    0.0
+  ],
+  "sage leaves": [
+    0.1,
+    0.1,
+    0.5,
+    0.1,
+    0.0
+  ],
+  "saline solution": [
+    0.1,
+    0.9,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "salt": [
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "salted caramel syrup": [
+    1.0,
+    0.4,
+    0.2,
+    0.0,
+    0.0
+  ],
+  "sambuca": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "sauternes dessert wine": [
+    0.9,
+    0.1,
+    0.1,
+    0.6,
+    0.0
+  ],
+  "sauvignon blanc wine": [
+    0.4,
+    0.1,
+    0.1,
+    0.7,
+    0.0
+  ],
+  "savoia americano rosso": [
+    0.35,
+    0.1,
+    0.4,
+    0.2,
+    0.1
+  ],
+  "savoia orancio": [
+    0.2,
+    0.1,
+    0.4,
+    0.6,
+    0.1
+  ],
+  "tangerine": [
+    0.7,
+    0.1,
+    0.2,
+    0.4,
+    0.0
+  ],
+  "mandarin": [
+    0.7,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "clementine": [
+    0.8,
+    0.1,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "sercial (dry) madeira wine": [
+    0.2,
+    0.1,
+    0.3,
+    0.8,
+    0.1
+  ],
+  "sesame oil": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "sexy bitters": [
+    0.2,
+    0.1,
+    0.8,
+    0.2,
+    0.3
+  ],
+  "sherry vinegar": [
+    0.2,
+    0.0,
+    0.0,
+    1.0,
+    0.1
+  ],
+  "shiraz red wine": [
+    0.4,
+    0.1,
+    0.3,
+    0.4,
+    0.5
+  ],
+  "shiso/perilla leaf": [
+    0.1,
+    0.1,
+    0.3,
+    0.2,
+    0.4
+  ],
+  "shochu/soju": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.2
+  ],
+  "single malt welsh whisky": [
+    0.4,
+    0.0,
+    0.3,
+    0.1,
+    0.5
+  ],
+  "slivovitz plum brandy": [
+    0.2,
+    0.0,
+    0.2,
+    0.1,
+    0.6
+  ],
+  "smoked porter beer": [
+    0.4,
+    0.1,
+    0.5,
+    0.1,
+    0.3
+  ],
+  "soave wine": [
+    0.1,
+    0.1,
+    0.2,
+    0.5,
+    0.0
+  ],
+  "soda": [
+    0.0,
+    0.0,
+    0.0,
+    0.2,
+    0.1
+  ],
+  "sorrelade": [
+    0.5,
+    0.1,
+    0.1,
+    0.8,
+    0.3
+  ],
+  "sour apple liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "sour pineapple liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "southern/louisiana-style whisky liqueur": [
+    0.7,
+    0.0,
+    0.2,
+    0.1,
+    0.4
+  ],
+  "soy milk": [
+    0.2,
+    0.0,
+    0.1,
+    0.0,
+    0.0
+  ],
+  "soy sauce": [
+    0.1,
+    1.0,
+    0.3,
+    0.2,
+    0.0
+  ],
+  "spanish brandy": [
+    0.4,
+    0.0,
+    0.2,
+    0.1,
+    0.3
+  ],
+  "sparkling apple juice": [
+    0.8,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "speyside single malt scotch whisky": [
+    0.5,
+    0.0,
+    0.2,
+    0.1,
+    0.3
+  ],
+  "spinach leaves": [
+    0.1,
+    0.1,
+    0.5,
+    0.1,
+    0.0
+  ],
+  "splash thomas henry soda water": [
+    0.4,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "straight rye whiskey": [
+    0.25,
+    0.0,
+    0.25,
+    0.05,
+    0.7
+  ],
+  "strawberries": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "strawberry candy (bonbon) syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "strawberry": [
+    0.8,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "strawberry sugar syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.4,
+    0.0
+  ],
+  "strega liqueur": [
+    0.8,
+    0.1,
+    0.3,
+    0.1,
+    0.4
+  ],
+  "strucchi bianco vermouth": [
+    0.5,
+    0.1,
+    0.4,
+    0.2,
+    0.2
+  ],
+  "strucchi dry vermouth": [
+    0.15,
+    0.0,
+    0.8,
+    0.2,
+    0.2
+  ],
+  "strucchi red bitter": [
+    0.4,
+    0.0,
+    0.5,
+    0.25,
+    0.15
+  ],
+  "strucchi rosso vermouth": [
+    0.1,
+    0.1,
+    0.8,
+    0.1,
+    0.0
+  ],
+  "sugar syrup 'rich'": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "sugar-free sweetener syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "swath grapefruit peel/zest": [
+    0.8,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "swath lemon peel": [
+    0.6,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "swedish punsch liqueur": [
+    0.8,
+    0.1,
+    0.2,
+    0.1,
+    0.3
+  ],
+  "syrup from luxardo maraschino cherries": [
+    1.0,
+    0.0,
+    0.1,
+    0.2,
+    0.0
+  ],
+  "tangerine / mandarin / clementine juice": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "tarragon sugar syrup": [
+    1.0,
+    0.0,
+    0.5,
+    0.0,
+    0.0
+  ],
+  "tea syrup": [
+    1.0,
+    0.0,
+    0.5,
+    0.0,
+    0.0
+  ],
+  "tennessee whiskey": [
+    0.4,
+    0.0,
+    0.2,
+    0.05,
+    0.25
+  ],
+  "tequila agave liqueur": [
+    0.6,
+    0.0,
+    0.2,
+    0.2,
+    0.3
+  ],
+  "thomas henry bitter lemon": [
+    0.6,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "thomas henry ginger ale": [
+    0.5,
+    0.0,
+    0.1,
+    0.3,
+    0.5
+  ],
+  "thomas henry ginger beer": [
+    0.6,
+    0.0,
+    0.1,
+    0.3,
+    0.7
+  ],
+  "thomas henry pink grapefruit soda": [
+    0.8,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "thomas henry soda water": [
+    0.0,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "thomas henry tonic water": [
+    0.4,
+    0.1,
+    0.8,
+    0.1,
+    0.0
+  ],
+  "tiki bitters": [
+    0.1,
+    0.1,
+    0.8,
+    0.2,
+    0.5
+  ],
+  "tobacco liqueur": [
+    0.8,
+    0.1,
+    0.5,
+    0.1,
+    0.3
+  ],
+  "tokaji hungarian wine": [
+    0.8,
+    0.1,
+    0.1,
+    0.6,
+    0.0
+  ],
+  "tomato juice": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "tomato ketchup": [
+    0.6,
+    0.5,
+    0.1,
+    0.6,
+    0.1
+  ],
+  "tonka bitters": [
+    0.3,
+    0.1,
+    0.8,
+    0.1,
+    0.4
+  ],
+  "aegean tonic water": [
+    0.4,
+    0.1,
+    0.8,
+    0.1,
+    0.0
+  ],
+  "brut champagne/sparkling wine": [
+    0.4,
+    0.1,
+    0.1,
+    0.7,
+    0.0
+  ],
+  "dunkel / dark / black lager": [
+    0.5,
+    0.1,
+    0.3,
+    0.1,
+    0.0
+  ],
+  "elderflower press": [
+    0.6,
+    0.1,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "ginger ale": [
+    0.5,
+    0.0,
+    0.1,
+    0.3,
+    0.5
+  ],
+  "weisse (wheat) beer": [
+    0.4,
+    0.1,
+    0.2,
+    0.3,
+    0.2
+  ],
+  "torabhaig peated single malt whisky": [
+    0.4,
+    0.1,
+    0.3,
+    0.1,
+    0.5
+  ],
+  "torres aqua d'or aguardiente": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.3
+  ],
+  "tuaca liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "lime zest": [
+    0.6,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ],
+  "orange zest/swath": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "ultravaganza euro bitters": [
+    0.2,
+    0.1,
+    0.8,
+    0.1,
+    0.5
+  ],
+  "unaged rye spirit": [
+    0.1,
+    0.1,
+    0.2,
+    0.1,
+    0.7
+  ],
+  "black olives": [
+    0.1,
+    0.7,
+    0.3,
+    0.1,
+    0.0
+  ],
+  "vanilla extract/essence": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "vanilla ice cream": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "vanilla pod": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "vanilla rum/vanilla-infused light rum": [
+    0.6,
+    0.0,
+    0.1,
+    0.0,
+    0.1
+  ],
+  "vanilla sugar syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "vermouth amaro - medium": [
+    0.5,
+    0.1,
+    0.6,
+    0.2,
+    0.3
+  ],
+  "viognier white wine": [
+    0.4,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "violet sugar syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "walnut (nocino) liqueur": [
+    0.6,
+    0.0,
+    0.3,
+    0.1,
+    0.05
+  ],
+  "warninks advocaat liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "wasabi leaf": [
+    0.1,
+    0.1,
+    0.2,
+    0.1,
+    0.9
+  ],
+  "wasabi paste": [
+    0.1,
+    0.1,
+    0.2,
+    0.1,
+    0.9
+  ],
+  "watermelon sugar syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "whiskey barrel-aged bitters": [
+    0.3,
+    0.0,
+    0.7,
+    0.1,
+    0.4
+  ],
+  "white balsamic vinegar": [
+    0.3,
+    0.0,
+    0.0,
+    1.0,
+    0.0
+  ],
+  "white chocolate grappa liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "white chocolate sugar syrup": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "white cranberry juice drink": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.0
+  ],
+  "white overproof rum": [
+    0.3,
+    0.0,
+    0.1,
+    0.0,
+    0.7
+  ],
+  "white tea": [
+    0.2,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "white truffle honey": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "white wine vinegar": [
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0
+  ],
+  "white zinfandel rosé wine": [
+    0.5,
+    0.1,
+    0.1,
+    0.4,
+    0.0
+  ],
+  "wiśniówka polish cherry vodka liqueur": [
+    0.7,
+    0.0,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "worcestershire sauce": [
+    0.2,
+    0.7,
+    0.1,
+    0.3,
+    0.3
+  ],
+  "wormwood bitters": [
+    0.1,
+    0.1,
+    0.8,
+    0.1,
+    0.0
+  ],
+  "xanthan gum": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.0
+  ],
+  "xocolatl mole bitters": [
+    0.1,
+    0.1,
+    0.8,
+    0.1,
+    0.5
+  ],
+  "yellow bell pepper juice": [
+    0.6,
+    0.1,
+    0.1,
+    0.5,
+    0.9
+  ],
+  "yellow chartreuse": [
+    0.7,
+    0.1,
+    0.3,
+    0.1,
+    0.1
+  ],
+  "yoghurt": [
+    0.1,
+    0.1,
+    0.1,
+    0.6,
+    0.0
+  ],
+  "yoghurt liqueur": [
+    0.8,
+    0.1,
+    0.1,
+    0.3,
+    0.0
+  ],
+  "yuzu juice": [
+    0.1,
+    0.1,
+    0.1,
+    0.9,
+    0.0
+  ]
+}
