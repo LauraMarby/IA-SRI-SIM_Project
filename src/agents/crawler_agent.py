@@ -11,77 +11,89 @@ from pathlib import Path
 class Crawler_Agent(BaseAgent):
     def __init__(self, name, system):
         super().__init__(name, system)
-        
         self.DATA_DIR = "src/data/"
 
-    def crawl_srap(self, message: str) -> str:
+    async def handle(self, message):
+        queries = message["content"]
+        results = self.crawl_scrap(queries)
+        if len(results) == 0:
+            await self.send("coordinator", {"source": "crawler", "results": "No se ha encontrado información relevante respecto a la consulta."})
+        await self.send("coordinator", {"source": "crawler", "results": results})
+
+
+    def crawl_scrap(self, messages: list[str]) -> str|list[dict]:
         """Realiza una búsqueda en google teniendo en cuenta la query del usuario y toma el contenido de la primera página que encuentra."""
         
-        try:
-            search_results = search(f"{message}, site:https://www.diffordsguide.com/cocktails/recipe/ OR site:https://www.liquor.com/recipes/ OR site:https://punchdrink.com/recipes/", advanced=True, unique=True, lang="en")
-            if not search_results:
-                return f"Error en la búsqueda. No se encontró resultados para: {message}."
-            
-            for search_result in search_results:
-                if search_result.url != "" and not is_url_visited(search_result.url):
-                    try:
-                        response = fetch_url(search_result.url)
-                    
-                        soup = BeautifulSoup(response.content, "html.parser")
+        result = []
 
-                        if 'diffordsguide.com' in search_result.url:
-                            print("diffords")
-                            content = {}
-                            content['Url'] = search_result.url
-                            content['Name'] = find_name(soup)
-                            content['Glass'] = find_glass(soup)
-                            content['Ingredients'] = find_ingredients(soup)
-                            content['Instructions'] = find_instructions(soup)
-                            content['Review'] = find_review(soup)
-                            content['History'] = find_history(soup)
-                            content['Nutrition'] = find_nutrition(soup)
-                            content['Alcohol_Content'] = find_alcohol_content(soup)
-                            content['Garnish'] = find_garnish(soup)
+        for message in messages:
+            try:
+                search_results = search(f"{message}, site:https://www.diffordsguide.com/cocktails/recipe/ OR site:https://www.liquor.com/recipes/ OR site:https://punchdrink.com/recipes/", lang="en")
+                if not search_results:
+                    return f"Error en la búsqueda. No se encontró resultados para: {message}."
+                
+                for search_result in search_results:
+                    if search_result != "" and not is_url_visited(search_result):
+                        try:
+                            response = fetch_url(search_result)
                         
-                        else:
-                            if 'liquor.com' in search_result.url:
-                                name = soup.find('h1', class_='heading__title').text.strip()
+                            soup = BeautifulSoup(response.content, "html.parser")
 
-                                data = extract(filecontent=str(soup))
-                                if data is None:
-                                    continue
-
+                            if 'diffordsguide.com' in search_result:
                                 content = {}
-                                content["Url"] = search_result.url
-                                content["Name"] = name
-                                content["Recipe"] = data
+                                content['Url'] = search_result
+                                content['Name'] = find_name(soup)
+                                content['Glass'] = find_glass(soup)
+                                content['Ingredients'] = find_ingredients(soup)
+                                content['Instructions'] = find_instructions(soup)
+                                content['Review'] = find_review(soup)
+                                content['History'] = find_history(soup)
+                                content['Nutrition'] = find_nutrition(soup)
+                                content['Alcohol_Content'] = find_alcohol_content(soup)
+                                content['Garnish'] = find_garnish(soup)
+                            
+                            else:
+                                if 'liquor.com' in search_result:
+                                    name = soup.find('h1', class_='heading__title').text.strip()
 
-                            elif 'punchdrink.com' in search_result.url:
-                                name = soup.find('h1', class_='entry-title text-center').text.strip() 
-                                recipe = soup.find('div', class_='save-recipe').text.strip()
-                                intro = soup.find('div', class_='entry-content').text.strip()
+                                    data = extract(filecontent=str(soup))
+                                    if data is None:
+                                        continue
 
-                                content = {}
-                                content["Url"] = search_result.url
-                                content["Name"] = name
-                                content["Intro"] = intro
-                                content["Recipe"] = recipe
+                                    content = {}
+                                    content["Url"] = search_result
+                                    content["Name"] = name
+                                    content["Recipe"] = data
 
-                        p = write_to_json(content)
-                        save_url_visited_urls(search_result.url)
-                        return p
+                                elif 'punchdrink.com' in search_result:
+                                    name = soup.find('h1', class_='entry-title text-center').text.strip() 
+                                    recipe = soup.find('div', class_='save-recipe').text.strip()
+                                    intro = soup.find('div', class_='entry-content').text.strip()
 
-                    except Exception as e:
-                        print(f"Error al procesar {search_result.url}: {str(e)}")
-                        continue
+                                    content = {}
+                                    content["Url"] = search_result
+                                    content["Name"] = name
+                                    content["Intro"] = intro
+                                    content["Recipe"] = recipe
 
-        except Exception as e:
-            return f"Error en la búsqueda: {str(e)}"
+                            result.append(content)
+                            p = write_to_json(content)
+                            embed_new_document(Path(p))
+                            save_url_visited_urls(search_result)
+                            break
 
-    async def handle(self, message):
-        result = self.crawl_srap(message["content"])
+                        except Exception as e:
+                            print(f"Error al procesar {search_result}: {str(e)}")
+                            continue
 
-        if not result.startswith('Error en la búsqueda'):
-            embed_new_document(Path(result))
+            except Exception as e:
+                return f"Error en la búsqueda: {str(e)}"
+            
+        return result
+
+        #enviar result a alguien, result es una lista de diccionarios con la información a responder o un string con error de que algo no pincho
+
+        # if not isinstance(result, str) and not result.startswith('Error en la búsqueda'):
+        #     embed_new_document(Path(result))
 
         #mandar mensaje a alguien? devolver algo?

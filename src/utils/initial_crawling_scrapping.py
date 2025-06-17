@@ -2,8 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import re
 from tenacity import retry, stop_after_attempt, wait_exponential
-from extract_robots import analyze_robots
-from write_to_json import write_to_json
+from utils.extract_robots import analyze_robots
+from utils.write_to_json import write_to_json
 
 target_url = "https://www.diffordsguide.com/"
 

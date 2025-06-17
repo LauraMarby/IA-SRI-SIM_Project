@@ -8,13 +8,12 @@ class CoordinatorAgent(BaseAgent):
         self.model = model
         self.lang = "en"
         self.query = "Empty query"
+        self.embedding_query = []
 
     async def handle(self, message):
 
         sender = message["from"]
         if sender == "user":
-    
-            print("[BUSCANDO INFORMACIÓN EN LAS BASES DE CONOCIMIENTOS]")
 
             content = message["content"]
 
@@ -29,8 +28,13 @@ class CoordinatorAgent(BaseAgent):
                 return
         
             self.query = data.get("translated_prompt", "unknown query")
-            embedding_query = data.get("embedding_query", "unnecesary question")
+            self.embedding_query = data.get("embedding_query", "")
             self.lang = data.get("original_language", "en")
+
+            if data["online"] == True:
+                await self.send_response([], [], "Debes mencionar explícitamente que se está realizando una búsqueda online respecto a la pregunta del usuario y que este debe esperar.", "await")
+                await self.send("crawler", self.embedding_query)
+                return
 
             cocktails = data.get("cocktails", [])
 
@@ -49,9 +53,11 @@ class CoordinatorAgent(BaseAgent):
                 cocktail_names.append(nombre)
                 field_sets.append(campos)
 
+            print("[BUSCANDO INFORMACIÓN EN LAS BASES DE CONOCIMIENTOS]")
+
             # Construir payload común
             payload_ontology = {"cocktails": cocktail_names, "fields": field_sets}
-            payload_embedding = {"query": embedding_query}
+            payload_embedding = {"query": self.embedding_query}
 
             expected_sources = ["ontology", "embedding"]
             # flavors = data.get("flavor_of_drink", [])
@@ -74,7 +80,7 @@ class CoordinatorAgent(BaseAgent):
         elif sender=="validator":
             if 'error' in message["content"]:
                 print("[EMITIENDO RESPUESTA]\n")
-                await self.send_response([], [], "Información al respecto no encontrada")
+                await self.send_response([], [], "Información al respecto no encontrada", "error")
             else:
                 content = message["content"]["suficiencia"]
                 drinks = message["content"]["drinks"]
@@ -87,7 +93,7 @@ class CoordinatorAgent(BaseAgent):
                     
                     # Enviando respuesta
                     print("[EMITIENDO RESPUESTA]\n")
-                    await self.send_response(drinks, extra, razonamiento)
+                    await self.send_response(drinks, extra, razonamiento, "final")
 
                     # Limpiando memoria
                     self.lang = "en"
@@ -95,13 +101,20 @@ class CoordinatorAgent(BaseAgent):
                 
                 elif online:
                     print("[EMITIENDO RESPUESTA]\n")
-                    await self.send_response([], [], "Información al respecto no encontrada. Realizando búsqueda online.")
-                
+                    await self.send_response([], [], "Información al respecto no encontrada. Debes mencionar explícitamente que se está realizando una búsqueda online respecto a la pregunta del usuario y que este debe esperar.", "await")
+                    await self.send("crawler", self.embedding_query)
+
                 else:
                     print("[EMITIENDO RESPUESTA]\n")
-                    await self.send_response(drinks, extra, "Información al respecto no encontrada. Voy a proceder a buscar en la web al respecto.")
+                    await self.send_response(drinks, extra, "Intenta responder con lo que tengas", "final")
 
-    async def send_response(self, respuesta, complementos, razonamiento):
+        elif sender=="crawler":
+            
+            await self.send_response(message["content"]["results"], [], "Resultado de realizar la busqueda online.", "final")
+                    
+        
+
+    async def send_response(self, respuesta, complementos, razonamiento, intencion):
         # Construir el prompt en base a la query original, la respuesta seleccionada, 
         # los complementos útiles y el razonamiento aplicado.
         prompt = f"""
@@ -129,7 +142,8 @@ class CoordinatorAgent(BaseAgent):
             # Enviar la respuesta al UserAgent (simulado aquí con un print, reemplaza con tu entorno de mensajes)
             await self.send("user", {
                 "type": "respuesta_final",
-                "content": final_answer
+                "content": final_answer,
+                "intencion": intencion
             })
 
         except Exception as e:

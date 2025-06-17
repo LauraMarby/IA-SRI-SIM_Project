@@ -31,8 +31,12 @@ class UserAgent(BaseAgent):
             await self.send("coordinator", intent_data)
 
             # Esperar respuesta final del coordinator
-            final_response = await self.receive()
-            result = final_response["content"]["content"]
-
-            # Mostrar respuesta final al usuario
-            ui.show_response(result)
+            
+            while True:
+                final_response = await self.receive()
+                intencion = final_response['content']['intencion']
+                result = final_response['content']['content']
+                # Mostrar respuesta final al usuario
+                ui.show_response(result)
+                if intencion != "await":
+                    break

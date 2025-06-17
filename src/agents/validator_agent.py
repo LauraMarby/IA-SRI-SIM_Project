@@ -343,6 +343,7 @@ Tu respuesta debe ser un OBJETO JSON con la siguiente estructura exacta, usando 
   "expandida_suficiente": Indica si agregando algunos de los fragmentos extra, es suficiente o no dar una respuesta correcta que cumpla las restricciones.
   "razonamiento": "..."
   "requiere_búsqueda_online": True o False. Esto depende del contexto de la pregunta. Por ejemplo si me piden un trago que no encuentro, esto debe ser True, pero si me piden algo como (Recomiendame algo) sin dar detalles de sus gustos, esto debe ser falso porque cualquier trago podría gustar.
+  **NOTA IMPORTANTE: Si la pregunta del usuario implica explícitamente una búsqueda en internet, requiere_búsqueda_online debe ser True.**
 }}
 """
 

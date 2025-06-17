@@ -6,6 +6,7 @@ from agents.user_agent import UserAgent
 from agents.coordinator_agent import CoordinatorAgent
 from agents.ontology_agent import OntologyAgent
 from agents.embedding_agent import EmbeddingAgent
+from agents.crawler_agent import Crawler_Agent
 from agents.intent_detector_agent import IntentDetectorAgent
 from agents.validator_agent import ValidationAgent
 from ontology.query_ontology import consultar_tragos
@@ -43,8 +44,9 @@ async def main():
     embedding = EmbeddingAgent("embedding", system, retrieve)
     intent_detector = IntentDetectorAgent("intent_detector", system, gemini_model)
     validator = ValidationAgent("validator", system, gemini_model)
+    crawler = Crawler_Agent("crawler", system)
 
-    for agent in [coordinator, ontology, user, intent_detector, embedding, validator]:
+    for agent in [coordinator, ontology, user, intent_detector, embedding, validator, crawler]:
         system.register_agent(agent)
 
     await asyncio.gather(
@@ -53,7 +55,8 @@ async def main():
         ontology.run(),
         embedding.run(),
         intent_detector.run(),
-        validator.run()
+        validator.run(),
+        crawler.run()
     )
 
 if __name__ == "__main__":
