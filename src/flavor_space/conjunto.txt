@@ -1,0 +1,2 @@
+# "[Dulce, Salado, Amargo, Ácido, Picante]"
+    0,      1,      2,      3,      4
