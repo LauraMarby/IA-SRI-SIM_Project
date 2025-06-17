@@ -124,6 +124,3 @@ def embed_new_document(path: Path):
     with open(OUTPUT_FILE, 'wb') as f:
         pickle.dump(new_emb, f)
 
-# ==== Ejecución principal ====
-if __name__ == "__main__":
-    embed_all_documents()

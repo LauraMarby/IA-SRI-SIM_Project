@@ -282,6 +282,3 @@ def crawler():
 
     # return drinks_data
 
-# ==== Ejecución principal ====
-if __name__ == "__main__":
-    crawler()
