@@ -60,10 +60,9 @@ class CoordinatorAgent(BaseAgent):
             payload_embedding = {"query": self.embedding_query}
 
             expected_sources = ["ontology", "embedding"]
-            # flavors = data.get("flavor_of_drink", [])
-            # if flavors is not []:
-            #     expected_sources.append("flavors agent")
-            #     await self.send("flavors agent", {"cocktails": poner cocteles a averiguar sabor, "flavors": poner sabores buscados en cocteles})
+            flavors = data.get("flavors", [])
+            if flavors is not None:
+                expected_sources.append("flavor")
 
             # Avisar al validador de qué fuentes esperar
             if expected_sources:
@@ -73,7 +72,9 @@ class CoordinatorAgent(BaseAgent):
                     "query": self.query  # útil para que el validador sepa qué validar
                 })
 
-
+            if flavors is not []:
+                print("[CONSULTANDO AGENTE DE SABORES]")
+                await self.send("flavor", {"flavors": flavors, "ammount": 5})
             await self.send("ontology", payload_ontology)
             await self.send("embedding", payload_embedding)
             

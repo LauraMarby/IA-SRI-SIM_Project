@@ -9,6 +9,7 @@ from agents.embedding_agent import EmbeddingAgent
 from agents.crawler_agent import Crawler_Agent
 from agents.intent_detector_agent import IntentDetectorAgent
 from agents.validator_agent import ValidationAgent
+from agents.flavor_agent import Flavor_Agent
 from ontology.query_ontology import consultar_tragos
 from embedding.query_embedding import retrieve
 from pathlib import Path
@@ -45,8 +46,9 @@ async def main():
     intent_detector = IntentDetectorAgent("intent_detector", system, gemini_model)
     validator = ValidationAgent("validator", system, gemini_model)
     crawler = Crawler_Agent("crawler", system)
+    flavor = Flavor_Agent("flavor", system, consultar_tragos)
 
-    for agent in [coordinator, ontology, user, intent_detector, embedding, validator, crawler]:
+    for agent in [coordinator, ontology, user, intent_detector, embedding, validator, crawler, flavor]:
         system.register_agent(agent)
 
     await asyncio.gather(
@@ -56,7 +58,8 @@ async def main():
         embedding.run(),
         intent_detector.run(),
         validator.run(),
-        crawler.run()
+        crawler.run(),
+        flavor.run()
     )
 
 if __name__ == "__main__":

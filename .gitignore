@@ -37,3 +37,4 @@ src/token.txt
 src/agents/__pycache__/validator_agent.cpython-310.pyc
 src/utils/__pycache__/metaheuristic.cpython-310.pyc
 .google-cookie
+src/agents/__pycache__/flavor_agent.cpython-310.pyc

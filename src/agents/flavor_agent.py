@@ -1,11 +1,17 @@
 import json
 from sympy import to_dnf, And, Or
 from agents.base_agent import BaseAgent
-import numpy as np
+import os
+from owlready2 import get_ontology
+from agents.base_agent import BaseAgent
+
 
 class Flavor_Agent(BaseAgent):
-    def __init__(self, name, system):
+    def __init__(self, name, system, ontology_fn):
         super().__init__(name, system)
+        self.ontology_fn = ontology_fn
+        ONTOLOGY_PATH = os.path.abspath("src/ontology/ontology.owl")
+        self.onto = get_ontology(f"file://{ONTOLOGY_PATH}").load()
 
         self.categories = {
             "nada": lambda x: 1.0 if x <= 0.1 else 0.0,
@@ -69,6 +75,21 @@ class Flavor_Agent(BaseAgent):
             return self.categories[modifier](flavor_value)
         else:
             return 0.0
+    
+    def es_formula_valida(self, expresion: str) -> bool:
+        permitidos = {
+            "nada_dulce", "poco_dulce", "medio_dulce", "mucho_dulce",
+            "nada_amargo", "poco_amargo", "medio_amargo", "mucho_amargo",
+            "nada_salado", "poco_salado", "medio_salado", "mucho_salado",
+            "nada_ácido", "poco_ácido", "medio_ácido", "mucho_ácido",
+            "nada_picante", "poco_picante", "medio_picante", "mucho_picante",
+            "AND", "OR"
+        }
+
+        tokens = expresion.strip().split()
+        if not tokens:
+            return False
+        return all(token in permitidos for token in tokens)
 
     async def handle(self, message: str) -> list[(str, int)]:
         """
@@ -76,13 +97,21 @@ class Flavor_Agent(BaseAgent):
         Args:
             message: dict con keys:
                 - content: str (fórmula lógica)
-                - accuracy_level: float (umbral de pertenencia)
                 - amount: int (cantidad de resultados)
         Returns:
             list[(str, int)]: Lista de tuplas (nombre, valor) ordenadas descendente
         """
+
+        if message["content"]["flavors"] == "" or message["content"]["flavors"] is None:
+            await self.send("validator", {"source": "flavor", "results": [], "type": "result"})
+            return
+
+        if (not self.es_formula_valida(message["content"]["flavors"])):
+            await self.send("validator", {"source": "flavor", "results": [], "type": "result"})
+            return
+
         response = []
-        message_dnf = self.query_to_dnf(message["content"])
+        message_dnf = self.query_to_dnf(message["content"]["flavors"])
 
         for cocktail in self.data:
             cocktail_vector = self.data[cocktail]
@@ -97,9 +126,17 @@ class Flavor_Agent(BaseAgent):
                 
                 max_value = max(max_value, min_value)
 
-            if max_value >= message["accuracy_level"]:
+            if max_value >= 0.7:
                 response.append((cocktail, max_value))
 
         response.sort(key=lambda x: x[1], reverse=True)
-        return response[:message["amount"]]
-                  
+        drinks = response[:message["content"]["ammount"]]
+        filtered_results = []
+        for drink in drinks:
+            filtered_results.append(drink[0])
+        results = self.ontology_fn(filtered_results, [[True,True,True,True,True,True,True,True,True]*len(filtered_results)], self.onto)
+        filtered_results = []
+        for result in results:
+            if "Error" not in result:
+                filtered_results.append(result)
+        await self.send("validator", {"source": "flavor", "results": filtered_results, "type": "result"})

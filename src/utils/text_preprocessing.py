@@ -1,5 +1,4 @@
 import re
-import nltk
 from langdetect import detect
 from nltk.corpus import stopwords
 import spacy
