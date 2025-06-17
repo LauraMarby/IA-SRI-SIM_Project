@@ -3,7 +3,31 @@ import re
 from agents.base_agent import BaseAgent
 
 class CoordinatorAgent(BaseAgent):
+    """
+    Agente coordinador del sistema.
+
+    Se encarga de recibir las consultas del usuario, detectar la intención
+    o tipo de búsqueda, y distribuir tareas a los agentes adecuados (como 
+    OntologyAgent, EmbeddingAgent, Flavor_Agent, etc.). Una vez recibidas 
+    las respuestas, las pasa al ValidationAgent para su evaluación.
+
+    Responsabilidades:
+    - Detectar la intención de la consulta del usuario.
+    - Gestionar el flujo de mensajes entre agentes.
+    - Consolidar la información y controlar el ciclo de validación.
+    - Reenviar la respuesta final al usuario.
+
+    """
+    
     def __init__(self, name, system, model):
+        """
+        Inicializa el agente coordinador.
+
+        Args:
+            name (str): Nombre del agente.
+            system (System): Referencia al sistema multiagente.
+            model (Any): Modelo de lenguaje utilizado para generar respuestas.
+        """
         super().__init__(name, system)
         self.model = model
         self.lang = "en"
@@ -11,7 +35,15 @@ class CoordinatorAgent(BaseAgent):
         self.embedding_query = []
 
     async def handle(self, message):
+        """
+        Maneja los mensajes entrantes según su origen (user, validator, crawler).
 
+        Dependiendo del emisor del mensaje, coordina el flujo de consulta entre 
+        agentes de ontología, embeddings, validador, crawler, y sabores.
+
+        Args:
+            message (dict): Mensaje recibido, debe incluir 'from' y 'content'.
+        """
         sender = message["from"]
         if sender == "user":
 
@@ -116,8 +148,19 @@ class CoordinatorAgent(BaseAgent):
         
 
     async def send_response(self, respuesta, complementos, razonamiento, intencion):
-        # Construir el prompt en base a la query original, la respuesta seleccionada, 
-        # los complementos útiles y el razonamiento aplicado.
+        """
+        Construye y envía la respuesta final al usuario.
+
+        Utiliza el modelo de lenguaje para generar una respuesta final en el idioma
+        del usuario, a partir de la información recuperada y el razonamiento aplicado.
+
+        Args:
+            respuesta (Any): Información seleccionada como más relevante.
+            complementos (Any): Datos adicionales útiles para enriquecer la respuesta.
+            razonamiento (str): Justificación para haber elegido esa respuesta.
+            intencion (str): Tipo de respuesta ("final", "await", "error", etc.).
+        """
+        
         prompt = f"""
     You are an expert bartender assistant.
     Answer the following user query in a clear, helpful, and friendly way

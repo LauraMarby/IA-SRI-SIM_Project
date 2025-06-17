@@ -8,7 +8,35 @@ from utils.softmax import softmax, select_k_without_replace
 
 
 class Flavor_Agent(BaseAgent):
+    """
+    Agente especializado en descripciones de sabor, recomendaciones sensoriales y preferencias.
+
+    Este agente interpreta preferencias del usuario (por ejemplo, "quiero algo dulce y suave"),
+    filtra las bebidas disponibles según perfiles de sabor, y colabora con el CoordinatorAgent
+    para enriquecer las recomendaciones personalizadas.
+
+    Responsabilidades:
+    - Interpretar preferencias sensoriales.
+    - Asociar descriptores de sabor a bebidas.
+    - Retornar tragos alineados con gustos específicos.
+
+    """
+
     def __init__(self, name, system, ontology_fn):
+        """
+        Inicializa el agente de sabores.
+
+        Este agente permite hacer consultas basadas en perfiles de sabor de los cócteles.
+        Utiliza un archivo JSON que contiene vectores de sabores, y aplica reglas lingüísticas
+        sobre ellos (como "muy dulce", "poco ácido", etc.) para filtrar recomendaciones.
+        Finalmente, consulta la ontología para enriquecer las respuestas.
+
+        Args:
+            name (str): Nombre del agente.
+            system (System): Referencia al sistema multiagente.
+            ontology_fn (Callable): Función de consulta a la ontología, para expandir o filtrar resultados.
+        """
+
         super().__init__(name, system)
         self.ontology_fn = ontology_fn
         ONTOLOGY_PATH = os.path.abspath("src/ontology/ontology.owl")
@@ -35,28 +63,63 @@ class Flavor_Agent(BaseAgent):
 
     def query_to_dnf(self, query):
         """
-        Transforma una expresión booleana en su forma normal disyuntiva.
+        Convierte una fórmula lógica textual a su Forma Normal Disyuntiva (DNF).
+
+        Args:
+            query (str): Expresión booleana en lenguaje natural con conectores AND, OR y modificadores de sabor.
+
+        Returns:
+            sympy.Expr: Fórmula equivalente en DNF.
         """
+
         treated = query.lower().replace('and', '&').replace('or', '|').replace('not', '~')
         dnf = to_dnf(treated, simplify=True)
         return dnf
     
     def get_clauses(self, expr):
-        """ Obtiene las clausuras de una expresión normal disyuntiva."""
+        """
+        Obtiene las cláusulas de una expresión booleana en forma DNF.
+
+        Args:
+            expr (sympy.Expr): Fórmula DNF.
+
+        Returns:
+            tuple: Clausulas que componen la expresión (una o varias).
+        """
+
         if isinstance(expr, Or):
             return expr.args
         else:
             return (expr,)
         
     def get_terms(self, clause):
-        """ Obtiene los términos de una clausura."""
+        """
+        Obtiene los términos individuales dentro de una cláusula booleana.
+
+        Args:
+            clause (sympy.Expr): Una cláusula (AND o literal).
+
+        Returns:
+            tuple: Lista de términos.
+        """
+
         if isinstance(clause, And):
             return clause.args
         else:
             return (clause,)
         
     def evaluate_term(self, term, cocktail_vector):
-        """Evalúa un término lingüístico contra el vector del cóctel."""
+        """
+        Evalúa un término lingüístico (ej. 'muy_dulce') sobre el vector de sabores de un cóctel.
+
+        Args:
+            term (sympy.Symbol): Término a evaluar.
+            cocktail_vector (list[float]): Vector de sabores del cóctel.
+
+        Returns:
+            float: Valor de pertenencia en el rango [0.0, 1.0].
+        """
+
         term_str = str(term)
         
         parts = term_str.split('_')
@@ -78,6 +141,16 @@ class Flavor_Agent(BaseAgent):
             return 0.0
     
     def es_formula_valida(self, expresion: str) -> bool:
+        """
+        Verifica que la fórmula ingresada sea válida.
+
+        Args:
+            expresion (str): Fórmula ingresada por el usuario.
+
+        Returns:
+            bool: True si todos los términos y operadores son válidos, False en caso contrario.
+        """
+
         permitidos = {
             "nada_dulce", "poco_dulce", "medio_dulce", "mucho_dulce",
             "nada_amargo", "poco_amargo", "medio_amargo", "mucho_amargo",

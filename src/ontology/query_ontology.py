@@ -1,6 +1,29 @@
 from utils.text_preprocessing import normalize
 
 def consultar_tragos(nombres_tragos, campos, onto):
+    """
+    Consulta información detallada de una lista de cócteles en una ontología.
+
+    Para cada cóctel dado en `nombres_tragos`, obtiene los campos solicitados
+    según la lista booleana correspondiente en `campos`. Los datos se extraen
+    de la ontología `onto`.
+
+    Parámetros:
+        nombres_tragos (list of str): Lista con los nombres de los cócteles a consultar.
+        campos (list of list of bool): Lista de listas booleanas que indican qué campos
+            se deben extraer para cada cóctel. La estructura por cada lista es:
+            [Url, Vaso, Ingredientes, Instrucciones, Review, Historia, Nutrición, Alcohol_Content, Garnish]
+            Cada posición con valor True indica que se debe extraer ese campo.
+        onto (objeto ontología): Instancia de la ontología donde se encuentran los cócteles
+            y sus propiedades.
+
+    Retorna:
+        list of dict: Lista de diccionarios con la información consultada para cada cóctel.
+            Cada diccionario contiene al menos la clave "Nombre" con el nombre del cóctel.
+            Si el cóctel no existe en la ontología, incluye la clave "Error" con un mensaje.
+            Para los campos solicitados, se incluyen las claves correspondientes con sus valores.
+            En caso de que alguna propiedad no esté presente, se devuelve cadena vacía o estructura vacía.
+    """
 
     resultados = []
 

@@ -1,4 +1,3 @@
-import random
 from agents.base_agent import BaseAgent
 import json
 import re
@@ -7,7 +6,31 @@ import asyncio
 from utils.metaheuristic import TabuSearchSelector
 
 class ValidationAgent(BaseAgent):
+    """
+    Agente responsable de validar y filtrar la información recopilada desde diferentes fuentes
+    (ontología, embedding, web) para construir una respuesta precisa y consistente.
+
+    Su trabajo principal es:
+    - Esperar resultados desde múltiples fuentes.
+    - Aplicar restricciones semánticas (fuertes y débiles) derivadas de la consulta del usuario.
+    - Evaluar subconjuntos de candidatos con una metaheurística (Tabu Search).
+    - Verificar la suficiencia de los elementos seleccionados antes de enviarlos al Coordinador.
+    """
+
     def __init__(self, name, system, model, alpha=100, beta=1, gamma=2, num_ants=10, max_iters=20):
+        """
+    Inicializa el agente validador.
+
+    Args:
+        name (str): Nombre identificador del agente.
+        system (System): Referencia al sistema multiagente (mensajería y orquestación).
+        model: Modelo de lenguaje usado para derivar restricciones semánticas a partir de la consulta.
+        alpha (int): Parámetro para exploración/explotación en metaheurísticas (no usado en Tabu).
+        beta (int): Parámetro de penalización.
+        gamma (int): Peso de las restricciones débiles.
+        num_ants (int): Cantidad de agentes en metaheurísticas basadas en colonia (no usado aquí).
+        max_iters (int): Número máximo de iteraciones para búsqueda de soluciones.
+    """
         super().__init__(name, system)
         self.model = model
         self.alpha = alpha
@@ -20,6 +43,23 @@ class ValidationAgent(BaseAgent):
         self.query = None
 
     async def handle(self, message):
+        """
+        Procesa mensajes entrantes desde otros agentes.
+
+        - Si el mensaje es del tipo "expectation", se inicializan las fuentes esperadas y la consulta.
+        - Si es del tipo "result", se acumulan los resultados por fuente.
+        - Cuando todas las fuentes esperadas han respondido, se:
+            - Unifican y normalizan los candidatos.
+            - Elimina duplicados.
+            - Extraen restricciones fuertes y débiles desde el modelo.
+            - Verifica subconjuntos válidos usando una matriz de cumplimiento.
+            - Ejecuta Tabu Search para encontrar el subconjunto óptimo.
+            - Verifica la suficiencia semántica de la respuesta final.
+            - Envía el resultado final al Coordinador.
+
+        En caso de error, se notifica al Coordinador con un mensaje de error.
+        """
+        
         try:
             content = message.get("content", {})
             msg_type = content.get("type")
@@ -62,7 +102,7 @@ class ValidationAgent(BaseAgent):
             candidates = eliminar_repetidos(candidates)
 
             # Extraer restricciones
-            restrictions = self.extract_constraints(self.query, candidates)
+            restrictions = self.extract_constraints(self.query)
             if not restrictions.get("fuertes"):
                 await self.send("coordinator", {"error": "No se pudieron extraer restricciones fuertes válidas."})
                 self._clear_state()
@@ -82,6 +122,7 @@ class ValidationAgent(BaseAgent):
                     print(f"[ACO] Error durante la ejecución: {e}. Reintentando...")
                     await asyncio.sleep(0.1)  # Pequeña pausa opcional para evitar bucles frenéticos
             
+            # Metaheurística descartada.
             # while True:
             #     try:
             #         selected, score = self.ant_colony_optimization(candidates, restrictions, matriz)
@@ -89,7 +130,6 @@ class ValidationAgent(BaseAgent):
             #     except Exception as e:
             #         print(f"[ACO] Error durante la ejecución: {e}. Reintentando...")
             #         await asyncio.sleep(0.1)  # Pequeña pausa opcional para evitar bucles frenéticos
-
 
             # Verificar suficiencia
             restricciones_conjuntas = restrictions.get("conjuntas", [])
@@ -105,11 +145,45 @@ class ValidationAgent(BaseAgent):
             await self.send("coordinator", {"error": f"Error inesperado en ValidationAgent: {str(e)}"})
 
     def _clear_state(self):
+        """
+        Limpia el estado interno del agente entre consultas.
+
+        Se eliminan:
+        - Fuentes esperadas.
+        - Datos recibidos.
+        - Consulta en curso.
+        """
         self.expected_sources.clear()
         self.received_data.clear()
         self.query = None
 
-    def extract_constraints(self, query, candidates):
+    def extract_constraints(self, query):
+
+        """
+        Genera restricciones semánticas a partir de la consulta original del usuario.
+
+        Utiliza el modelo de lenguaje para clasificar restricciones en:
+        - Fuertes: obligatorias para cumplir con los requisitos explícitos.
+        - Débiles: deseables pero no obligatorias.
+        - Conjuntas: aplican sobre la cantidad o combinación de resultados.
+
+        El formato del JSON devuelto es:
+        {
+            "fuertes": [ ... ],
+            "débiles": [ ... ],
+            "conjuntas": [ ... ]
+        }
+
+        Args:
+            query (str): Consulta original del usuario.
+
+        Returns:
+            dict: Diccionario con listas de restricciones clasificadas.
+
+        Lanza:
+            ValueError: Si el modelo no produce una salida válida.
+        """
+
         prompt = f"""
 Eres un asistente para procesar consultas de usuarios sobre cocteles y tragos. Dada esta consulta de usuario: \"{query}\"
 
@@ -274,6 +348,24 @@ NOTA: Ninguna de las restricciones extraidas debe ser algo ambiguo, tienen que s
     #     return pheromones
 
     def verifica_matriz(self, respuestas, restricciones):
+        """
+        Evalúa una lista de respuestas candidatas contra un conjunto de restricciones
+        (fuertes y/o débiles) y devuelve una matriz booleana indicando el cumplimiento.
+
+        Cada fila representa una respuesta candidata y cada columna una restricción.
+        El valor en [i][j] es True si la respuesta i cumple la restricción j, False en caso contrario.
+
+        La evaluación se realiza mediante una consulta a un modelo de lenguaje, que responde
+        en formato JSON indicando "sí"/"no" para cada par respuesta-restricción.
+
+        Args:
+            respuestas (list of str): Lista de respuestas candidatas normalizadas.
+            restricciones (list of str): Lista de restricciones a verificar.
+
+        Returns:
+            list of list of bool: Matriz de cumplimiento (True/False) por respuesta y restricción.
+        """
+
         prompt = f"""
         Tenemos una lista de respuestas candidatas y una lista de restricciones.
         Para cada respuesta, indica si cumple cada restricción (sí o no). 
@@ -319,6 +411,29 @@ NOTA: Ninguna de las restricciones extraidas debe ser algo ambiguo, tienen que s
             return {(r, c): False for c in respuestas for r in restricciones}
 
     def verifica_suficiencia(self, pregunta, respuestas, candidates, restricciones_grupales):
+        """
+        Evalúa si el conjunto seleccionado de respuestas contiene información suficiente
+        para responder la pregunta del usuario de forma completa y válida, según un conjunto
+        de restricciones conjuntas y secundarias.
+
+        Utiliza un modelo de lenguaje para analizar si:
+        - Las respuestas seleccionadas bastan para cumplir los requisitos ("suficiente").
+        - Algunas respuestas adicionales podrían mejorar o completar la respuesta ("expandida_suficiente").
+        - Se necesita hacer una búsqueda en línea debido a limitaciones del conocimiento disponible.
+
+        Args:
+            pregunta (str): Consulta original del usuario.
+            respuestas (list of str): Fragmentos seleccionados como núcleo de la respuesta.
+            candidates (list of str): Resto de fragmentos disponibles como información secundaria.
+            restricciones_grupales (list of str): Reglas que deben cumplirse para toda la respuesta combinada.
+
+        Returns:
+            dict: Diccionario con claves:
+                - "suficiente": bool
+                - "expandida_suficiente": bool
+                - "razonamiento": str
+                - "online": bool
+        """
 
         prompt = f"""
         Tengo una pregunta que realizó un usuario, y tengo información que puedo usar para conformar una respuesta.
@@ -358,6 +473,20 @@ Tu respuesta debe ser un OBJETO JSON con la siguiente estructura exacta, usando 
         return cleaned
 
     def stringify_candidate(self, candidate):
+        """
+        Convierte un candidato (puede ser string o dict) a una representación
+        de texto estándar para su análisis posterior por un modelo de lenguaje.
+
+        Si el candidato es un diccionario, se transforma a una cadena en formato:
+        "clave1: valor1 | clave2: valor2 | ...", con listas también representadas como strings.
+
+        Args:
+            candidate (str or dict): Fragmento de información sobre un trago.
+
+        Returns:
+            str: Representación textual del candidato.
+        """
+        
         if isinstance(candidate, str):
             return candidate
 

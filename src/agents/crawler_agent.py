@@ -9,11 +9,46 @@ from embedding.embedder import embed_new_document
 from pathlib import Path
 
 class Crawler_Agent(BaseAgent):
+    """
+    Agente encargado de realizar búsquedas externas en la web.
+
+    Se activa cuando la respuesta del sistema requiere información 
+    que no está en la ontología ni en los embeddings. Utiliza técnicas 
+    de scraping o consultas a motores de búsqueda para obtener datos actualizados.
+
+    Responsabilidades:
+    - Consultar fuentes externas (como Google).
+    - Extraer los tres primeros resultados relevantes.
+    - Retornar contenido limpio y estructurado.
+    
+    """
+
     def __init__(self, name, system):
+        """
+        Inicializa el agente de crawling.
+
+        Este agente se encarga de realizar búsquedas en línea sobre recetas de cócteles,
+        extraer información útil, y almacenarla en un archivo JSON, además de indexarla 
+        en el sistema de embeddings para recuperación futura.
+
+        Args:
+            name (str): Nombre del agente.
+            system (System): Referencia al sistema multiagente donde se integra.
+        """
         super().__init__(name, system)
         self.DATA_DIR = "src/data/"
 
     async def handle(self, message):
+        """
+        Maneja mensajes entrantes desde el agente coordinador.
+
+        Procesa una lista de consultas proporcionadas por el `CoordinatorAgent`, realiza
+        la búsqueda web correspondiente y responde con los datos encontrados. Los resultados
+        también son almacenados en disco y añadidos al sistema de embeddings.
+
+        Args:
+            message (dict): Mensaje recibido, con el campo "content" conteniendo una lista de consultas.
+        """
         queries = message["content"]
         results = self.crawl_scrap(queries)
         if len(results) == 0:
@@ -22,8 +57,21 @@ class Crawler_Agent(BaseAgent):
 
 
     def crawl_scrap(self, messages: list[str]) -> str|list[dict]:
-        """Realiza una búsqueda en google teniendo en cuenta la query del usuario y toma el contenido de la primera página que encuentra."""
-        
+        """
+        Realiza una búsqueda en Google sobre sitios confiables de recetas de cócteles 
+        y extrae contenido relevante.
+
+        Recorre los primeros resultados y, si encuentra uno no visitado previamente,
+        descarga el contenido, lo procesa y lo guarda en JSON, además de agregarlo al
+        sistema de embeddings.
+
+        Args:
+            messages (list[str]): Lista de consultas a buscar online.
+
+        Returns:
+            Union[str, list[dict]]: En caso de error, retorna un string con el mensaje.
+                                    Si tiene éxito, retorna una lista de diccionarios con los datos extraídos.
+        """
         result = []
 
         for message in messages:
@@ -90,10 +138,3 @@ class Crawler_Agent(BaseAgent):
                 return f"Error en la búsqueda: {str(e)}"
             
         return result
-
-        #enviar result a alguien, result es una lista de diccionarios con la información a responder o un string con error de que algo no pincho
-
-        # if not isinstance(result, str) and not result.startswith('Error en la búsqueda'):
-        #     embed_new_document(Path(result))
-
-        #mandar mensaje a alguien? devolver algo?

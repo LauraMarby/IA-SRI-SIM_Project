@@ -14,6 +14,41 @@ from ontology.query_ontology import consultar_tragos
 from embedding.query_embedding import retrieve
 from pathlib import Path
 
+"""
+Script principal para inicializar y ejecutar el sistema multiagente de bartender.
+
+Este script realiza las siguientes tareas:
+- Carga el token de API desde un archivo local para autenticar la API de Google Generative AI.
+- Configura el modelo generativo Gemini 1.5 de Google.
+- Crea una instancia del sistema de agentes (`AgentSystem`).
+- Inicializa los agentes necesarios, cada uno con sus responsabilidades específicas:
+  * `UserAgent`: Agente que representa al usuario.
+  * `CoordinatorAgent`: Coordinador que gestiona la interacción entre agentes.
+  * `OntologyAgent`: Agente encargado de consultas a la ontología de cócteles.
+  * `EmbeddingAgent`: Agente que gestiona búsquedas vectoriales.
+  * `IntentDetectorAgent`: Agente que detecta intenciones del usuario usando el modelo.
+  * `ValidationAgent`: Agente que valida respuestas usando el modelo.
+  * `Crawler_Agent`: Agente que realiza scraping o crawling.
+  * `Flavor_Agent`: Agente especializado en sabores y consultas extendidas.
+- Registra los agentes en el sistema.
+- Ejecuta todos los agentes concurrentemente con `asyncio.gather`.
+- Cambia el directorio de trabajo al directorio raíz del proyecto para asegurar rutas relativas correctas.
+
+Funciones clave:
+- `load_token(file_path)`: Lee el token de API desde un archivo, manejando errores comunes.
+
+Uso:
+Ejecutar este archivo iniciará el sistema multiagente en modo asíncrono, permitiendo que
+los agentes trabajen en paralelo para atender consultas y coordinar respuestas.
+
+Requisitos:
+- Archivo `src/token.txt` con el token válido para la API de Google Generative AI.
+- Dependencias adecuadas instaladas (asyncio, google.generativeai, etc.).
+
+Ejemplo de ejecución:
+    python src/main.py
+"""
+
 def load_token(file_path="src/token.txt") -> str:
     try:
         token = Path(file_path).read_text(encoding="utf-8").strip()
