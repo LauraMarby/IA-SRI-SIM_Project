@@ -4,6 +4,7 @@ from agents.base_agent import BaseAgent
 import os
 from owlready2 import get_ontology
 from agents.base_agent import BaseAgent
+from utils.softmax import softmax, select_k_without_replace
 
 
 class Flavor_Agent(BaseAgent):
@@ -129,8 +130,11 @@ class Flavor_Agent(BaseAgent):
             if max_value >= 0.7:
                 response.append((cocktail, max_value))
 
-        response.sort(key=lambda x: x[1], reverse=True)
-        drinks = response[:message["content"]["ammount"]]
+        probs = softmax(response)
+        drinks = select_k_without_replace(probs, message["content"]["ammount"])
+
+        # response.sort(key=lambda x: x[1], reverse=True)
+        # drinks = response[:message["content"]["ammount"]]
         filtered_results = []
         for drink in drinks:
             filtered_results.append(drink[0])
