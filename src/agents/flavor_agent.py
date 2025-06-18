@@ -152,11 +152,11 @@ class Flavor_Agent(BaseAgent):
         """
 
         permitidos = {
-            "nada_dulce", "poco_dulce", "medio_dulce", "mucho_dulce",
-            "nada_amargo", "poco_amargo", "medio_amargo", "mucho_amargo",
-            "nada_salado", "poco_salado", "medio_salado", "mucho_salado",
-            "nada_ácido", "poco_ácido", "medio_ácido", "mucho_ácido",
-            "nada_picante", "poco_picante", "medio_picante", "mucho_picante",
+            "nada_dulce", "poco_dulce", "medio_dulce", "muy_dulce",
+            "nada_amargo", "poco_amargo", "medio_amargo", "muy_amargo",
+            "nada_salado", "poco_salado", "medio_salado", "muy_salado",
+            "nada_ácido", "poco_ácido", "medio_ácido", "muy_ácido",
+            "nada_picante", "poco_picante", "medio_picante", "muy_picante",
             "AND", "OR"
         }
 
