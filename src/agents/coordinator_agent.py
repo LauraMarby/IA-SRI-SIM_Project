@@ -183,7 +183,7 @@ class CoordinatorAgent(BaseAgent):
             # Extraer texto limpio
             final_answer = output.text.strip() if hasattr(output, 'text') else str(output).strip()
 
-            # Enviar la respuesta al UserAgent (simulado aquí con un print, reemplaza con tu entorno de mensajes)
+            # Enviar la respuesta al UserAgent 
             await self.send("user", {
                 "type": "respuesta_final",
                 "content": final_answer,

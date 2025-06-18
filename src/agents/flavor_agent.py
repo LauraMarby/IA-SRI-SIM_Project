@@ -127,7 +127,7 @@ class Flavor_Agent(BaseAgent):
         if len(parts) == 2:
             modifier, flavor = parts
         else:
-            modifier, flavor = "muy", parts[0]
+            modifier, flavor = "medio", parts[0]
         
         if flavor not in self.flavor_map:
             return 0.0  
@@ -152,11 +152,11 @@ class Flavor_Agent(BaseAgent):
         """
 
         permitidos = {
-            "nada_dulce", "poco_dulce", "medio_dulce", "muy_dulce",
-            "nada_amargo", "poco_amargo", "medio_amargo", "muy_amargo",
-            "nada_salado", "poco_salado", "medio_salado", "muy_salado",
-            "nada_ácido", "poco_ácido", "medio_ácido", "muy_ácido",
-            "nada_picante", "poco_picante", "medio_picante", "muy_picante",
+            "nada_dulce", "poco_dulce", "medio_dulce", "muy_dulce", "dulce"
+            "nada_amargo", "poco_amargo", "medio_amargo", "muy_amargo", "amargo"
+            "nada_salado", "poco_salado", "medio_salado", "muy_salado", "salado"
+            "nada_ácido", "poco_ácido", "medio_ácido", "muy_ácido", "ácido"
+            "nada_picante", "poco_picante", "medio_picante", "muy_picante", "picante"
             "AND", "OR"
         }
 
@@ -167,53 +167,69 @@ class Flavor_Agent(BaseAgent):
 
     async def handle(self, message: str) -> list[(str, int)]:
         """
-        Recomienda cócteles basados en la fórmula lógica.
+        Recomienda cócteles basados en una lista de fórmulas lógicas.
+
         Args:
             message: dict con keys:
-                - content: str (fórmula lógica)
-                - amount: int (cantidad de resultados)
+                - content: dict con key 'flavors': list[str]
+                - amount: int (cuántos tragos por fórmula)
         Returns:
             list[(str, int)]: Lista de tuplas (nombre, valor) ordenadas descendente
         """
 
-        if message["content"]["flavors"] == "" or message["content"]["flavors"] is None:
+        flavor_formulas = message["content"]["flavors"]
+        amount = message["content"].get("ammount", 1)
+
+        if not flavor_formulas or not isinstance(flavor_formulas, list):
             await self.send("validator", {"source": "flavor", "results": [], "type": "result"})
             return
 
-        if (not self.es_formula_valida(message["content"]["flavors"])):
+        final_results = []
+
+        for formula in flavor_formulas:
+            if not self.es_formula_valida(formula):
+                continue
+
+            try:
+                message_dnf = self.query_to_dnf(formula)
+            except Exception as e:
+                print(f"[Flavor_Agent] Error al convertir a DNF: {e}")
+                continue
+
+            scored_candidates = []
+
+            for cocktail in self.data:
+                cocktail_vector = self.data[cocktail]
+                max_value = 0.0
+
+                for clause in self.get_clauses(message_dnf):
+                    min_value = 1.0
+                    for term in self.get_terms(clause):
+                        term_value = self.evaluate_term(term, cocktail_vector)
+                        min_value = min(min_value, term_value)
+                    max_value = max(max_value, min_value)
+
+                if max_value >= 0.7:
+                    scored_candidates.append((cocktail, max_value))
+
+            if not scored_candidates:
+                continue
+
+            # Softmax y selección top-k para cada fórmula
+            probs = softmax(scored_candidates)
+            top_k = select_k_without_replace(probs, amount)
+
+            for name, _ in top_k:
+                final_results.append(name)
+
+        if not final_results:
             await self.send("validator", {"source": "flavor", "results": [], "type": "result"})
             return
 
-        response = []
-        message_dnf = self.query_to_dnf(message["content"]["flavors"])
+        # Generar campos dummy y consultar la ontología
+        dummy_fields = [[True]*9 for _ in final_results]
+        ontology_results = self.ontology_fn(final_results, dummy_fields, self.onto)
 
-        for cocktail in self.data:
-            cocktail_vector = self.data[cocktail]
-            max_value = 0.0  
+        filtered_results = [res for res in ontology_results if "Error" not in res]
 
-            for clause in self.get_clauses(message_dnf):
-                min_value = 1.0  
-                
-                for term in self.get_terms(clause):
-                    term_value = self.evaluate_term(term, cocktail_vector)
-                    min_value = min(min_value, term_value)
-                
-                max_value = max(max_value, min_value)
-
-            if max_value >= 0.7:
-                response.append((cocktail, max_value))
-
-        probs = softmax(response)
-        drinks = select_k_without_replace(probs, message["content"]["ammount"])
-
-        # response.sort(key=lambda x: x[1], reverse=True)
-        # drinks = response[:message["content"]["ammount"]]
-        filtered_results = []
-        for drink in drinks:
-            filtered_results.append(drink[0])
-        results = self.ontology_fn(filtered_results, [[True,True,True,True,True,True,True,True,True]*len(filtered_results)], self.onto)
-        filtered_results = []
-        for result in results:
-            if "Error" not in result:
-                filtered_results.append(result)
         await self.send("validator", {"source": "flavor", "results": filtered_results, "type": "result"})
