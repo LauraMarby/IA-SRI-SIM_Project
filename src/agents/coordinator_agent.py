@@ -2,6 +2,8 @@ import json
 import re
 from agents.base_agent import BaseAgent
 
+TEST = False
+
 class CoordinatorAgent(BaseAgent):
     """
     Agente coordinador del sistema.
@@ -145,8 +147,6 @@ class CoordinatorAgent(BaseAgent):
             
             await self.send_response(message["content"]["results"], [], "Resultado de realizar la busqueda online.", "final")
                     
-        
-
     async def send_response(self, respuesta, complementos, razonamiento, intencion):
         """
         Construye y envía la respuesta final al usuario.

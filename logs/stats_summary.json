@@ -1,0 +1,200 @@
+{
+  "stage_1": {
+    "round_1": {
+      "OK": 12,
+      "ERROR": 7
+    },
+    "round_2": {
+      "OK": 11,
+      "ERROR": 9
+    },
+    "round_3": {
+      "OK": 13,
+      "ERROR": 7
+    },
+    "round_4": {
+      "OK": 13,
+      "ERROR": 7
+    },
+    "round_5": {
+      "OK": 14,
+      "ERROR": 6
+    },
+    "round_6": {
+      "OK": 13,
+      "ERROR": 7
+    },
+    "round_7": {
+      "OK": 16,
+      "ERROR": 4
+    },
+    "round_8": {
+      "OK": 13,
+      "ERROR": 7
+    },
+    "round_9": {
+      "OK": 17,
+      "ERROR": 3
+    },
+    "round_10": {
+      "OK": 7,
+      "ERROR": 13
+    }
+  },
+  "stage_2": {
+    "round_1": {
+      "OK": 15,
+      "ERROR": 5
+    },
+    "round_2": {
+      "OK": 12,
+      "ERROR": 8
+    },
+    "round_3": {
+      "OK": 7,
+      "ERROR": 13
+    },
+    "round_4": {
+      "OK": 12,
+      "ERROR": 8
+    },
+    "round_5": {
+      "OK": 15,
+      "ERROR": 5
+    },
+    "round_6": {
+      "OK": 12,
+      "ERROR": 8
+    },
+    "round_7": {
+      "OK": 11,
+      "ERROR": 9
+    },
+    "round_8": {
+      "OK": 12,
+      "ERROR": 8
+    },
+    "round_9": {
+      "OK": 12,
+      "ERROR": 8
+    },
+    "round_10": {
+      "OK": 11,
+      "ERROR": 9
+    }
+  },
+  "stage_3": {
+    "round_1": {
+      "OK": 10,
+      "ERROR": 10
+    },
+    "round_2": {
+      "OK": 8,
+      "ERROR": 12
+    },
+    "round_3": {
+      "OK": 14,
+      "ERROR": 6
+    },
+    "round_4": {
+      "OK": 12,
+      "ERROR": 8
+    },
+    "round_5": {
+      "OK": 12,
+      "ERROR": 8
+    },
+    "round_6": {
+      "OK": 14,
+      "ERROR": 6
+    },
+    "round_7": {
+      "OK": 11,
+      "ERROR": 9
+    },
+    "round_8": {
+      "OK": 14,
+      "ERROR": 6
+    },
+    "round_9": {
+      "OK": 17,
+      "ERROR": 3
+    },
+    "round_10": {
+      "OK": 14,
+      "ERROR": 6
+    }
+  },
+  "stage_4": {
+    "round_1": {
+      "OK": 0,
+      "ERROR": 1
+    },
+    "round_2": {
+      "OK": 2,
+      "ERROR": 1
+    },
+    "round_3": {
+      "OK": 2,
+      "ERROR": 2
+    },
+    "round_5": {
+      "OK": 2,
+      "ERROR": 0
+    },
+    "round_6": {
+      "OK": 3,
+      "ERROR": 0
+    },
+    "round_7": {
+      "OK": 0,
+      "ERROR": 1
+    },
+    "round_9": {
+      "OK": 1,
+      "ERROR": 0
+    },
+    "round_10": {
+      "OK": 2,
+      "ERROR": 0
+    }
+  },
+  "stage_5": {
+    "round_1": {
+      "OK": 13,
+      "ERROR": 6
+    },
+    "round_2": {
+      "OK": 9,
+      "ERROR": 11
+    },
+    "round_3": {
+      "OK": 14,
+      "ERROR": 6
+    },
+    "round_4": {
+      "OK": 12,
+      "ERROR": 8
+    },
+    "round_5": {
+      "OK": 14,
+      "ERROR": 6
+    },
+    "round_6": {
+      "OK": 14,
+      "ERROR": 6
+    },
+    "round_7": {
+      "OK": 10,
+      "ERROR": 10
+    },
+    "round_8": {
+      "OK": 14,
+      "ERROR": 6
+    },
+    "round_9": {
+      "OK": 12,
+      "ERROR": 8
+    }
+  }
+}

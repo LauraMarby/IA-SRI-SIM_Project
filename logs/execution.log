@@ -1,0 +1,382 @@
+2025-06-17 23:40:20,688 - INFO - Inicio ejecución. Tiempo máximo: 30.0 minutos
+2025-06-17 23:40:20,690 - INFO - Vuelta 1 - Etapa 1
+2025-06-17 23:40:20,690 - INFO - Iniciando Etapa 1 (Vuelta 1)
+2025-06-17 23:40:21,700 - INFO - Vuelta 2 - Etapa 1
+2025-06-17 23:40:21,701 - INFO - Iniciando Etapa 1 (Vuelta 2)
+2025-06-17 23:40:22,714 - INFO - Vuelta 3 - Etapa 1
+2025-06-17 23:40:22,715 - INFO - Iniciando Etapa 1 (Vuelta 3)
+2025-06-17 23:40:23,726 - INFO - Vuelta 4 - Etapa 1
+2025-06-17 23:40:23,727 - INFO - Iniciando Etapa 1 (Vuelta 4)
+2025-06-17 23:40:24,737 - INFO - Vuelta 5 - Etapa 1
+2025-06-17 23:40:24,738 - INFO - Iniciando Etapa 1 (Vuelta 5)
+2025-06-17 23:40:25,754 - INFO - Vuelta 6 - Etapa 1
+2025-06-17 23:40:25,755 - INFO - Iniciando Etapa 1 (Vuelta 6)
+2025-06-17 23:40:26,764 - INFO - Vuelta 7 - Etapa 1
+2025-06-17 23:40:26,765 - INFO - Iniciando Etapa 1 (Vuelta 7)
+2025-06-17 23:40:27,781 - INFO - Vuelta 8 - Etapa 1
+2025-06-17 23:40:27,782 - INFO - Iniciando Etapa 1 (Vuelta 8)
+2025-06-17 23:40:28,790 - INFO - Vuelta 9 - Etapa 1
+2025-06-17 23:40:28,790 - INFO - Iniciando Etapa 1 (Vuelta 9)
+2025-06-17 23:40:29,804 - INFO - Vuelta 10 - Etapa 1
+2025-06-17 23:40:29,804 - INFO - Iniciando Etapa 1 (Vuelta 10)
+2025-06-17 23:40:30,821 - INFO - Vuelta 11 - Etapa 2
+2025-06-17 23:40:30,822 - INFO - Iniciando Etapa 2 (Vuelta 1)
+2025-06-17 23:40:31,827 - INFO - Vuelta 12 - Etapa 2
+2025-06-17 23:40:31,828 - INFO - Iniciando Etapa 2 (Vuelta 2)
+2025-06-17 23:40:32,832 - INFO - Vuelta 13 - Etapa 2
+2025-06-17 23:40:32,833 - INFO - Iniciando Etapa 2 (Vuelta 3)
+2025-06-17 23:40:33,839 - INFO - Vuelta 14 - Etapa 2
+2025-06-17 23:40:33,845 - INFO - Iniciando Etapa 2 (Vuelta 4)
+2025-06-17 23:40:34,862 - INFO - Vuelta 15 - Etapa 2
+2025-06-17 23:40:34,862 - INFO - Iniciando Etapa 2 (Vuelta 5)
+2025-06-17 23:40:35,876 - INFO - Vuelta 16 - Etapa 2
+2025-06-17 23:40:35,876 - INFO - Iniciando Etapa 2 (Vuelta 6)
+2025-06-17 23:40:36,880 - INFO - Vuelta 17 - Etapa 2
+2025-06-17 23:40:36,880 - INFO - Iniciando Etapa 2 (Vuelta 7)
+2025-06-17 23:40:37,895 - INFO - Vuelta 18 - Etapa 2
+2025-06-17 23:40:37,895 - INFO - Iniciando Etapa 2 (Vuelta 8)
+2025-06-17 23:40:38,910 - INFO - Vuelta 19 - Etapa 2
+2025-06-17 23:40:38,910 - INFO - Iniciando Etapa 2 (Vuelta 9)
+2025-06-17 23:41:54,395 - INFO - Inicio ejecución. Tiempo máximo: 30.0 minutos
+2025-06-17 23:41:54,396 - INFO - Vuelta 1 - Etapa 1
+2025-06-17 23:41:54,397 - INFO - Iniciando Etapa 1 (Vuelta 1)
+2025-06-17 23:41:55,293 - ERROR - Error en la API: 403 Received http2 header with status: 403
+2025-06-17 23:41:57,580 - ERROR - Error en la API: 403 Received http2 header with status: 403
+2025-06-17 23:42:01,867 - ERROR - Error en la API: 403 Received http2 header with status: 403
+2025-06-17 23:42:10,151 - ERROR - Error en la API: 403 Received http2 header with status: 403
+2025-06-17 23:46:12,648 - INFO - Inicio ejecución. Tiempo máximo: 30.0 minutos
+2025-06-17 23:46:12,649 - INFO - Vuelta 1 - Etapa 1
+2025-06-17 23:46:12,650 - INFO - Iniciando Etapa 1 (Vuelta 1)
+2025-06-17 23:46:13,542 - ERROR - Error en la API: 403 Received http2 header with status: 403
+2025-06-17 23:46:16,006 - ERROR - Error en la API: 403 Received http2 header with status: 403
+2025-06-17 23:48:17,117 - INFO - Inicio ejecución. Tiempo máximo: 30.0 minutos
+2025-06-17 23:48:17,118 - INFO - Vuelta 1 - Etapa 1
+2025-06-17 23:48:17,119 - INFO - Iniciando Etapa 1 (Vuelta 1)
+2025-06-17 23:48:20,864 - INFO - Etapa 1 completada: OK=12, ERROR=7
+2025-06-17 23:48:21,877 - INFO - Vuelta 2 - Etapa 1
+2025-06-17 23:48:21,878 - INFO - Iniciando Etapa 1 (Vuelta 2)
+2025-06-17 23:48:26,269 - INFO - Etapa 1 completada: OK=11, ERROR=9
+2025-06-17 23:48:27,286 - INFO - Vuelta 3 - Etapa 1
+2025-06-17 23:48:27,287 - INFO - Iniciando Etapa 1 (Vuelta 3)
+2025-06-17 23:48:31,088 - INFO - Etapa 1 completada: OK=13, ERROR=7
+2025-06-17 23:48:32,101 - INFO - Vuelta 4 - Etapa 1
+2025-06-17 23:48:32,102 - INFO - Iniciando Etapa 1 (Vuelta 4)
+2025-06-17 23:48:36,324 - INFO - Etapa 1 completada: OK=13, ERROR=7
+2025-06-17 23:48:37,328 - INFO - Vuelta 5 - Etapa 1
+2025-06-17 23:48:37,329 - INFO - Iniciando Etapa 1 (Vuelta 5)
+2025-06-17 23:48:41,368 - INFO - Etapa 1 completada: OK=14, ERROR=6
+2025-06-17 23:48:42,371 - INFO - Vuelta 6 - Etapa 1
+2025-06-17 23:48:42,371 - INFO - Iniciando Etapa 1 (Vuelta 6)
+2025-06-17 23:48:45,880 - INFO - Etapa 1 completada: OK=13, ERROR=7
+2025-06-17 23:48:46,888 - INFO - Vuelta 7 - Etapa 1
+2025-06-17 23:48:46,888 - INFO - Iniciando Etapa 1 (Vuelta 7)
+2025-06-17 23:48:51,502 - INFO - Etapa 1 completada: OK=16, ERROR=4
+2025-06-17 23:48:52,504 - INFO - Vuelta 8 - Etapa 1
+2025-06-17 23:48:52,505 - INFO - Iniciando Etapa 1 (Vuelta 8)
+2025-06-17 23:48:56,085 - INFO - Etapa 1 completada: OK=13, ERROR=7
+2025-06-17 23:48:57,093 - INFO - Vuelta 9 - Etapa 1
+2025-06-17 23:48:57,094 - INFO - Iniciando Etapa 1 (Vuelta 9)
+2025-06-17 23:49:01,740 - INFO - Etapa 1 completada: OK=17, ERROR=3
+2025-06-17 23:49:02,751 - INFO - Vuelta 10 - Etapa 1
+2025-06-17 23:49:02,751 - INFO - Iniciando Etapa 1 (Vuelta 10)
+2025-06-17 23:49:07,229 - INFO - Etapa 1 completada: OK=7, ERROR=13
+2025-06-17 23:49:08,243 - INFO - Vuelta 11 - Etapa 2
+2025-06-17 23:49:08,244 - INFO - Iniciando Etapa 2 (Vuelta 1)
+2025-06-17 23:49:12,868 - INFO - Etapa 2 completada: OK=15, ERROR=5
+2025-06-17 23:49:13,873 - INFO - Vuelta 12 - Etapa 2
+2025-06-17 23:49:13,873 - INFO - Iniciando Etapa 2 (Vuelta 2)
+2025-06-17 23:49:19,978 - INFO - Etapa 2 completada: OK=12, ERROR=8
+2025-06-17 23:49:20,984 - INFO - Vuelta 13 - Etapa 2
+2025-06-17 23:49:20,984 - INFO - Iniciando Etapa 2 (Vuelta 3)
+2025-06-17 23:49:25,328 - INFO - Etapa 2 completada: OK=7, ERROR=13
+2025-06-17 23:49:26,330 - INFO - Vuelta 14 - Etapa 2
+2025-06-17 23:49:26,331 - INFO - Iniciando Etapa 2 (Vuelta 4)
+2025-06-17 23:49:30,219 - INFO - Etapa 2 completada: OK=12, ERROR=8
+2025-06-17 23:49:31,225 - INFO - Vuelta 15 - Etapa 2
+2025-06-17 23:49:31,226 - INFO - Iniciando Etapa 2 (Vuelta 5)
+2025-06-17 23:49:36,082 - INFO - Etapa 2 completada: OK=15, ERROR=5
+2025-06-17 23:49:37,088 - INFO - Vuelta 16 - Etapa 2
+2025-06-17 23:49:37,088 - INFO - Iniciando Etapa 2 (Vuelta 6)
+2025-06-17 23:49:42,070 - INFO - Etapa 2 completada: OK=12, ERROR=8
+2025-06-17 23:49:43,083 - INFO - Vuelta 17 - Etapa 2
+2025-06-17 23:49:43,083 - INFO - Iniciando Etapa 2 (Vuelta 7)
+2025-06-17 23:49:46,992 - INFO - Etapa 2 completada: OK=11, ERROR=9
+2025-06-17 23:49:48,003 - INFO - Vuelta 18 - Etapa 2
+2025-06-17 23:49:48,003 - INFO - Iniciando Etapa 2 (Vuelta 8)
+2025-06-17 23:49:53,343 - INFO - Etapa 2 completada: OK=12, ERROR=8
+2025-06-17 23:49:54,357 - INFO - Vuelta 19 - Etapa 2
+2025-06-17 23:49:54,358 - INFO - Iniciando Etapa 2 (Vuelta 9)
+2025-06-17 23:49:58,835 - INFO - Etapa 2 completada: OK=12, ERROR=8
+2025-06-17 23:49:59,838 - INFO - Vuelta 20 - Etapa 2
+2025-06-17 23:49:59,838 - INFO - Iniciando Etapa 2 (Vuelta 10)
+2025-06-17 23:50:04,706 - INFO - Etapa 2 completada: OK=11, ERROR=9
+2025-06-17 23:50:05,712 - INFO - Vuelta 21 - Etapa 3
+2025-06-17 23:50:05,713 - INFO - Iniciando Etapa 3 (Vuelta 1)
+2025-06-17 23:50:11,878 - INFO - Etapa 3 completada: OK=10, ERROR=10
+2025-06-17 23:50:12,888 - INFO - Vuelta 22 - Etapa 3
+2025-06-17 23:50:12,889 - INFO - Iniciando Etapa 3 (Vuelta 2)
+2025-06-17 23:50:18,964 - INFO - Etapa 3 completada: OK=8, ERROR=12
+2025-06-17 23:50:19,971 - INFO - Vuelta 23 - Etapa 3
+2025-06-17 23:50:19,972 - INFO - Iniciando Etapa 3 (Vuelta 3)
+2025-06-17 23:50:27,190 - INFO - Etapa 3 completada: OK=14, ERROR=6
+2025-06-17 23:50:28,198 - INFO - Vuelta 24 - Etapa 3
+2025-06-17 23:50:28,199 - INFO - Iniciando Etapa 3 (Vuelta 4)
+2025-06-17 23:50:33,847 - INFO - Etapa 3 completada: OK=12, ERROR=8
+2025-06-17 23:50:34,859 - INFO - Vuelta 25 - Etapa 3
+2025-06-17 23:50:34,860 - INFO - Iniciando Etapa 3 (Vuelta 5)
+2025-06-17 23:50:41,035 - INFO - Etapa 3 completada: OK=12, ERROR=8
+2025-06-17 23:50:42,050 - INFO - Vuelta 26 - Etapa 3
+2025-06-17 23:50:42,051 - INFO - Iniciando Etapa 3 (Vuelta 6)
+2025-06-17 23:50:49,338 - INFO - Etapa 3 completada: OK=14, ERROR=6
+2025-06-17 23:50:50,346 - INFO - Vuelta 27 - Etapa 3
+2025-06-17 23:50:50,347 - INFO - Iniciando Etapa 3 (Vuelta 7)
+2025-06-17 23:50:58,273 - INFO - Etapa 3 completada: OK=11, ERROR=9
+2025-06-17 23:50:59,284 - INFO - Vuelta 28 - Etapa 3
+2025-06-17 23:50:59,284 - INFO - Iniciando Etapa 3 (Vuelta 8)
+2025-06-17 23:51:04,826 - INFO - Etapa 3 completada: OK=14, ERROR=6
+2025-06-17 23:51:05,834 - INFO - Vuelta 29 - Etapa 3
+2025-06-17 23:51:05,835 - INFO - Iniciando Etapa 3 (Vuelta 9)
+2025-06-17 23:51:11,112 - INFO - Etapa 3 completada: OK=17, ERROR=3
+2025-06-17 23:51:12,122 - INFO - Vuelta 30 - Etapa 3
+2025-06-17 23:51:12,123 - INFO - Iniciando Etapa 3 (Vuelta 10)
+2025-06-17 23:51:19,015 - INFO - Etapa 3 completada: OK=14, ERROR=6
+2025-06-17 23:51:20,024 - INFO - Vuelta 31 - Etapa 4
+2025-06-17 23:51:20,025 - INFO - Iniciando Etapa 4 (Vuelta 1)
+2025-06-17 23:51:20,136 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:20,137 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:20,137 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:20,137 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:20,137 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:20,137 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:20,137 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:20,138 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:20,138 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:20,138 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:20,138 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:20,138 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:20,138 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:20,139 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:20,139 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:20,139 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:20,139 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:20,139 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:20,139 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:21,164 - INFO - Etapa 4 completada: OK=0, ERROR=1
+2025-06-17 23:51:22,172 - INFO - Vuelta 32 - Etapa 4
+2025-06-17 23:51:22,173 - INFO - Iniciando Etapa 4 (Vuelta 2)
+2025-06-17 23:51:22,284 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:22,284 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:22,284 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:22,285 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:22,285 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:22,285 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:22,285 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:22,285 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:22,285 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:22,286 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:22,286 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:22,286 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:22,286 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:22,286 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:22,286 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:22,287 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:22,287 - WARNING - Faltan campos para etapa 4: 5/9
+2025-06-17 23:51:24,372 - INFO - Etapa 4 completada: OK=2, ERROR=1
+2025-06-17 23:51:25,383 - INFO - Vuelta 33 - Etapa 4
+2025-06-17 23:51:25,384 - INFO - Iniciando Etapa 4 (Vuelta 3)
+2025-06-17 23:51:25,489 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:25,489 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:25,489 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:25,490 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:25,490 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:25,490 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:25,490 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:25,490 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:25,490 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:25,491 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:25,491 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:25,491 - WARNING - Faltan campos para etapa 4: 5/9
+2025-06-17 23:51:25,491 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:25,491 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:25,492 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:25,492 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:27,835 - INFO - Etapa 4 completada: OK=2, ERROR=2
+2025-06-17 23:51:28,844 - INFO - Vuelta 34 - Etapa 4
+2025-06-17 23:51:28,844 - INFO - Iniciando Etapa 4 (Vuelta 4)
+2025-06-17 23:51:28,965 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:28,966 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:28,966 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:28,966 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:28,966 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:28,966 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:28,966 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:28,967 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:28,967 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:28,967 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:28,967 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:28,967 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:28,967 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:28,968 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:28,968 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:28,968 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:28,968 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:28,969 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:28,969 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:28,969 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:29,979 - INFO - Vuelta 35 - Etapa 4
+2025-06-17 23:51:29,979 - INFO - Iniciando Etapa 4 (Vuelta 5)
+2025-06-17 23:51:30,092 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:30,092 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:30,092 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:30,092 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:30,092 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:30,093 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:30,093 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:30,093 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:30,093 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:30,093 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:30,093 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:30,094 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:30,094 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:30,094 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:30,094 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:30,094 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:30,094 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:30,095 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:31,766 - INFO - Etapa 4 completada: OK=2, ERROR=0
+2025-06-17 23:51:32,778 - INFO - Vuelta 36 - Etapa 4
+2025-06-17 23:51:32,779 - INFO - Iniciando Etapa 4 (Vuelta 6)
+2025-06-17 23:51:32,886 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:32,886 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:32,887 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:32,887 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:32,888 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:32,888 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:32,889 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:32,889 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:32,889 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:32,890 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:32,890 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:32,890 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:32,891 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:32,891 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:32,891 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:32,892 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:32,892 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:34,953 - INFO - Etapa 4 completada: OK=3, ERROR=0
+2025-06-17 23:51:35,960 - INFO - Vuelta 37 - Etapa 4
+2025-06-17 23:51:35,961 - INFO - Iniciando Etapa 4 (Vuelta 7)
+2025-06-17 23:51:36,071 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:36,071 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:36,071 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:36,072 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:36,072 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:36,072 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:36,072 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:36,072 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:36,073 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:36,073 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:36,073 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:36,073 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:36,073 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:36,073 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:36,073 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:36,074 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:36,074 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:36,074 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:36,074 - WARNING - Faltan campos para etapa 4: 5/9
+2025-06-17 23:51:37,503 - INFO - Etapa 4 completada: OK=0, ERROR=1
+2025-06-17 23:51:38,507 - INFO - Vuelta 38 - Etapa 4
+2025-06-17 23:51:38,507 - INFO - Iniciando Etapa 4 (Vuelta 8)
+2025-06-17 23:51:38,618 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:38,618 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:38,619 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:38,619 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:38,619 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:38,619 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:38,619 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:38,619 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:38,620 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:38,620 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:38,620 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:38,620 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:38,620 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:38,620 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:38,620 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:38,621 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:38,621 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:38,621 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:38,621 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:38,621 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:39,633 - INFO - Vuelta 39 - Etapa 4
+2025-06-17 23:51:39,634 - INFO - Iniciando Etapa 4 (Vuelta 9)
+2025-06-17 23:51:39,743 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:39,743 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:39,743 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:39,744 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:39,744 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:39,744 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:39,744 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:39,745 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:39,745 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:39,745 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:39,745 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:39,745 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:39,745 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:39,745 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:39,746 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:39,746 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:39,746 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:39,746 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:39,746 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:40,770 - INFO - Etapa 4 completada: OK=1, ERROR=0
+2025-06-17 23:51:41,781 - INFO - Vuelta 40 - Etapa 4
+2025-06-17 23:51:41,782 - INFO - Iniciando Etapa 4 (Vuelta 10)
+2025-06-17 23:51:41,892 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:41,893 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:41,893 - WARNING - Faltan campos para etapa 4: 6/9
+2025-06-17 23:51:41,893 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:41,894 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:41,894 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:41,894 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:41,894 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:41,894 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:41,894 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:41,895 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:41,895 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:41,895 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:41,895 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:41,895 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:41,896 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:41,896 - WARNING - Faltan campos para etapa 4: 7/9
+2025-06-17 23:51:41,896 - WARNING - Faltan campos para etapa 4: 8/9
+2025-06-17 23:51:43,806 - INFO - Etapa 4 completada: OK=2, ERROR=0
+2025-06-17 23:51:44,810 - INFO - Vuelta 41 - Etapa 5
+2025-06-17 23:51:44,810 - INFO - Iniciando Etapa 5 (Vuelta 1)
+2025-06-17 23:51:51,389 - INFO - Etapa 5 completada: OK=13, ERROR=6
+2025-06-17 23:51:52,405 - INFO - Vuelta 42 - Etapa 5
+2025-06-17 23:51:52,406 - INFO - Iniciando Etapa 5 (Vuelta 2)
+2025-06-17 23:51:57,388 - INFO - Etapa 5 completada: OK=9, ERROR=11
+2025-06-17 23:51:58,391 - INFO - Vuelta 43 - Etapa 5
+2025-06-17 23:51:58,391 - INFO - Iniciando Etapa 5 (Vuelta 3)
+2025-06-17 23:52:03,363 - INFO - Etapa 5 completada: OK=14, ERROR=6
+2025-06-17 23:52:04,379 - INFO - Vuelta 44 - Etapa 5
+2025-06-17 23:52:04,380 - INFO - Iniciando Etapa 5 (Vuelta 4)
+2025-06-17 23:52:10,531 - INFO - Etapa 5 completada: OK=12, ERROR=8
+2025-06-17 23:52:11,547 - INFO - Vuelta 45 - Etapa 5
+2025-06-17 23:52:11,547 - INFO - Iniciando Etapa 5 (Vuelta 5)
+2025-06-17 23:52:16,540 - INFO - Etapa 5 completada: OK=14, ERROR=6
+2025-06-17 23:52:17,549 - INFO - Vuelta 46 - Etapa 5
+2025-06-17 23:52:17,550 - INFO - Iniciando Etapa 5 (Vuelta 6)
+2025-06-17 23:52:24,051 - INFO - Etapa 5 completada: OK=14, ERROR=6
+2025-06-17 23:52:25,065 - INFO - Vuelta 47 - Etapa 5
+2025-06-17 23:52:25,066 - INFO - Iniciando Etapa 5 (Vuelta 7)
+2025-06-17 23:52:30,191 - INFO - Etapa 5 completada: OK=10, ERROR=10
+2025-06-17 23:52:31,204 - INFO - Vuelta 48 - Etapa 5
+2025-06-17 23:52:31,205 - INFO - Iniciando Etapa 5 (Vuelta 8)
+2025-06-17 23:52:36,900 - INFO - Etapa 5 completada: OK=14, ERROR=6
+2025-06-17 23:52:37,913 - INFO - Vuelta 49 - Etapa 5
+2025-06-17 23:52:37,914 - INFO - Iniciando Etapa 5 (Vuelta 9)
+2025-06-17 23:52:43,832 - INFO - Etapa 5 completada: OK=12, ERROR=8
+2025-06-17 23:52:44,849 - INFO - Vuelta 50 - Etapa 5
+2025-06-17 23:52:44,850 - INFO - Iniciando Etapa 5 (Vuelta 10)

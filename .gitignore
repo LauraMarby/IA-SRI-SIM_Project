@@ -38,3 +38,9 @@ src/agents/__pycache__/validator_agent.cpython-310.pyc
 src/utils/__pycache__/metaheuristic.cpython-310.pyc
 .google-cookie
 src/agents/__pycache__/flavor_agent.cpython-310.pyc
+src/tests/__pycache__/test_embedding.cpython-310.pyc
+src/tests/__pycache__/test_flavor.cpython-310.pyc
+src/utils/__pycache__/softmax.cpython-310.pyc
+src/tests/__pycache__/test_ontology.cpython-310.pyc
+src/utils/__pycache__/aco_metaheuristic.cpython-310.pyc
+src/tests/__pycache__/test_metaheuristic.cpython-310.pyc
