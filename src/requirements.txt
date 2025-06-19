@@ -1,0 +1,15 @@
+beautifulsoup4
+google
+langdetect
+matplotlib
+nltk
+numpy
+owlready2
+requests
+sentence-transformers
+spacy
+sympy
+tenacity
+trafilatura
+urllib3
+google-generativeai
